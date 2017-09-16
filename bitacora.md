@@ -23,4 +23,15 @@ reuniones y llevará una bitácora de los acuerdos, y avances que haga el equipo
    - Hemos decidido trabajar según el libro _PCI Express System Architecture_, y las sugerencias del profesor.
    - Estudio de Mercado.
      Se han encontrado los siguientes productos:
-       - [PX1011B: PCI Express stand-alone X1 PHY](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+     ### [PX1011B: PCI Express stand-alone X1 PHY](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+
+     - __Precio:__ $6.88 por unidad al comprar 1000 unidades.
+     - __Bloques:__
+
+       ![Bloques del componente](https://www.nxp.com/assets/images/en/block-diagrams/002aac211.gif)
+
+     - __Frecuencia:__ De la hoja del fabricante: fclk(ref) reference clock frequency min:99.97, typ:100, max:100.03 MHz
+
+    - __Potencia:__ De la hoja del fabricante: Power management
+ Dissipates < 300 mW in L0 normal mode
+ Support power management of L0, L0s and L1
