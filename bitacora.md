@@ -18,9 +18,13 @@
   _de 8:00pm a *en proceso_
 
    - Revisión del proyecto.
+   -
    - Hemos decidido trabajar según el libro _PCI Express System Architecture_, y las sugerencias del profesor.
 
    - Se decide usar la especificación de Intel 4.4.1 en vez de la 4.0 puesto que es más reciente. Esta utiliza el estandar USB 3.1 y no el 3.0 que viene en la especificación 4.0. El posible trabajo _extra_ se ve recompensado en estudiar una tecnología más actual.
+
+   - Se decide usar [Marp](https://yhatt.github.io/marp/) para las presentaciones. Es fácil de usar, curva de aprendizaje mínima, poco configurable pero funciona para lo que necesitamos.
+
    - Estudio de Mercado:
      > Busque 2 fabricantes de circuitos integrados que vendan un dispositivo que sirva para implementar la funcionalidad de la capa PHY de una interfaz PCIe y de una interfaz USB. Un posible fabricante y producto se puede encontrar en http://www.nxp.com/. Examine el producto de este fabricante y otro para determinar, tanto para PCIe como para USB, lo siguiente:
 1. ¿Qué bloques funcionales trae la capa PHY para una interfaz PCIe?
@@ -51,3 +55,7 @@ competitivos?
        - Dissipates < 300 mW in L0 normal mode
 
        - Support power management of L0, L0s and L1
+
+   - Se inicia la presentación 1 en ```/presentaciones/presentacion-1.md```.
+
+   - Se agregan documentos de referencia en ```/documentos```.
