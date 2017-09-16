@@ -16,6 +16,7 @@
   _15/9/2017_
 
   _de 8:00pm a 11:15pm_
+
   _Son 3hrs 15mins_
 
    - Revisión del proyecto.
@@ -63,5 +64,12 @@ competitivos?
 
   ### Pendientes
 
-   - Busqueda de usb's
-   - Propuesta de trabajo
+   - Se eligió el componenete XIO1100 de TI, queda pendiente agregar información de este.
+   - Busqueda de usb's.
+   - Propuesta de trabajo.
+   - Finalizar Presentación.
+
+  _Fin de la reunión 1_
+
+  ### Reunión 2
+  _Propuesta para el 16/9/2017, hora todavía por acordar_
