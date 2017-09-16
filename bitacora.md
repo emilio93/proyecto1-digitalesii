@@ -18,7 +18,7 @@
   _de 8:00pm a *en proceso_
 
    - Revisión del proyecto.
-   -
+
    - Hemos decidido trabajar según el libro _PCI Express System Architecture_, y las sugerencias del profesor.
 
    - Se decide usar la especificación de Intel 4.4.1 en vez de la 4.0 puesto que es más reciente. Esta utiliza el estandar USB 3.1 y no el 3.0 que viene en la especificación 4.0. El posible trabajo _extra_ se ve recompensado en estudiar una tecnología más actual.
