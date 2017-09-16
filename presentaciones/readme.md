@@ -1,4 +1,8 @@
 # Presentaciones del proyecto
+Se usa Markdown con Marp.
+
+[Cheatsheet de Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 ## Como usar
 
  - [Descargar Marp](https://yhatt.github.io/marp/)

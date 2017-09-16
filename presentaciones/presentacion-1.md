@@ -50,3 +50,11 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
   > Power management
     - Dissipates < 300 mW in L0 normal mode
     - Support power management of L0, L0s and L1
+
+---
+
+# Conclusiones del Estudio de Mercado
+
+---
+
+# División Propuesta del Trabajo
