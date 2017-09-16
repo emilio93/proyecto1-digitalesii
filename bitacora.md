@@ -15,7 +15,8 @@
   ### Reunión 1
   _15/9/2017_
 
-  _de 8:00pm a *en proceso_
+  _de 8:00pm a 11:15pm_
+  _Son 3hrs 15mins_
 
    - Revisión del proyecto.
 
@@ -59,3 +60,8 @@ competitivos?
    - Se inicia la presentación 1 en ```/presentaciones/presentacion-1.md```.
 
    - Se agregan documentos de referencia en ```/documentos```.
+
+  ### Pendientes
+
+   - Busqueda de usb's
+   - Propuesta de trabajo
