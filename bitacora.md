@@ -32,6 +32,10 @@ reuniones y llevará una bitácora de los acuerdos, y avances que haga el equipo
 
      - __Frecuencia:__ De la hoja del fabricante: fclk(ref) reference clock frequency min:99.97, typ:100, max:100.03 MHz
 
-    - __Potencia:__ De la hoja del fabricante: Power management
- Dissipates < 300 mW in L0 normal mode
- Support power management of L0, L0s and L1
+     - __Potencia:__ De la hoja del fabricante:
+
+       Power management
+
+       - Dissipates < 300 mW in L0 normal mode
+
+       - Support power management of L0, L0s and L1
