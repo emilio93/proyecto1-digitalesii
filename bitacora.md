@@ -69,8 +69,22 @@ competitivos?
    - Propuesta de trabajo.
    - Finalizar Presentación.
 
-  _Fin de la reunión 1_
+_Fin de la reunión 1_
 
-  ### Reunión 2
-  _Propuesta para el 16/9/2017, hora todavía por acordar_
-  _Se inicia a las 14:45_
+### Reunión 2
+
+_Propuesta para el 16/9/2017, hora todavía por acordar_
+
+_17/9/2017_
+
+_Se inicia a las 15:00, Se finaliza a las 16:00_
+
+_Es 1 hora._
+
+  - Se discute sobre M31Tech que provee diseños para diferentes protocolos IP.
+
+  - Se continua con la presentación
+
+  - Se asignan tareas para el día de hoy y siguiente semana.
+
+_Fin de la reunión 2_
