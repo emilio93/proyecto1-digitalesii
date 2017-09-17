@@ -77,7 +77,7 @@ _Propuesta para el 16/9/2017, hora todavía por acordar_
 
 _17/9/2017_
 
-_Se inicia a las 15:00, Se finaliza a las_
+_Se inicia a las 15:00, Se finaliza a las 4:45_
 
   - Se discute sobre M31Tech que provee diseños para diferentes protocolos IP.
 
