@@ -22,10 +22,31 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 ---
 
+### [XIO1100](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+
+- __Precio:__ $5.25 por unidad al comprar 1000 unidades.
+- __Diagrama de bloques:__
+![Bloques del componente](presentacion-1/xio1100-diagrama-de-bloques.svg)
+
+
+
+---
+
+### [XIO1100](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+  - __Frecuencia:__ De la hoja del fabricante: 
+  >fIN–DIFF
+  >Differential input frequency
+  >REFCLK+
+  >REFCLK−
+  >100 MHz The input frequency is 100 MHz + 300 ppm and
+  >− 2800 ppm including SSC–dictated variations.
+  
+  - __Potencia:__ La hoja del fabricante no indica consumo de potencia(unidades W), sin embargo indica consumo de potencia bajo. Tres modos de potencia P0, P0s y P1.
+---
+
  ![Logo NXP](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/NXP_Semiconductors_Logo.svg/1200px-NXP_Semiconductors_Logo.svg.png)
  
 ---
-
 
 ### [PX1011B: PCI Express stand-alone X1 PHY](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
 
@@ -53,8 +74,14 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 ---
 
+
 # Conclusiones del Estudio de Mercado
 
 ---
 
 # División Propuesta del Trabajo
+
+ 
+ - __Robin__: Implementación Paralelo-Serial.
+ 
+ - __Boanerges y Emilio__: Revisión de bloque 8b/10b, posible inicio de implementación.
