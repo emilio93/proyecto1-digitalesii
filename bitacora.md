@@ -73,3 +73,4 @@ competitivos?
 
   ### Reunión 2
   _Propuesta para el 16/9/2017, hora todavía por acordar_
+  _Se inicia a las 14:45_
