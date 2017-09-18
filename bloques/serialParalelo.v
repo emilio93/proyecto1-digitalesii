@@ -2,16 +2,24 @@
 
 module serialParalelo(entrada, salidas, clk);
 
+parameter cantidadBits = 10;
+
 input wire entrada;
-output reg [9:0] salidas;
-input clk;
+output reg [cantidadBits-1:0] salidas;
+input wire clk;
+
+reg [cantidadBits-1:0] bits;
 
 integer contador = 0;
 
 always @(posedge clk) begin
-	salidas[contador] = entrada;
+	bits[contador] <= entrada;
 	++contador;
-	if(contador == 10) contador = 0;
+	if(contador == cantidadBits) begin
+		contador = 0;
+		salidas <= bits;
+		salidas[cantidadBits-1] <= entrada;
+	end
 end
 
 endmodule
