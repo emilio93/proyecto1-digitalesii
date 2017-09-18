@@ -86,5 +86,11 @@ _Se inicia a las 15:00, Se finaliza a las 4:45_
   - Se asignan tareas para el día de hoy y siguiente semana.
 
   _Emilio se va a las 16:00_
-
   _Reunión continua con los demás integrantes_
+  
+  - Se agrego un componente USB 3.0 de Texas Instruments
+  - Falta agregar la informacion de potencia y frecuencia
+  - En la mañana trabajare en ello
+  - Robin completo una version de los modulos paralelo-serial, serial-paralelo
+  - Boa se desconecta a las 7:20pm
+  
