@@ -22,7 +22,7 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 ---
 
-### [XIO1100](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+### [XIO1100 x1 PCI Express PHY](http://www.ti.com/product/XIO1100)
 
 - __Precio:__ $5.25 por unidad al comprar 1000 unidades.
 - __Diagrama de bloques:__
@@ -31,8 +31,7 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 
 ---
-
-### [XIO1100](https://www.nxp.com/products/interfaces/pci-express/pci-express-stand-alone-x1-phy:PX1011B)
+### [XIO1100 x1 PCI Express PHY](http://www.ti.com/product/XIO1100)
   - __Frecuencia:__ De la hoja del fabricante: 
   >fIN–DIFF
   >Differential input frequency
@@ -42,7 +41,26 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
   >− 2800 ppm including SSC–dictated variations.
   
   - __Potencia:__ La hoja del fabricante no indica consumo de potencia(unidades W), sin embargo indica consumo de potencia bajo. Tres modos de potencia P0, P0s y P1.
+
 ---
+
+### [TUSB1310A USB 3.0 Transceiver](http://www.ti.com/product/TUSB1310A)
+- __Precio:__ $9.60 por unidad al comprar 1000 unidades.
+- __Diagrama de bloques:__
+!![85% center](presentacion-1/fbd_sllse32.gif)
+
+
+
+---
+### [TUSB1310A USB 3.0 Transceiver](http://www.ti.com/product/TUSB1310A)
+  - __Frecuencia:__ 
+ 
+  
+  - __Potencia:__ 
+---
+
+
+
 
  ![Logo NXP](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/NXP_Semiconductors_Logo.svg/1200px-NXP_Semiconductors_Logo.svg.png)
  
@@ -76,6 +94,8 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 
 # Conclusiones del Estudio de Mercado
+
+
 
 ---
 
