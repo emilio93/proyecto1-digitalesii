@@ -3,9 +3,9 @@
 PCI Express, Sata, USB 3.0
 ===
 
-Robin Gonzalez, CARNET
-Boanerges Martinez, CARNET
-Emilio Rojas, B15680
+Robin Gonzalez
+Boanerges Martinez
+Emilio Rojas
 
 ---
 
@@ -17,7 +17,7 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 - NXP
 
 ---
-     
+
  ![Logo TI](http://oedk.rice.edu/Resources/Pictures/ti_logo.jpg)
 
 ---
@@ -26,11 +26,10 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 - __Precio:__ $5.25 por unidad al comprar 1000 unidades.
 - __Diagrama de bloques:__
-![Bloques del componente](presentacion-1/xio1100-diagrama-de-bloques.svg)
-
-
+![center](presentacion-1/xio1100-diagrama-de-bloques.svg)
 
 ---
+
 ### [XIO1100 x1 PCI Express PHY](http://www.ti.com/product/XIO1100)
   - __Frecuencia:__ De la hoja del fabricante: 
   >fIN–DIFF
@@ -47,22 +46,19 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 ### [TUSB1310A USB 3.0 Transceiver](http://www.ti.com/product/TUSB1310A)
 - __Precio:__ $9.60 por unidad al comprar 1000 unidades.
 - __Diagrama de bloques:__
-!![85% center](presentacion-1/fbd_sllse32.gif)
-
-
+![80% center](presentacion-1/fbd_sllse32.gif)
 
 ---
+
 ### [TUSB1310A USB 3.0 Transceiver](http://www.ti.com/product/TUSB1310A)
   - __Frecuencia:__ 
- 
-  
+  Seleccionables desde 20 a 40 Mhz
   - __Potencia:__ 
+  Desde 13 hasta 128mW
+  
 ---
 
-
-
-
- ![Logo NXP](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/NXP_Semiconductors_Logo.svg/1200px-NXP_Semiconductors_Logo.svg.png)
+ ![center](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/NXP_Semiconductors_Logo.svg/1200px-NXP_Semiconductors_Logo.svg.png)
  
 ---
 
@@ -71,7 +67,7 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 - __Precio:__ $6.88 por unidad al comprar 1000 unidades.
 - __Diagrama de Bloques:__
 
-  ![Bloques del componente](https://www.nxp.com/assets/images/en/block-diagrams/002aac211.gif)
+  ![center](https://www.nxp.com/assets/images/en/block-diagrams/002aac211.gif)
 
 ---
 
@@ -95,6 +91,8 @@ Se busca un dispositivo para __PCIe__ y uno de __USB 3__ comerciales de los fabr
 
 # Conclusiones del Estudio de Mercado
 
+  - Mercado con precios muy competitivos, dificulta ingreso de nuevas empresas.
+  - Características similares entre los distintos productos.
 
 
 ---
