@@ -1,0 +1,94 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Mon Sep 18 06:32:25 2017
+[*]
+[dumpfile] "./gtkws/testComSerialParalelo.vcd"
+[dumpfile_mtime] "Mon Sep 18 06:24:27 2017"
+[dumpfile_size] 4393
+[savefile] "./gtkws/testComSerialParalelo.gtkw"
+[timestart] 0
+[size] 1878 1025
+[pos] -1 -1
+*-17.690599 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testerComunicaionPS.
+[sst_width] 223
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@28
+testerComunicaionPS.clk
+@22
+[color] 5
+testerComunicaionPS.entradasPS[9:0]
+@c00022
+[color] 5
+testerComunicaionPS.salidasSP[9:0]
+@28
+(0)testerComunicaionPS.salidasSP[9:0]
+(1)testerComunicaionPS.salidasSP[9:0]
+(2)testerComunicaionPS.salidasSP[9:0]
+(3)testerComunicaionPS.salidasSP[9:0]
+(4)testerComunicaionPS.salidasSP[9:0]
+(5)testerComunicaionPS.salidasSP[9:0]
+(6)testerComunicaionPS.salidasSP[9:0]
+(7)testerComunicaionPS.salidasSP[9:0]
+(8)testerComunicaionPS.salidasSP[9:0]
+(9)testerComunicaionPS.salidasSP[9:0]
+@1401200
+-group_end
+@420
+[color] 2
+testerComunicaionPS.emisor.contador
+@c00022
+[color] 2
+testerComunicaionPS.emisor.entradas[9:0]
+@28
+(0)testerComunicaionPS.emisor.entradas[9:0]
+(1)testerComunicaionPS.emisor.entradas[9:0]
+(2)testerComunicaionPS.emisor.entradas[9:0]
+(3)testerComunicaionPS.emisor.entradas[9:0]
+(4)testerComunicaionPS.emisor.entradas[9:0]
+(5)testerComunicaionPS.emisor.entradas[9:0]
+(6)testerComunicaionPS.emisor.entradas[9:0]
+(7)testerComunicaionPS.emisor.entradas[9:0]
+(8)testerComunicaionPS.emisor.entradas[9:0]
+(9)testerComunicaionPS.emisor.entradas[9:0]
+@1401200
+-group_end
+@28
+[color] 2
+testerComunicaionPS.emisor.salida
+@420
+[color] 3
+testerComunicaionPS.receptor.contador
+@28
+[color] 3
+testerComunicaionPS.receptor.entrada
+@c00022
+[color] 3
+testerComunicaionPS.receptor.salidas[9:0]
+@28
+[color] 3
+(0)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(1)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(2)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(3)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(4)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(5)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(6)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(7)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(8)testerComunicaionPS.receptor.salidas[9:0]
+[color] 3
+(9)testerComunicaionPS.receptor.salidas[9:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
