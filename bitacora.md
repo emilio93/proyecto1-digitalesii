@@ -69,28 +69,51 @@ competitivos?
    - Propuesta de trabajo.
    - Finalizar Presentación.
 
-_Fin de la reunión 1_
+  _Fin de la reunión 1_
 
-### Reunión 2
+  ### Reunión 2
 
-_Propuesta para el 16/9/2017, hora todavía por acordar_
+  _Propuesta para el 16/9/2017, hora todavía por acordar_
 
-_17/9/2017_
+  _17/9/2017_
 
-_Se inicia a las 15:00, Se finaliza a las 4:45_
+  _Se inicia a las 15:00, Se finaliza a las 4:45_
 
-  - Se discute sobre M31Tech que provee diseños para diferentes protocolos IP.
+    - Se discute sobre M31Tech que provee diseños para diferentes protocolos IP.
 
-  - Se continua con la presentación
+    - Se continua con la presentación
 
-  - Se asignan tareas para el día de hoy y siguiente semana.
+    - Se asignan tareas para el día de hoy y siguiente semana.
 
-  _Emilio se va a las 16:00_
-  _Reunión continua con los demás integrantes_
-  
-  - Se agrego un componente USB 3.0 de Texas Instruments
-  - Falta agregar la informacion de potencia y frecuencia
-  - En la mañana trabajare en ello
-  - Robin completo una version de los modulos paralelo-serial, serial-paralelo
-  - Boa se desconecta a las 7:20pm
-  
+    _Emilio se va a las 16:00_
+    _Reunión continua con los demás integrantes_
+
+    - Se agrego un componente USB 3.0 de Texas Instruments
+    - Falta agregar la informacion de potencia y frecuencia
+    - En la mañana trabajare en ello
+    - Robin completo una version de los modulos paralelo-serial, serial-paralelo
+    - Boa se desconecta a las 7:20pm
+    
+  ### Reunión 3
+
+  _21/9/2017_
+
+  _Se inicia a las 11:00_
+
+  Se definen las entradas y salidas para los bloques
+  Encoder8b10b y Decoder10b8b y en general se habla
+  sobre el funcionamiento de estos bloques y su utilidad
+
+  Se enfatiza en la nececidad de crear pruebas para los
+  bloques existentes, sin embargo se da prioridad al
+  diseño en este momento.
+  _Se termina a las 12:45_
+
+  ### Reunión 4
+
+  _24/9/2017_
+  _Reunión breve a través de mensajes a las 20:30_
+
+  Se da un resumen de la semana a Robin, se decide
+  exponer el jueves para poder nivelarnos con lo que
+  se ha hecho.
