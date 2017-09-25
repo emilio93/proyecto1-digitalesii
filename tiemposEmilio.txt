@@ -1,0 +1,44 @@
+Estos son tiempos en el editor
+
+Al 24/9/2017 22:00
+---
+proyecto1-digitalesii commits share
+4 hrs 47 mins 18 secs in the Last 7 Days in proyecto1-digitalesii under all branches.
+
+Languages in proyecto1-digitalesii
+
+Makefile (35.28%)
+Tcl (24.53%)
+Verilog (22.53%)
+Markdown (8.45%)
+Other (7.13%)
+Bash (2.07%)
+
+Files
+1 hr 41 mins 21 secs	Makefile
+36 mins 14 secs	...paraleloSerial.tcl
+31 mins 4 secs	yosys.tcl
+21 mins 3 secs	bloques/8b10b/encoder8b10b.v
+15 mins 24 secs	bloques/serialParalelo.v
+14 mins 9 secs	...serialParalelo.v
+11 mins 29 secs	...paraleloSerial/synth.ys
+10 mins 24 secs	bitacora.md
+9 mins 1 sec	bloques/8b10b/readme.md
+7 mins 40 secs	bloques/paraleloSerial.v
+5 mins 57 secs	build.sh
+5 mins 16 secs	bloques/8b10b/synth.ys
+3 mins 45 secs	readme.md
+3 mins 14 secs	bloques/paraleloSerial_tb.v
+3 mins 11 secs	...paraleloSerial/synth.tcl
+2 mins 49 secs	.gitignore
+1 min 54 secs	...paraleloSerial.v
+54 secs	...presentacion-1.md
+53 secs	...testComSerialParalelo.gtkw
+49 secs	...paraleloSerial_tb.v
+31 secs	build/paraleloSerial-rtlil.v
+13 secs	documentos/readme.md
+2 secs	registro.ys
+1 sec	lib/cmos_cells.v
+
+Branches
+4 hrs 47 mins 18 secs	master
