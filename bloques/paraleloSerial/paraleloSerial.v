@@ -5,8 +5,8 @@ module paraleloSerial(entradas, salida, clk);
 parameter cantidadBits = 10;
 
 input wire [cantidadBits-1:0] entradas;
-input wire clk;
 output reg salida;
+input wire clk;
 
 // Se utiliza para mantener la entrada
 // cada vez que esta entra(cada 10 flancos
@@ -15,10 +15,10 @@ output reg salida;
 // transcurso de esos flancos
 reg [cantidadBits-1:0] bits;
 
-integer contador = 0;
+reg contador = 0;
 
 always @(posedge clk) begin
-	++contador;
+	contador = contador + 1;
 	salida <= bits[contador];
 	if(contador == cantidadBits) begin
 		contador = 0;

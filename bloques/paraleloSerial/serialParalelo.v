@@ -10,13 +10,13 @@ input wire clk;
 
 reg [cantidadBits-1:0] bits;
 
-integer contador = 0;
+reg contador = 0;
 
 always @(posedge clk) begin
 	bits[contador] <= entrada;
-	++contador;
+	contador <= contador + 1;
 	if(contador == cantidadBits) begin
-		contador = 0;
+		contador <= 0;
 		salidas <= bits;
 		salidas[cantidadBits-1] <= entrada;
 	end
