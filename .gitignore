@@ -1,6 +1,7 @@
 build
 synth
 pdfs
+tests
 *.vcd
 *.out
 *.swp

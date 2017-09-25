@@ -13,35 +13,35 @@ yosys proc
 show -prefix pdfs/$vlogModuleName-proc -format pdf -colors 3 -viewer echo
 
 opt
-show -prefix pdfs/$vlogModuleName-proc_opt -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-proc_opt -format pdf -colors 3 -viewer echo
 
 fsm
-show -prefix pdfs/$vlogModuleName-fsm -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-fsm -format pdf -colors 3 -viewer echo
 
 opt
-show -prefix pdfs/$vlogModuleName-fsm_opt -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-fsm_opt -format pdf -colors 3 -viewer echo
 
 memory
-show -prefix pdfs/$vlogModuleName-memory -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-memory -format pdf -colors 3 -viewer echo
 
 opt
-show -prefix pdfs/$vlogModuleName-memory_opt -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-memory_opt -format pdf -colors 3 -viewer echo
 
 techmap
-show -prefix pdfs/$vlogModuleName-techmap -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-techmap -format pdf -colors 3 -viewer echo
 
 opt
-show -prefix pdfs/$vlogModuleName-techmap_opt -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-techmap_opt -format pdf -colors 3 -viewer echo
 
 write_verilog ./build/$vlogModuleName-rtlil.v
 
-dfflibmap -liberty ./lib/cmos_cells.lib;
-show -prefix pdfs/$vlogModuleName-dff_seq -lib ./lib/cmos_cells.v -format pdf -colors 3 -viewer echo
+dfflibmap -liberty ./lib/cmos_cells.lib
+# show -prefix pdfs/$vlogModuleName-dff_seq -lib ./lib/cmos_cells.v -format pdf -colors 3 -viewer echo
 
-abc -liberty ./lib/cmos_cells.lib;
-show -prefix pdfs/$vlogModuleName-abc_comb -lib ./lib/cmos_cells.v -format pdf -colors 3 -viewer echo
+abc -liberty ./lib/cmos_cells.lib
+# show -prefix pdfs/$vlogModuleName-abc_comb -lib ./lib/cmos_cells.v -format pdf -colors 3 -viewer echo
 
 clean
 
-show -prefix pdfs/$vlogModuleName-synth -lib ./lib/cmos_cells.v -viewer echo -format pdf -colors 3 -viewer echo
+# show -prefix pdfs/$vlogModuleName-synth -lib ./lib/cmos_cells.v -viewer echo -format pdf -colors 3 -viewer echo
 write_verilog ./build/$vlogModuleName-sintetizado.v
