@@ -1,4 +1,7 @@
 build
+synth
+pdfs
 *.vcd
 *.out
 *.swp
+*.dot
