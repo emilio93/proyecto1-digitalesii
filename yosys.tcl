@@ -13,19 +13,19 @@ yosys proc
 show -prefix pdfs/$vlogModuleName-proc -format pdf -colors 3 -viewer echo
 
 opt
-# show -prefix pdfs/$vlogModuleName-proc_opt -format pdf -colors 3 -viewer echo
+show -prefix pdfs/$vlogModuleName-proc_opt -format pdf -colors 3 -viewer echo
 
 fsm
-# show -prefix pdfs/$vlogModuleName-fsm -format pdf -colors 3 -viewer echo
+show -prefix pdfs/$vlogModuleName-fsm -format pdf -colors 3 -viewer echo
 
 opt
-# show -prefix pdfs/$vlogModuleName-fsm_opt -format pdf -colors 3 -viewer echo
+show -prefix pdfs/$vlogModuleName-fsm_opt -format pdf -colors 3 -viewer echo
 
 memory
-# show -prefix pdfs/$vlogModuleName-memory -format pdf -colors 3 -viewer echo
+show -prefix pdfs/$vlogModuleName-memory -format pdf -colors 3 -viewer echo
 
 opt
-# show -prefix pdfs/$vlogModuleName-memory_opt -format pdf -colors 3 -viewer echo
+show -prefix pdfs/$vlogModuleName-memory_opt -format pdf -colors 3 -viewer echo
 
 techmap
 # show -prefix pdfs/$vlogModuleName-techmap -format pdf -colors 3 -viewer echo
