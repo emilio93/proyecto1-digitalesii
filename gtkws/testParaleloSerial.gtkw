@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Mon Sep 25 10:15:39 2017
+[*]
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testParaleloSerial.vcd"
+[dumpfile_mtime] "Mon Sep 25 10:13:28 2017"
+[dumpfile_size] 52054
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testParaleloSerial.gtkw"
+[timestart] 0
+[size] 1638 995
+[pos] -1 -1
+*-19.984465 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testParaleloSerial.
+[sst_width] 223
+[signals_width] 163
+[sst_expanded] 1
+[sst_vpaned_height] 281
+@28
+testParaleloSerial.clk
+testParaleloSerial.rstContador
+@200
+-
+@22
+[color] 3
+testParaleloSerial.emisor.contador[9:0]
+[color] 3
+testParaleloSerial.emisor.entradas[9:0]
+[color] 3
+testParaleloSerial.emisor.bits[9:0]
+@29
+[color] 7
+testParaleloSerial.emisor.salida
+@200
+-
+@28
+[color] 7
+testParaleloSerial.salidaSynth
+[pattern_trace] 1
+[pattern_trace] 0

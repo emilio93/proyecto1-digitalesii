@@ -1,0 +1,87 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Mon Sep 25 10:25:29 2017
+[*]
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testSerialParalelo.vcd"
+[dumpfile_mtime] "Mon Sep 25 10:24:24 2017"
+[dumpfile_size] 61290
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testSerialParalelo.gtkw"
+[timestart] 0
+[size] 1638 995
+[pos] -1 -1
+*-20.867765 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testSerialParalelo.
+[sst_width] 223
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 281
+@28
+[color] 4
+testSerialParalelo.receptor.clk
+[color] 4
+testSerialParalelo.receptor.rstContador
+@24
+[color] 4
+testSerialParalelo.receptor.contador[9:0]
+@28
+[color] 3
+testSerialParalelo.receptor.entrada
+@c00022
+[color] 2
+testSerialParalelo.receptor.bits[9:0]
+@28
+[color] 2
+(0)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(1)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(2)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(3)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(4)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(5)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(6)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(7)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(8)testSerialParalelo.receptor.bits[9:0]
+[color] 2
+(9)testSerialParalelo.receptor.bits[9:0]
+@1401200
+-group_end
+@c00022
+[color] 7
+testSerialParalelo.receptor.salidas[9:0]
+@28
+[color] 7
+(0)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(1)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(2)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(3)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(4)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(5)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(6)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(7)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(8)testSerialParalelo.receptor.salidas[9:0]
+[color] 7
+(9)testSerialParalelo.receptor.salidas[9:0]
+@1401200
+-group_end
+@200
+-
+@23
+[color] 7
+testSerialParalelo.salidasSynth[9:0]
+[pattern_trace] 1
+[pattern_trace] 0
