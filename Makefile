@@ -23,7 +23,7 @@ compile:
 # Sintetiza segun scripts de yosys dentro de las carpetas para los bloques
 synth: synthYoys renameSynths
 synthYoys:
-	$(foreach vlog,$(wildcard ./bloques/paraleloSerial/*.v), VLOG_FILE_NAME=$(vlog) VLOG_MODULE_NAME=$(subst .v,,$(notdir $(vlog))) CUR_DIR=$(shell pwd) $(CC3) ./yosys.tcl;)
+	$(foreach vlog,$(wildcard ./bloques/**/*.v), VLOG_FILE_NAME=$(vlog) VLOG_MODULE_NAME=$(subst .v,,$(notdir $(vlog))) CUR_DIR=$(shell pwd) $(CC3) ./yosys.tcl;)
 	rm -f ./pdfs/*.dot
 renameSynths:
 	bash ./renameSynths.sh
