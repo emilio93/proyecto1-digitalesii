@@ -20,6 +20,11 @@
 //
 // Queda pendiente probar con la síntesis de yosys si al
 // optimizar el diseño, el consumo permanece igual.
+
+/*COMENTARIO_BOA:De la consulta que hice al profe, me parece que deberia de haber 2 CLK de entrada,
+uno para sincronizar las salidas serializadas(el mas rapido),
+y otro para sincronizar la lectura de los 8 bits de entrada(mas lento, multiplo del mas rapido)*/
+
 module paraleloSerial(entradas, salida, clk, rstContador);
 
 // esto es n en la explicación del módulo
@@ -70,6 +75,9 @@ always @(posedge clk) begin
 
 	end else begin
 		if (contador == 0) begin
+			
+/*COMENTARIO_BOA:deberia ser salida <=entradas[0]?*/
+			//
 			salida <= entradas[1];
 			contador <= contador + 1;
 		end else if (contador < (cantidadBits-1)) begin
