@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Fri Sep 29 04:59:37 2017
+[*]
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.vcd"
+[dumpfile_mtime] "Fri Sep 29 04:57:21 2017"
+[dumpfile_size] 11079
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.gtkw"
+[timestart] 0
+[size] 1680 1022
+[pos] -1 -1
+*-17.201490 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testClks.
+[sst_width] 223
+[signals_width] 156
+[sst_expanded] 1
+[sst_vpaned_height] 290
+@24
+testClks.clk
+@28
+testClks.testClks.enb
+testClks.rst
+@200
+-
+@800024
+[color] 3
+testClks.testClks.cnt10[2:0]
+@28
+[color] 3
+(0)testClks.testClks.cnt10[2:0]
+[color] 3
+(1)testClks.testClks.cnt10[2:0]
+[color] 3
+(2)testClks.testClks.cnt10[2:0]
+@1001200
+-group_end
+@28
+[color] 3
+testClks.clk10
+[color] 3
+testClks.testClks.clk20
+[color] 3
+testClks.testClks.clk40
+@200
+-
+@28
+[color] 2
+testClks.clk10Synth
+[color] 2
+testClks.clk20Synth
+@29
+[color] 2
+testClks.clk40Synth
+[pattern_trace] 1
+[pattern_trace] 0
