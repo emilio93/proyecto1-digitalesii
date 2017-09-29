@@ -123,9 +123,8 @@ end
 initial begin
 	$dumpfile("gtkws/testParaleloSerialSerialParalelo.vcd");
 	$dumpvars;
-	$display("		tiempo    | clk | rstContador |   entradas    | salida | contadorE | timepo en escala usada");
-	$monitor("%t      | %b   | %b           | %b      | %d         | %f ns",
-		$time, clk, rstContador, $realtime);
+	$display("		tiempo    | clk | rstContador |   timepo en escala usada");
+	$monitor("%t      | %b   | %b  | $f ns", $time, clk, rstContador, $realtime);
 
 end
 
