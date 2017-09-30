@@ -51,7 +51,10 @@ module testClks;
     # 40;
     @ (posedge clk);
     rst = 0;
-  	# 900;
+  	# 910;
+    @ (posedge clk);
+    enb = 0;
+    # 600;
   	$finish;
   end
 
