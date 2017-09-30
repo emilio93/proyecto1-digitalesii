@@ -8,6 +8,6 @@ for file in ./*-sintetizado.v; do
   newModuleName=${moduleName}Synth
   echo "${file}:"
   echo "    ${moduleName} -> ${newModuleName}"
-  echo "sed -i \"s/module ${moduleName}/module ${newModuleName}/g\" \"${file}\""
+  echo "sed -i \"s/module ${moduleName}/module  ${newModuleName}/g\" \"${file}\""
   sed -i "s/module ${moduleName}/module ${newModuleName}/g" "${file}"
 done
