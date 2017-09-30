@@ -1,24 +1,21 @@
 `timescale 1ns/1ps
 
-`ifndef paraleloSerial
-  `include "./bloques/paraleloSerial/paraleloSerial.v"
-`endif
-`ifndef serialParalelo
-  `include "./bloques/paraleloSerial/serialParalelo.v"
-`endif
-`ifndef cmos_cells
-  `include "./lib/cmos_cells.v"
-`endif
-`ifndef serialParaleloSynth
-  `include "./build/serialParalelo-sintetizado.v"
-`endif
-`ifndef serialParaleloSynth
-  `include "./build/paraleloSerial-sintetizado.v"
-`endif
+`include "./bloques/clk/clks.v"
+`include "./build/clks-sintetizado.v"
+
+`include "./bloques/paraleloSerial/paraleloSerial.v"
+`include "./bloques/paraleloSerial/serialParalelo.v"
+
+`include "./lib/cmos_cells.v"
+
+`include "./build/serialParalelo-sintetizado.v"
+`include "./build/paraleloSerial-sintetizado.v"
+
 module testParaleloSerialSerialParalelo ();
 
 reg clk;
-reg rstContador;
+reg rst;
+reg enb;
 
 reg [9:0] entradasPS;
 wire salidaPS;
@@ -28,33 +25,64 @@ wire [9:0] salidasSP;
 
 wire salidaPSSynth;
 wire [9:0] salidasSPSynth;
+wire clk10;
+wire clk10Synth;
+wire clk20;
+wire clk20Synth;
+wire clk40;
+wire clk40Synth;
+
+clks clkGen(
+  .clk(clk),
+  .clk10(clk10),
+  .clk20(clk20),
+  .clk40(clk40),
+  .rst(rstContador),
+  .enb(enb)
+);
+
+clksSynth clkGenSynth(
+  .clk(clk),
+  .clk10(clk10Synth),
+  .clk20(clk20Synth),
+  .clk40(clk40Synth),
+  .rst(rstContador),
+  .enb(enb)
+);
 
 paraleloSerial emisor(
-	.entradas(entradasPS),
-	.salida(salidaPS),
   .clk(clk),
-  .rstContador(rstContador)
+	.rst(rst),
+	.enb(enb),
+	.clk10(clk10),
+	.entradas(entradasPS),
+	.salida(salidaPS)
+);
+paraleloSerialSynth emisorSynth(
+  .clk(clk),
+	.rst(rst),
+	.enb(enb),
+	.clk10(clk10),
+	.entradas(entradasPS),
+	.salida(salidaPSSynth)
 );
 
 serialParalelo receptor(
-	.entrada(salidaPS),
-	.salidas(salidasSP),
   .clk(clk),
-  .rstContador(rstContador)
+  .rst(rst),
+  .enb(enb),
+  .clk10(clk10),
+	.entrada(salidaPS),
+	.salidas(salidasSP)
 );
 
-paraleloSerialSynth emisorSynth(
-  .entradas(entradasPS),
-  .salida(salidaPSSynth),
-  .clk(clk),
-  .rstContador(rstContador)
-  );
-
 serialParaleloSynth receptorSynth(
-	.entrada(salidaPSSynth),
-	.salidas(salidasSPSynth),
   .clk(clk),
-  .rstContador(rstContador)
+  .rst(rst),
+  .enb(enb),
+  .clk10(clk10Synth),
+	.entrada(salidaPSSynth),
+	.salidas(salidasSPSynth)
 );
 
 integer periodo=100;
@@ -67,9 +95,10 @@ integer periodoGrande2=2000;
 always # reloj clk = ~clk;//inicio de la señal de reloj, cambia cada 10ns
 
 initial begin
+  enb = 1;
 	clk = 0;
 	entradasPS = 10'b1010010101;
-  rstContador = 1'b1;
+  rst = 1'b1;
 
   # periodo
   @ (posedge clk);
@@ -89,7 +118,7 @@ initial begin
 
   # relojGrande
   @ (posedge clk);
-  rstContador = 1'b0;
+  rst = 1'b0;
 
 	# relojGrande
   @ (posedge clk);
@@ -124,7 +153,7 @@ initial begin
 	$dumpfile("gtkws/testParaleloSerialSerialParalelo.vcd");
 	$dumpvars;
 	$display("		tiempo    | clk | rstContador |   timepo en escala usada");
-	$monitor("%t      | %b   | %b  | $f ns", $time, clk, rstContador, $realtime);
+	$monitor("%t      | %b   | %b  | $f ns", $time, clk, rst, $realtime);
 
 end
 

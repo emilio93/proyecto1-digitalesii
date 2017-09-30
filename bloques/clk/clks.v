@@ -12,11 +12,11 @@ module clks(clk, clk10, clk20, clk40, rst, enb);
   output reg clk20;
   output reg clk40;
 
-  reg [2:0] cnt10;
+  reg [3:0] cnt10;
 
   always @ (posedge clk) begin
     if (rst) begin
-      cnt10 <= 3'b000;
+      cnt10 <= 4'd9;
       clk10 <= 1'b0;
       clk20 <= 1'b0;
       clk40 <= 1'b0;

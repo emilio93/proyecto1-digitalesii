@@ -1,5 +1,12 @@
 `timescale 1ns/1ps
 
+`ifndef clks
+  `include "./bloques/clk/clks.v"
+`endif
+`ifndef clksSynth
+  `include "./build/clks-sintetizado.v"
+`endif
+
 `ifndef paraleloSerial
   `include "./bloques/paraleloSerial/paraleloSerial.v"
 `endif
@@ -13,25 +20,55 @@
 module testParaleloSerial ();
 
 reg clk;
-reg rstContador;
+reg enb;
+reg rst;
 
 reg [9:0] entradas;
 wire salida;
 wire salidaSynth;
 
 
-paraleloSerial emisor(
-	.entradas(entradas),
-	.salida(salida),
+wire clk10;
+wire clk10Synth;
+wire clk20;
+wire clk20Synth;
+wire clk40;
+wire clk40Synth;
+
+clks clkGen(
   .clk(clk),
-  .rstContador(rstContador)
+  .clk10(clk10),
+  .clk20(clk20),
+  .clk40(clk40),
+  .rst(rst),
+  .enb(enb)
 );
 
-paraleloSerialSynth emisorSynth(
-	.entradas(entradas),
-	.salida(salidaSynth),
+clksSynth clkGenSynth(
   .clk(clk),
-  .rstContador(rstContador)
+  .clk10(clk10Synth),
+  .clk20(clk20Synth),
+  .clk40(clk40Synth),
+  .rst(rst),
+  .enb(enb)
+);
+
+
+paraleloSerial emisor(
+  .clk(clk),
+	.rst(rst),
+	.enb(enb),
+	.clk10(clk10),
+	.entradas(entradas),
+	.salida(salida)
+);
+paraleloSerialSynth emisorSynth(
+  .clk(clk),
+	.rst(rst),
+	.enb(enb),
+	.clk10(clk10Synth),
+	.entradas(entradas),
+	.salida(salida)
 );
 
 integer periodo = 80;
@@ -45,9 +82,10 @@ always # reloj clk = ~clk;//inicio de la señal de reloj, cambia cada 10ns
 
 
 initial begin
-	clk = 0;
+  clk = 0;
+  enb = 1;
 	entradas = 10'b1010010101;
-  rstContador = 1'b1;
+  rst = 1'b1;
 
   # cuartoPeriodoGrande
   @ (posedge clk);
@@ -67,13 +105,13 @@ initial begin
 
   # cuartoPeriodoGrande
   @ (posedge clk);
-  rstContador = 1'b0;
+  rst = 1'b0;
 
 	# medioPeriodoGrande
   @ (posedge clk);
-	entradas = 10'bx10x10x10x;
+	entradas = 10'b1101101100;
 
-	# periodoGrande
+	# 200
 	@ (posedge clk);
 	entradas = 10'b1111100000;
 
@@ -83,7 +121,7 @@ initial begin
 
   # periodoGrande
 	@ (posedge clk);
-	entradas = 10'bx10x10x10x;
+	entradas = 10'b1101101101;
 
 	# periodoGrande
 	@ (posedge clk);
@@ -104,7 +142,7 @@ initial begin
 	$dumpvars;
 	$display("		tiempo    | clk | rstContador |   entradas    | salida | contadorE | timepo en escala usada");
 	$monitor("%t      | %b   | %b           | %b      | %d         | %f ns",
-		$time, clk, rstContador, entradas, salida, emisor.contador, $realtime);
+		$time, clk, rst, entradas, salida, emisor.contador, $realtime);
 
 end
 

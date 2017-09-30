@@ -25,23 +25,30 @@
 uno para sincronizar las salidas serializadas(el mas rapido),
 y otro para sincronizar la lectura de los 8 bits de entrada(mas lento, multiplo del mas rapido)*/
 
-module paraleloSerial(entradas, salida, clk, rstContador);
+module paraleloSerial(
+	clk,
+	rst,
+	enb,
+	clk10,
+	entradas,
+	salida
+);
 
 // esto es n en la explicación del módulo
 parameter cantidadBits = 10;
+
+// señales de control
+input wire clk;
+input wire enb;
+input wire rst;
+
+input wire clk10;
 
 // Se tienen n entradas
 input wire [cantidadBits-1:0] entradas;
 
 // La salida es serial, por lo tanto es un solo elemento
 output reg salida;
-
-input wire clk;
-
-// Indica que el contador se asigna a 0, esto es útil
-// en el probador para inicializar el valor de contador
-// puesto que inicia en un estado desconocido
-input wire rstContador;
 
 // Se utiliza para mantener la entrada
 // cada vez que esta entra(cada 10 flancos
@@ -55,10 +62,7 @@ reg [cantidadBits-1:0] bits;
 // cuenta de ciclos de reloj
 // El reg contador se encarga de llevar la
 // cuenta de ciclos de reloj.
-//
-// Pendiente se debe usar el redondeo a entero
-// hacia arriba de log(n)
-reg [cantidadBits-1:0] contador;
+reg [3:0] contador;
 
 // Únicamente se realizan operaciones no bloqueantes
 // por lo que se utiliza un bloque que se ejecuta cada
@@ -68,25 +72,16 @@ always @(posedge clk) begin
 	// Cuando rstContador está encendido se
 	// asigna 0 al contador, se obtienen las
 	// entradas y se envia la primer salida
-	if (rstContador) begin
-		contador <= 0;
+	if (rst) begin
+		contador <= 9;
 		bits <= entradas;
-		salida <= entradas[0];
-
-	end else begin
-		if (contador == 0) begin
-			
-/*COMENTARIO_BOA:deberia ser salida <=entradas[0]?*/
-			//
-			salida <= entradas[1];
-			contador <= contador + 1;
-		end else if (contador < (cantidadBits-1)) begin
-			salida <= bits[contador+1];
-			contador <= contador + 1;
-		end else begin
-			contador <= 0;
+	end else if (enb) begin
+		salida <= bits[contador];
+		if (contador >= cantidadBits-1) begin
 			bits <= entradas;
-			salida <= entradas[0];
+			contador <= 0;
+		end else begin
+		contador <= contador + 1;
 		end
 	end
 end
