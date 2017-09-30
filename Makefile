@@ -10,7 +10,7 @@ NO_ERROR = 2> /dev/null
 # crea folders necesarios en caso que no existan
 MAKE_FOLDERS := $(shell mkdir -p $(DIRS))
 
-.PHONY: synth compile run
+.PHONY: 	compile run
 
 
 # Sintetiza con yosys, compila con iverilog y corre con vvp
@@ -21,8 +21,8 @@ compile:
 	@$(foreach test,$(wildcard pruebas/*.v), $(CC) -o build/$(subst pruebas/,,$(subst .v,.o,$(test))) $(test) -Ttyp -g specify;)
 
 # Sintetiza segun scripts de yosys dentro de las carpetas para los bloques
-synth: synthYoys renameSynths
-synthYoys:
+synth: synthYosys renameSynths
+synthYosys:
 	$(foreach vlog,$(wildcard ./bloques/**/*.v), VLOG_FILE_NAME=$(vlog) VLOG_MODULE_NAME=$(subst .v,,$(notdir $(vlog))) CUR_DIR=$(shell pwd) $(CC3) ./yosys.tcl;)
 	rm -f ./pdfs/*.dot
 renameSynths:
