@@ -18,7 +18,7 @@ all: synth compile run
 
 # Compila con iverilog
 compile:
-	@$(foreach test,$(wildcard pruebas/*.v), $(CC) -o build/$(subst pruebas/,,$(subst .v,.o,$(test))) $(test) -Ttyp -g specify;)
+	@$(foreach test,$(wildcard pruebas/*.v),cd pruebas; $(CC) -o ../build/$(subst pruebas/,,$(subst .v,.o,$(test))) $(subst pruebas/,,$(test)) -Ttyp -g specify;cd ..;)
 
 # Sintetiza segun scripts de yosys dentro de las carpetas para los bloques
 synth: synthYosys renameSynths

@@ -1,14 +1,9 @@
 `timescale 1ns/1ps
 
-`ifndef clks
-  `include "./bloques/clk/clks.v"
-`endif
-`ifndef cmos_cells
-  `include "./lib/cmos_cells.v"
-`endif
-`ifndef clksSynth
-  `include "./build/clks-sintetizado.v"
-`endif
+`include "../lib/cmos_cells.v"
+
+`include "../bloques/clk/clks.v"
+`include "../build/clks-sintetizado.v"
 
 module testClks;
 
