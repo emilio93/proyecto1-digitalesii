@@ -2,15 +2,13 @@
 
 `include "../lib/cmos_cells.v"
 
-`include "../bloques/clk/clks.v"
+`include "../bloques/clks/clks.v"
 `include "../build/clks-sintetizado.v"
 
-`include "../bloques/to8bit/to8bit.v"
+`include "../bloques/to8bit-from8bit/to8bit.v"
 `include "../build/to8bit-sintetizado.v"
 
 module testsTo8Bit;
-
-
 
   reg clk;
   reg rst;

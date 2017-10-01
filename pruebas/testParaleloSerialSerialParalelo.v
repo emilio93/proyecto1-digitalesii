@@ -2,13 +2,13 @@
 
 `include "../lib/cmos_cells.v"
 
-`include "../bloques/clk/clks.v"
+`include "../bloques/clks/clks.v"
 `include "../build/clks-sintetizado.v"
 
-`include "../bloques/paraleloSerial/paraleloSerial.v"
+`include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
 `include "../build/paraleloSerial-sintetizado.v"
 
-`include "../bloques/paraleloSerial/serialParalelo.v"
+`include "../bloques/paraleloSerial-serialParalelo/serialParalelo.v"
 `include "../build/serialParalelo-sintetizado.v"
 
 module testParaleloSerialSerialParalelo ();
