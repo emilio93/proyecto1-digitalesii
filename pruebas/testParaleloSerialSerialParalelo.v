@@ -1,15 +1,15 @@
 `timescale 1ns/1ps
 
-`include "./bloques/clk/clks.v"
-`include "./build/clks-sintetizado.v"
+`include "../lib/cmos_cells.v"
 
-`include "./bloques/paraleloSerial/paraleloSerial.v"
-`include "./bloques/paraleloSerial/serialParalelo.v"
+`include "../bloques/clk/clks.v"
+`include "../build/clks-sintetizado.v"
 
-`include "./lib/cmos_cells.v"
+`include "../bloques/paraleloSerial/paraleloSerial.v"
+`include "../build/paraleloSerial-sintetizado.v"
 
-`include "./build/serialParalelo-sintetizado.v"
-`include "./build/paraleloSerial-sintetizado.v"
+`include "../bloques/paraleloSerial/serialParalelo.v"
+`include "../build/serialParalelo-sintetizado.v"
 
 module testParaleloSerialSerialParalelo ();
 
@@ -25,6 +25,7 @@ wire [9:0] salidasSP;
 
 wire salidaPSSynth;
 wire [9:0] salidasSPSynth;
+
 wire clk10;
 wire clk10Synth;
 wire clk20;
@@ -37,7 +38,7 @@ clks clkGen(
   .clk10(clk10),
   .clk20(clk20),
   .clk40(clk40),
-  .rst(rstContador),
+  .rst(rst),
   .enb(enb)
 );
 
@@ -46,7 +47,7 @@ clksSynth clkGenSynth(
   .clk10(clk10Synth),
   .clk20(clk20Synth),
   .clk40(clk40Synth),
-  .rst(rstContador),
+  .rst(rst),
   .enb(enb)
 );
 
@@ -97,8 +98,8 @@ always # reloj clk = ~clk;//inicio de la señal de reloj, cambia cada 10ns
 initial begin
   enb = 1;
 	clk = 0;
-	entradasPS = 10'b1010010101;
   rst = 1'b1;
+	entradasPS = 10'b1010010101;
 
   # periodo
   @ (posedge clk);
@@ -114,15 +115,16 @@ initial begin
 
   # periodo
   @ (posedge clk);
-  entradasPS = 10'b1000000000;
+  entradasPS = 10'b0000011111;
 
   # relojGrande
   @ (posedge clk);
   rst = 1'b0;
+  entradasPS = 10'b1000011111;
 
 	# relojGrande
   @ (posedge clk);
-	entradasPS = 10'b1100101100;
+	entradasPS = 10'b0111111110;
 
 	# relojGrande2
 	@ (posedge clk);

@@ -69,19 +69,20 @@ reg [3:0] contador;
 // flanco positivo de reloj
 always @(posedge clk) begin
 
-	// Cuando rstContador está encendido se
+	// Cuando rst está encendido se
 	// asigna 0 al contador, se obtienen las
 	// entradas y se envia la primer salida
 	if (rst) begin
 		contador <= 9;
 		bits <= entradas;
+		salida <= entradas[cantidadBits-1];
 	end else if (enb) begin
-		salida <= bits[contador];
-		if (contador >= cantidadBits-1) begin
+		salida <= (contador == cantidadBits-1) ? entradas[cantidadBits-1] : bits[contador];
+		if (contador == cantidadBits-1) begin
 			bits <= entradas;
-			contador <= 0;
+			contador <= contador - 1;
 		end else begin
-		contador <= contador + 1;
+			contador <= contador == 0 ? cantidadBits-1 : contador - 1;
 		end
 	end
 end

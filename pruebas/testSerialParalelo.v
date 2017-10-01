@@ -1,21 +1,12 @@
 `timescale 1ns/1ps
 
-`ifndef clks
-  `include "./bloques/clk/clks.v"
-`endif
-`ifndef clksSynth
-  `include "./build/clks-sintetizado.v"
-`endif
+`include "../lib/cmos_cells.v"
 
-`ifndef serialParalelo
-  `include "./bloques/paraleloSerial/serialParalelo.v"
-`endif
-`ifndef cmos_cells
-  `include "./lib/cmos_cells.v"
-`endif
-`ifndef serialParaleloSynth
-  `include "./build/serialParalelo-sintetizado.v"
-`endif
+`include "../bloques/clk/clks.v"
+`include "../build/clks-sintetizado.v"
+
+`include "../bloques/paraleloSerial/serialParalelo.v"
+`include "../build/serialParalelo-sintetizado.v"
 
 module testSerialParalelo ();
 

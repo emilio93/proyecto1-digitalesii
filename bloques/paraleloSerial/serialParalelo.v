@@ -38,15 +38,15 @@ reg [cantidadBits-1:0] bits;
 
 always @(posedge clk) begin
 	if (rst) begin
-		contador <= 9;
+		contador <= cantidadBits-2;
 	end else if (enb) begin
-		if (contador >= cantidadBits-1) begin
+		if (contador == cantidadBits-1) salidas = {entrada, bits[cantidadBits-2:0]};
+		if (contador ==  cantidadBits-1) begin
 			contador <= 0;
-			bits[0] <= entrada;
-			salidas <= bits;
+			bits[cantidadBits-1] <= entrada;
 		end else begin
-			bits[contador+1] <= entrada;
-			contador <= contador + 1;
+			bits[contador] <= entrada;
+			contador <= contador+1;
 		end
 	end
 end
