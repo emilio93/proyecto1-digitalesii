@@ -2,7 +2,7 @@
 
 `include "../lib/cmos_cells.v"
 
-`include "../bloques/clk/clks.v"
+`include "../bloques/clks/clks.v"
 `include "../build/clks-sintetizado.v"
 
 module testClks;
