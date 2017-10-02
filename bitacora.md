@@ -117,3 +117,4 @@ competitivos?
   Se da un resumen de la semana a Robin, se decide
   exponer el jueves para poder nivelarnos con lo que
   se ha hecho.
+  No obstante al final expusimos el mismo lunes.

@@ -56,7 +56,7 @@ module testClks;
   initial begin
   	$dumpfile("gtkws/testClks.vcd");
   	$dumpvars;
-  	$display("		tiempo    | clk | clk10 |   entradas    | salida | contadorE | timepo en escala usada");
+  	$display("		tiempo    | clk | clk10 |   entradas    | salida | contadorE | tiempo en escala usada");
   	$monitor("%t      | %b   | %b %f ns", $time, clk, clk10, $realtime);
 
   end

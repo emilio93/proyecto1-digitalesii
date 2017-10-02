@@ -21,7 +21,7 @@ de folders y archivos, no es necesario modificar el makefile
 ni el archivo ```yosys.tcl``` si se siguen los siguientes rubros
  - Los archivos de módulos deben colocarse dentro de una carpeta
  dentro de la carpeta bloques, las pruebas no deben colocarse en
- esta carpeta, únnicamente las despcripciones conductuales.
+ esta carpeta, únicamente las despcripciones conductuales.
  - Cada archivo debe contener un único módulo cuyo nombre sea el
  mismo que el archivo sin la extensión. Esto asegura que el modulo
  del sintetizado va a llamarse igual con Synth(<nombre-del-modulo>Synth).
@@ -40,10 +40,10 @@ sintetizado es ```<nombre-del-modulo>Synth```.
 
 Una vez que se ha sintetizado se compilan todos los archivos .v en la carpeta
 pruebas y por ultimo se corren. Los archivos .gtkw deberían salir a la carpeta
-gtkws y se le debe haccer un savefile(```.gtkw```).
+gtkws y se le debe hacer un savefile(```.gtkw```).
 
 #### Identificando fallas que no detienen al Make
-Conforme he trabajado, he notado que el make no se detiene ante ciertas fallas, esto se traduce en que no se actualiza las ondas, el ```.vcd```. Cuando se sospecha que esto está pasando puede ser por varias razones.
+Conforme se ha trabajado, se ha notado que el make no se detiene ante ciertas fallas, esto se traduce en que no se actualiza las ondas, el ```.vcd```. Cuando se sospecha que esto está pasando puede ser por varias razones.
    - Un  módulo no tiene salidas y yosys lo interpreta como un empty module. Para verificar que esto está sucediendo se puede realizar un ```make synth```, o ```make synthYosys``` y revisar la salida, esto puede ser algo complicado si la salida es muy grande, la alternativa es sintetizar únicamente el módulo del que sospechan que da error, por ejemplo para el módulo ```clks```:
    ```bash
    VLOG_FILE_NAME="./bloques/clk/clks.v" VLOG_MODULE_NAME="clks" CUR_DIR="$(pwd)" yosys ./yosys.tcl
