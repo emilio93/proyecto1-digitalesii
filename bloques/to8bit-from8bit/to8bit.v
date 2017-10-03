@@ -7,9 +7,8 @@
 //
 //  Este módulo espera una señal bien temporizada
 module to8bit(
-  rst,
-  enb,
-  clk, clk16, clk32,
+  rst, enb, clk,
+  clk16, clk32,
   dataIn, dataIn16, dataIn32,
   dataS,
   dataOut
@@ -28,17 +27,28 @@ module to8bit(
 
   output reg [7:0] dataOut; // salida del módulo
 
+  reg [1:0] contador;
+
   always @ ( * ) begin
     if (dataS == 2'b01) begin
-      if (clk16) dataOut = dataIn16[7:0];
-      else dataOut = dataIn16[15:8];
+      dataOut = contador == 0 ? dataIn16[15:8] : dataIn16[7:0];
     end else if (dataS == 2'b10) begin
-      if (clk32 && clk16) dataOut = dataIn32[7:0];
-      else if (clk32 && ~clk16) dataOut = dataIn32[15:8];
-      else if (~clk32 && clk16) dataOut = dataIn32[23:16];
-      else dataOut = dataIn32[31:24]; // if (~clk32 && ~clk16)
+      if (contador == 0) dataOut = dataIn32[31:24];
+      else if (contador == 2'b01) dataOut = dataIn32[23:16];
+      else if (contador == 2'b10) dataOut = dataIn32[15:8];
+      else dataOut = dataIn32[7:0]; // if (~clk32 && ~clk16)
     end else begin
       dataOut = dataIn;
+    end
+  end
+
+  always @ (posedge clk) begin
+    if (dataS == 2'b01) begin
+      contador <= contador >= 2'b01 ? 0 : contador + 1;
+    end else if (dataS ==2'b10) begin
+      contador <= contador >= 2'b11 ? 0 : contador + 1;
+    end else begin
+      contador <= 0;
     end
   end
 
