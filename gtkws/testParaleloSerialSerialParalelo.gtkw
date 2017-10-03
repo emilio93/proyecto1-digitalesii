@@ -1,25 +1,32 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Sun Oct  1 04:28:43 2017
+[*] Tue Oct  3 06:00:34 2017
 [*]
 [dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testParaleloSerialSerialParalelo.vcd"
-[dumpfile_mtime] "Sun Oct  1 04:28:15 2017"
-[dumpfile_size] 111359
+[dumpfile_mtime] "Tue Oct  3 05:57:08 2017"
+[dumpfile_size] 95004
 [savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testParaleloSerialSerialParalelo.gtkw"
 [timestart] 0
-[size] 1680 1022
+[size] 1680 688
 [pos] -1 -1
-*-21.037039 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[treeopen] testParaleloSerialSerialParalelo.
+*-17.439589 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testParaleloSerialSerialParalelo.emisor.
-[sst_width] 223
-[signals_width] 197
-[sst_expanded] 1
-[sst_vpaned_height] 281
+[sst_width] 45
+[signals_width] 176
+[sst_expanded] 0
+[sst_vpaned_height] 167
 @28
+[color] 4
 testParaleloSerialSerialParalelo.clk
+[color] 4
 testParaleloSerialSerialParalelo.clk10
+@29
+[color] 4
+testParaleloSerialSerialParalelo.clk10Synth
+@28
+[color] 4
 testParaleloSerialSerialParalelo.enb
+[color] 4
 testParaleloSerialSerialParalelo.rst
 @200
 -
@@ -47,33 +54,7 @@ testParaleloSerialSerialParalelo.emisor.entradas[9:0]
 (8)testParaleloSerialSerialParalelo.emisor.entradas[9:0]
 [color] 3
 (9)testParaleloSerialSerialParalelo.emisor.entradas[9:0]
-@1401202
--group_end
-@c00022
-[color] 3
-testParaleloSerialSerialParalelo.emisor.bits[9:0]
-@28
-[color] 3
-(0)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(1)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(2)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(3)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(4)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(5)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(6)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(7)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(8)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-[color] 3
-(9)testParaleloSerialSerialParalelo.emisor.bits[9:0]
-@1401202
+@1401200
 -group_end
 @c00022
 [color] 3
@@ -100,7 +81,7 @@ testParaleloSerialSerialParalelo.receptor.entrada
 @22
 [color] 3
 testParaleloSerialSerialParalelo.receptor.contador[3:0]
-@800022
+@c00022
 [color] 3
 testParaleloSerialSerialParalelo.receptor.bits[9:0]
 @28
@@ -124,9 +105,10 @@ testParaleloSerialSerialParalelo.receptor.bits[9:0]
 (8)testParaleloSerialSerialParalelo.receptor.bits[9:0]
 [color] 3
 (9)testParaleloSerialSerialParalelo.receptor.bits[9:0]
-@1001200
+@1401200
 -group_end
-@c00023
+@c00022
+[color] 3
 testParaleloSerialSerialParalelo.receptor.salidas[9:0]
 @28
 (0)testParaleloSerialSerialParalelo.receptor.salidas[9:0]
@@ -139,17 +121,13 @@ testParaleloSerialSerialParalelo.receptor.salidas[9:0]
 (7)testParaleloSerialSerialParalelo.receptor.salidas[9:0]
 (8)testParaleloSerialSerialParalelo.receptor.salidas[9:0]
 (9)testParaleloSerialSerialParalelo.receptor.salidas[9:0]
-@1401203
+@1401200
 -group_end
 @200
 -
-@28
-testParaleloSerialSerialParalelo.clk10Synth
 @22
 [color] 2
 testParaleloSerialSerialParalelo.emisorSynth.entradas[9:0]
-[color] 2
-testParaleloSerialSerialParalelo.emisorSynth.bits[9:0]
 [color] 2
 testParaleloSerialSerialParalelo.emisorSynth.contador[3:0]
 @28
@@ -201,6 +179,7 @@ testParaleloSerialSerialParalelo.receptorSynth.bits[9:0]
 @1401200
 -group_end
 @22
+[color] 2
 testParaleloSerialSerialParalelo.receptorSynth.salidas[9:0]
 [pattern_trace] 1
 [pattern_trace] 0
