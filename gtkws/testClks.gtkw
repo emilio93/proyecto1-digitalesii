@@ -1,37 +1,40 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Sat Sep 30 00:45:56 2017
+[*] Tue Oct  3 01:35:18 2017
 [*]
 [dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.vcd"
-[dumpfile_mtime] "Sat Sep 30 00:45:42 2017"
-[dumpfile_size] 16987
+[dumpfile_mtime] "Tue Oct  3 01:34:00 2017"
+[dumpfile_size] 28100
 [savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.gtkw"
 [timestart] 0
 [size] 1680 688
 [pos] -1 -1
-*-17.920019 726000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-18.496521 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testClks.
-[sst_width] 223
-[signals_width] 156
-[sst_expanded] 1
+[sst_width] 45
+[signals_width] 136
+[sst_expanded] 0
 [sst_vpaned_height] 172
-@24
-testClks.clk
-@29
+@28
 [color] 4
-testClks.testClks.enb
+testClks.clk
+[color] 4
+testClks.enb
 [color] 4
 testClks.rst
 @200
 -
-@c00024
-[color] 3
-testClks.testClks.cnt10[2:0]
-@1401200
--group_end
 @28
 [color] 3
-testClks.clk10
+testClks.testClks.enb
+[color] 3
+testClks.testClks.cnt10[2:0]
+[color] 3
+testClks.testClks.rst
+[color] 3
+testClks.testClks.clk
+[color] 3
+testClks.testClks.clk10
 [color] 3
 testClks.testClks.clk20
 [color] 3
@@ -41,26 +44,28 @@ testClks.testClks.clk40
 @28
 [color] 2
 testClks.testClksSynth.enb
-[color] 2
-testClks.testClksSynth.rst
-@c00024
+@29
 [color] 2
 testClks.testClksSynth.cnt10[2:0]
 @28
 [color] 2
-(0)testClks.testClksSynth.cnt10[2:0]
+testClks.testClksSynth.rst
 [color] 2
-(1)testClks.testClksSynth.cnt10[2:0]
+testClks.testClksSynth.clk
 [color] 2
-(2)testClks.testClksSynth.cnt10[2:0]
-@1401200
--group_end
+testClks.testClksSynth.clk10
+[color] 2
+testClks.testClksSynth.clk20
+[color] 2
+testClks.testClksSynth.clk40
+@200
+-
 @28
-[color] 2
-testClks.clk10Synth
-[color] 2
-testClks.clk20Synth
-[color] 2
-testClks.clk40Synth
+[color] 4
+testClks.error10
+[color] 4
+testClks.error20
+[color] 4
+testClks.error40
 [pattern_trace] 1
 [pattern_trace] 0

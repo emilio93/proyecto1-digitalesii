@@ -3,20 +3,24 @@
 // Este módulo se encarga de generar las señales de reloj del
 // dispositivo a partir de la señal de mayor frecuencia que se
 // utilice(ej 2.5G, 5G).
-module clks(clk, clk10, clk20, clk40, rst, enb);
+module clks(
+  clk, rst, enb,
+  clk10, clk20, clk40
+);
 
   input wire clk;
   input wire rst;
   input wire enb;
+
   output reg clk10;
   output reg clk20;
   output reg clk40;
 
-  reg [3:0] cnt10;
+  reg [2:0] cnt10;
 
   always @ (posedge clk) begin
     if (rst) begin
-      cnt10 <= 4'd9;
+      cnt10 <= 3'd4;
       clk10 <= 1'b0;
       clk20 <= 1'b0;
       clk40 <= 1'b0;
