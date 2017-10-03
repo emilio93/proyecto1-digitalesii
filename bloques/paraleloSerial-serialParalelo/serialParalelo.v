@@ -4,12 +4,10 @@
 // de reloj, y enviarlos una vez que se han adquirido los
 // n bits.
 module serialParalelo(
-	clk,
-	rst,
-	enb,
-	clk10,
-	entrada,
-	salidas
+  clk, rst, enb,
+  clk10,
+  entrada,
+  salidas
 );
 
 parameter cantidadBits = 10;
@@ -37,18 +35,15 @@ reg [3:0] contador;
 reg [cantidadBits-1:0] bits;
 
 always @(posedge clk) begin
-	if (rst) begin
-		contador <= cantidadBits-2;
-	end else if (enb) begin
-		if (contador == cantidadBits-1) salidas = {entrada, bits[cantidadBits-2:0]};
-		if (contador ==  cantidadBits-1) begin
-			contador <= 0;
-			bits[cantidadBits-1] <= entrada;
-		end else begin
-			bits[contador] <= entrada;
-			contador <= contador+1;
-		end
-	end
+  if (rst) begin
+    contador <= 0;
+  end else if (enb) begin
+    contador <= contador == 0 ? cantidadBits-1 : contador-1;
+    bits[contador] <= entrada;
+    if (contador ==  0) begin
+      salidas <= {bits[cantidadBits-1:1], entrada};
+    end
+  end
 end
 
 endmodule
