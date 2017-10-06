@@ -1,11 +1,12 @@
-DIRS  = build synth pdfs
+DIRS  = build pdfs
 CC    = iverilog
 CC1   = vvp
 CC2   = gtkwave
 CC3   = yosys -c
-VPI = -M ~/.local/install/ivl/lib/ivl
+VPI   = -M ~/.local/install/ivl/lib/ivl
+
 NO_OUTPUT = > /dev/null
-NO_ERROR = 2> /dev/null
+NO_ERROR  = 2> /dev/null
 
 # crea folders necesarios en caso que no existan
 MAKE_FOLDERS := $(shell mkdir -p $(DIRS))
@@ -29,7 +30,7 @@ renameSynths:
 	bash ./renameSynths.sh
 
 run:
-	@$(foreach test,$(wildcard build/*.o), $(CC1) $(VPI) $(test);)
+	$(foreach test,$(wildcard build/*.o), $(CC1) $(VPI) $(test);)
 
 # Este comando acepta argumentos al correrlo de la siguiente manera
 # > make gtkw="./achivo.gtkw" view
@@ -41,7 +42,6 @@ view:
 
 clean:
 	rm -r build
-	rm -r synth
 	rm -r pdfs
 	rm -f ./*.dot
 	rm -f tests/*.vcd

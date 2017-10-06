@@ -1,21 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Sun Oct  1 07:57:06 2017
+[*] Tue Oct  3 06:46:10 2017
 [*]
 [dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testTo8bit.vcd"
-[dumpfile_mtime] "Sun Oct  1 07:55:49 2017"
-[dumpfile_size] 75094
+[dumpfile_mtime] "Tue Oct  3 06:44:53 2017"
+[dumpfile_size] 75734
 [savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testTo8bit.gtkw"
 [timestart] 0
 [size] 1680 1022
 [pos] -1 -1
-*-18.243931 1142000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-18.990223 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testsTo8Bit.
-[sst_width] 223
-[signals_width] 260
-[sst_expanded] 1
+[sst_width] 45
+[signals_width] 142
+[sst_expanded] 0
 [sst_vpaned_height] 290
-@29
+@28
 [color] 4
 testsTo8Bit.clk
 [color] 4
@@ -30,9 +30,6 @@ testsTo8Bit.enb
 testsTo8Bit.rst
 @200
 -
-@28
-[color] 3
-testsTo8Bit.testTo8bit.clk
 @c00022
 [color] 3
 testsTo8Bit.testTo8bit.dataIn[7:0]
@@ -47,12 +44,19 @@ testsTo8Bit.testTo8bit.dataIn[7:0]
 (7)testsTo8Bit.testTo8bit.dataIn[7:0]
 @1401200
 -group_end
+@24
+[color] 3
+testsTo8Bit.testTo8bit.contador[1:0]
 @22
 [color] 3
 testsTo8Bit.testTo8bit.dataIn16[15:0]
 [color] 3
 testsTo8Bit.testTo8bit.dataIn32[31:0]
+@200
+-
 @28
+[color] 3
+testsTo8Bit.testTo8bit.clk
 [color] 3
 testsTo8Bit.testTo8bit.dataS[1:0]
 @22
@@ -67,14 +71,8 @@ testsTo8Bit.clk10Synth
 testsTo8Bit.clk20Synth
 [color] 2
 testsTo8Bit.clk40Synth
-@22
 [color] 2
-testsTo8Bit.testTo8bitSynth.dataIn[7:0]
-[color] 2
-testsTo8Bit.dataIn16Synth[15:0]
-[color] 2
-testsTo8Bit.testTo8bitSynth.dataIn32[31:0]
-@28
+testsTo8Bit.testTo8bitSynth.contador[1:0]
 [color] 2
 testsTo8Bit.testTo8bitSynth.dataS[1:0]
 @22

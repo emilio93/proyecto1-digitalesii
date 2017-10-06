@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+      `timescale 1ns/1ps
 
 `include "../lib/cmos_cells.v"
 
@@ -19,6 +19,16 @@ module testClks;
   wire clk20Synth;
   wire clk40Synth;
 
+  reg error10;
+  reg error20;
+  reg error40;
+
+  always @ ( * ) begin
+    error10 = clk10-clk10Synth;
+    error20 = clk10-clk10Synth;
+    error40 = clk10-clk10Synth;
+  end
+  
   clks testClks(
     .clk(clk),
     .rst(rst),
@@ -37,19 +47,42 @@ module testClks;
     .clk40(clk40Synth)
   );
 
-  always # 5 clk = ~clk; // inicio de la señal de reloj, cambia cada 10ns
+  always # 5 clk <= ~clk; // inicio de la señal de reloj, cambia cada 10ns
 
   initial begin
-  	clk = 0;
-    rst = 1;
-    enb = 1;
-    # 40;
+  	clk <= 0;
+    rst <= 1;
+    enb <= 0;
+
+    # 80;
     @ (posedge clk);
-    rst = 0;
+    rst <= 0;
+
+    # 80;
+    @ (posedge clk);
+    enb <= 1;
+
   	# 910;
     @ (posedge clk);
-    enb = 0;
-    # 600;
+    enb <= 0;
+
+    # 80;
+    @ (posedge clk);
+    rst <= 1;
+
+    # 150
+    @ (posedge clk);
+    enb <= 0;
+
+    # 150
+    @ (posedge clk);
+    enb <= 1;
+
+    # 150
+    @ (posedge clk);
+    rst <= 0;
+
+    # 1080;
   	$finish;
   end
 
