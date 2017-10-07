@@ -118,3 +118,19 @@ competitivos?
   exponer el jueves para poder nivelarnos con lo que
   se ha hecho.
   No obstante al final expusimos el mismo lunes.
+
+Entre el 24 y el 4 de octubre no se dan reuniones estrictamente.
+
+  _5/10/17
+  _Reunión breve a través de llama de voz
+  _Se inicia a las 8:20
+  Nos ponemos de acuerdo para qué hacer cada uno,
+  nos ponemos al día con el trabajo de Emilio.
+  Los siguientes pasos son: tener listo el modulo 8bit (Emilio), codificador 8 a 10 b (Robin)
+  decodificador (Boanerges) y su respectivo tester.
+  Para exponer esto en la clase del lunes.
+  Una vez logrado este avance aun faltaría hacer el módulo diferenciador, los otros 3 modulos 
+  presentes en el receptor y optimizar toda nuestra interfaz PCIE.
+  _Emilio se desconecta a las 8:40
+  _Boanerges y Robin a las 9:10
+
