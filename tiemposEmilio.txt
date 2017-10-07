@@ -35,4 +35,6 @@ Tiempos Adicionales
     20hrs 10min
 
 Acumulado Total
-  60 hrs 44mins
+  60 hrs 44 min
+  factor de trabajo
+  .85 => 51hrs 37min
