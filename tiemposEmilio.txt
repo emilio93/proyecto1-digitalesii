@@ -1,44 +1,38 @@
-Estos son tiempos en el editor
+Tiempos de Codeo:
+  14/9/2017 al 17/9/2017
+    4hrs 19mins
+  18/9/2017 al 24/9/2017
+    6hrs 59mins
+  25/9/2017 al 01/10/2017
+    20hrs 16mins
 
-Al 24/9/2017 22:00
----
-proyecto1-digitalesii commits share
-4 hrs 47 mins 18 secs in the Last 7 Days in proyecto1-digitalesii under all branches.
+  Acumulado
+    31hrs 34mins
 
-Languages in proyecto1-digitalesii
+Análisis de ondas:
+  14/9/2017 al 17/9/2017
+    1hr 30mins
+  18/9/2017 al 24/9/2017
+    2hr 30mins
+  25/9/2017 al 01/10/2017
+    5hrs
 
-Makefile (35.28%)
-Tcl (24.53%)
-Verilog (22.53%)
-Markdown (8.45%)
-Other (7.13%)
-Bash (2.07%)
+  Acumulado
+    9hrs
 
-Files
-1 hr 41 mins 21 secs	Makefile
-36 mins 14 secs	...paraleloSerial.tcl
-31 mins 4 secs	yosys.tcl
-21 mins 3 secs	bloques/8b10b/encoder8b10b.v
-15 mins 24 secs	bloques/serialParalelo.v
-14 mins 9 secs	...serialParalelo.v
-11 mins 29 secs	...paraleloSerial/synth.ys
-10 mins 24 secs	bitacora.md
-9 mins 1 sec	bloques/8b10b/readme.md
-7 mins 40 secs	bloques/paraleloSerial.v
-5 mins 57 secs	build.sh
-5 mins 16 secs	bloques/8b10b/synth.ys
-3 mins 45 secs	readme.md
-3 mins 14 secs	bloques/paraleloSerial_tb.v
-3 mins 11 secs	...paraleloSerial/synth.tcl
-2 mins 49 secs	.gitignore
-1 min 54 secs	...paraleloSerial.v
-54 secs	...presentacion-1.md
-53 secs	...testComSerialParalelo.gtkw
-49 secs	...paraleloSerial_tb.v
-31 secs	build/paraleloSerial-rtlil.v
-13 secs	documentos/readme.md
-2 secs	registro.ys
-1 sec	lib/cmos_cells.v
+Tiempos Adicionales
+  A parte de los tiempos en la Bitacora, los tiempos aproximados que siguen son de trabajo individual de investigación.
+  _Texto/formato tomado de Boa y adaptado_
 
-Branches
-4 hrs 47 mins 18 secs	master
+  - 4h 18/9/17 al 9/20/17: Invetigacion sobre el Encoder8b10b y Decoder10b8b antes de segunda reunion grupal y lectura de los papers de especificaciones para el proyecto.
+  - 8h 25/9/17 al 9/30/17: Investigación de bloques y señales, profundización en significado de señales, frecuencias utilizadas, breve investigaciones de consideraciones de potencia.
+  - 30mins 1/10/17: Breve resumen de avances en videoconferencia.
+  - 30mins 2/10/17: Creación de la presentación de avances de la semana previa
+  - 10mins 2/10/17: Consulta sobre clk recovery.
+  - 4hrs 3/10/17 al 10/4/17: Investigacion CLK recovery y PLL.
+
+  Acumulado
+    20hrs 10min
+
+Acumulado Total
+  60 hrs 44mins
