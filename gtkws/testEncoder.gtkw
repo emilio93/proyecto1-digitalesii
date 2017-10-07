@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Sat Oct  7 20:52:48 2017
+[*]
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.vcd"
+[dumpfile_mtime] "Sat Oct  7 19:30:42 2017"
+[dumpfile_size] 2975
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.gtkw"
+[timestart] 0
+[size] 1920 1021
+[pos] -44 -44
+*-17.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 213
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@28
+[color] 5
+testEncoder.clk
+[color] 5
+testEncoder.enb
+[color] 4
+testEncoder.K
+@800022
+testEncoder.entradas[7:0]
+@28
+(0)testEncoder.entradas[7:0]
+(1)testEncoder.entradas[7:0]
+(2)testEncoder.entradas[7:0]
+(3)testEncoder.entradas[7:0]
+(4)testEncoder.entradas[7:0]
+(5)testEncoder.entradas[7:0]
+(6)testEncoder.entradas[7:0]
+(7)testEncoder.entradas[7:0]
+@1001200
+-group_end
+@800022
+[color] 2
+testEncoder.salidasC[9:0]
+@29
+(0)testEncoder.salidasC[9:0]
+@28
+(1)testEncoder.salidasC[9:0]
+(2)testEncoder.salidasC[9:0]
+(3)testEncoder.salidasC[9:0]
+(4)testEncoder.salidasC[9:0]
+(5)testEncoder.salidasC[9:0]
+(6)testEncoder.salidasC[9:0]
+(7)testEncoder.salidasC[9:0]
+(8)testEncoder.salidasC[9:0]
+(9)testEncoder.salidasC[9:0]
+@1001200
+-group_end
+@800022
+[color] 2
+testEncoder.salidasE[9:0]
+@28
+(0)testEncoder.salidasE[9:0]
+(1)testEncoder.salidasE[9:0]
+(2)testEncoder.salidasE[9:0]
+(3)testEncoder.salidasE[9:0]
+(4)testEncoder.salidasE[9:0]
+(5)testEncoder.salidasE[9:0]
+(6)testEncoder.salidasE[9:0]
+(7)testEncoder.salidasE[9:0]
+(8)testEncoder.salidasE[9:0]
+(9)testEncoder.salidasE[9:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
