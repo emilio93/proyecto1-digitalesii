@@ -7,8 +7,7 @@ module encoder(	//8 to 10 bit encoder
 	);
 
 	input wire [7:0] entradas;
-	input wire clk;
-	input wire K, enb;
+	input wire clk, K, enb;
 	output reg [9:0] salidas;//wire no funca
 
 	reg PDRS6, PDRS4;
@@ -31,48 +30,55 @@ module encoder(	//8 to 10 bit encoder
 //ahora se haya una logica combinacional que consigue las 10 entradas deseadas cada flanco de reloj:
 //ingoramos la senal s
 
-always @(clk)
+always @(posedge clk)begin
 
-	if(enb)begin
+//	if(enb)begin
 
-	if(!clk) begin
-	
-	L03 <= (~entradas[0])&(~entradas[1])&(~entradas[2]);
-	L30 <= (entradas[0])&(entradas[1])&(entradas[2]);
-	L12 <= (entradas[0]&(~entradas[1])&(~entradas[2]))|((~entradas[0])&entradas[1]&(~entradas[2]))|((~entradas[0])&(~entradas[1])&entradas[2]);
-	L21 <= (~entradas[0]&entradas[1]&entradas[2])|(entradas[0]&~entradas[1]&entradas[2])|(entradas[0]&entradas[1]&~entradas[2]);
+//	if(!clk) begin
+//
+	A <= enb & entradas[0];
+	B <= enb & entradas[1];
+	C <= enb & entradas[2];
+	D <= enb & entradas[3];
+	E <= enb & entradas[4];
+	F <= enb & entradas[5];
+	G <= enb & entradas[6];
+	H <= enb & entradas[7];
 
-	A <= entradas[0];
-	B <= entradas[1];
-	C <= entradas[2];
-	D <= entradas[3];
-	E <= entradas[4];
-	F <= entradas[5];
-	G <= entradas[6];
-	H <= entradas[7];
+	L03 <= (~A)&(~B)&(~C);
+	L30 <= (A)&(B)&(C);
+	L12 <= (A&(~B)&(~C))|((~A)&B&(~C))|((~A)&(~B)&C);
+	L21 <= (~A&B&C)|(A&~B&C)|(A&B&~C);
+
+
+//	L03 <= (~entradas[0])&(~entradas[1])&(~entradas[2]);
+//	L30 <= (entradas[0])&(entradas[1])&(entradas[2]);
+//	L12 <= (entradas[0]&(~entradas[1])&(~entradas[2]))|((~entradas[0])&entradas[1]&(~entradas[2]))|((~entradas[0])&(~entradas[1])&entradas[2]);
+//	L21 <= (~entradas[0]&entradas[1]&entradas[2])|(entradas[0]&~entradas[1]&entradas[2])|(entradas[0]&entradas[1]&~entradas[2]);
+
 
 	//DIFERENTE: XOR ^
 	//IGUAL: XNOR -^
 	//Ingoro señal s como lo recomendó el profesor
-	salidas[9] <= 	(F^G)&~H | F&G&H&K;	//j
-	salidas[8] <= 	H;			//h
-	salidas[7] <= 	G | ~F&~G&~H -^ G | ~F&~H;//g
-	salidas[6] <= 	F&~(F&G&H&K);		//f
-	salidas[5] <= 	L21&~D&~E | L12&((D ^ E) | K) | L03&D&~E | L30&D&E;//i
-	salidas[4] <= 	(E&~(L03&D)) | (L12&~D&~E) | (L03&D&~E);//e
-	salidas[3] <=	(D&~(L30&D));		//d
-	salidas[2] <= 	C|(L30&~D) | L03&D&(E -^ C) | (L03&(~D|D&E)) -^ C | L03&(~D|E);//c
-	salidas[1] <= 	B&~(L30&D)|L03&~D;	//b
-	salidas[0] <= 	A;			//a
+	salidas[9] <= 	enb & ( (F^G)&~H | F&G&H&K );		//j
+	salidas[8] <= 	enb & H;				//h
+	salidas[7] <= 	enb & (G | ~F&~G&~H -^ G | ~F&~H);	//g
+	salidas[6] <= 	enb & (F&~(F&G&H&K));			//f
+	salidas[5] <= 	enb & (L21&~D&~E | L12&((D ^ E) | K) | L03&D&~E | L30&D&E);//i
+	salidas[4] <= 	enb & ((E&~(L03&D)) | (L12&~D&~E) | (L03&D&~E));//e
+	salidas[3] <=	enb & ((D&~(L30&D)));			//d
+	salidas[2] <= 	enb & (C|(L30&~D) | L03&D&(E -^ C) | (L03&(~D|D&E)) -^ C | L03&(~D|E));//c
+	salidas[1] <= 	enb & (B&~(L30&D)|L03&~D);		//b
+	salidas[0] <= 	enb & A;				//a
 
-end
+//end
 
-	if (clk) begin
+//	if (clk) begin
 //Las siguientes lineas su utilizaban, segun el PDF de IBM para identificar
 //cuando usar la forma primaria o alterna de las salidas sin embargo no
 //funcionaron muy bien, motivo por el cual implementé esto de otra manera en
 //las lineas posteriores.	
-	PDRS6 <= (L03&(D|~E)) | (L30&D&~E) | (L12&~D&~E);//Running Disparity
+//	PDRS6 <= (L03&(D|~E)) | (L30&D&~E) | (L12&~D&~E);//Running Disparity
 //	NDRS6 <= L30&(~D&E) |L03&~D&E | L21&D&E | K;
 //	PDRS4 <= ~F&~G | (F ^ G)&K;
 //	NDRS4 <= F&G;
@@ -97,7 +103,7 @@ end
 	
 //	if (DBDR4 != 2'b10) salidas[9:0] = salidas[9:0] ^ (10'b1111000000);//Hay shift
 
-end
+//end
 
 end
 
