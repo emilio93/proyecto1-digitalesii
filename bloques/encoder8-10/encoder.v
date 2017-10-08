@@ -38,18 +38,6 @@ always @(posedge clk)begin
 	//DIFERENTE: XOR ^
 	//IGUAL: XNOR -^
 	//Ingoro señal s como lo recomendó el profesor
-/*	j <= 	( (entradas[5]^entradas[6])&~entradas[7] | entradas[5]&entradas[6]&entradas[7]&K );		//j
-	h <= 	entradas[7];				//h
-	g <= 	(entradas[6] | ~entradas[5]&~entradas[6]&~entradas[7] -^ entradas[6] | ~entradas[5]&~entradas[7]);	//g
-	f <= 	(entradas[5]&~(entradas[5]&entradas[6]&entradas[7]&K));			//f
-	i <= 	(L21&~entradas[3]&~entradas[4] | L12&((entradas[3] ^ entradas[4]) | K) | L03&entradas[3]&~entradas[4] | L30&entradas[3]&entradas[4]);//i
-	e <= 	( (entradas[4]&(~(L03&entradas[3]))) | (L12&(~entradas[3])&(~entradas[4])) | (L03&entradas[3]&~entradas[4]));//e
-	d <=	((entradas[3]&~(L30&entradas[3])));			//d
-	c <= 	( (entradas[2]|(L30&(~entradas[3])))  |  ((L03&entradas[3]&entradas[4]) -^ entradas[2])  |  ((L03&((~entradas[3])|(entradas[3]&entradas[4]))) -^ entradas[2])  | ( L03&((~entradas[3])|entradas[4])) );//c
-	b <= 	(entradas[1]&~(L30&entradas[3]) | L03&~entradas[3]);		//b
-	a <= 	entradas[0];				//a
-*/
-
 
 	salidas[9]  <= 	( (entradas[5]^entradas[6])&~entradas[7] | entradas[5]&entradas[6]&entradas[7]&K );		//j
 	salidas[8]  <= 	entradas[7];				//h
@@ -62,22 +50,6 @@ always @(posedge clk)begin
 	salidas[1]  <= 	(entradas[1]&~(L30&entradas[3]) | L03&~entradas[3]);		//b
 	salidas[0]  <= 	entradas[0];				//a
 
-
-//end
-
-//always @(posedge clk)begin
-
-/*	salidas[9] <= 	j;
-	salidas[8] <= 	h;
-	salidas[7] <= 	g;
-	salidas[6] <= 	f;
-	salidas[5] <= 	i;
-	salidas[4] <= 	e;
-dfdf	salidas[3] <=	d;
-	salidas[2] <= 	c;
-	salidas[1] <= 	b;
-	salidas[0] <= 	a;
-*/
 end
 
 endmodule 
