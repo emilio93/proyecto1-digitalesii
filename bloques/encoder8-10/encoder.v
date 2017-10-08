@@ -24,7 +24,7 @@ module encoder(	//8 to 10 bit encoder
 //ahora se haya una logica combinacional que consigue las 10 entradas deseadas cada flanco de reloj:
 //ingoramos la senal s
 
-always @(negedge clk)begin
+always @(*)begin
 
 	L03 <= (~entradas[0])&(~entradas[1])&(~entradas[2]);
 	L30 <= (entradas[0])&(entradas[1])&(entradas[2]);
