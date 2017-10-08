@@ -84,31 +84,15 @@ initial begin
   # 100
   @ (posedge clk);
   rst <= 1'b0;
-  @ (posedge clk10);
-  entradas <= 10'h36c;
 
-  # 100
-  @ (posedge clk);
-  entradas <= 10'h3e0;
-
-  # 100
-  @ (posedge clk);
-  entradas <= 10'h01f;
-
-  # 100
-  @ (posedge clk);
-  entradas <= 10'h36d;
-
-  # 100
-  @ (posedge clk);
-  entradas <= 10'h3e0;
-
-  # 100
-  @ (posedge clk);
-  entradas <= 10'h1d5;
+  @ (posedge clk10); entradas <= 10'h36c;
+  @ (posedge clk10); entradas <= 10'h3e0;
+  @ (posedge clk10); entradas <= 10'h01f;
+  @ (posedge clk10); entradas <= 10'h36d;
+  @ (posedge clk10); entradas <= 10'h3e0;
+  @ (posedge clk10); entradas <= 10'h1d5;
 
   # 200
-
   $finish;
 end
 endmodule

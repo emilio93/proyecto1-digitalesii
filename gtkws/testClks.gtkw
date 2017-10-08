@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Tue Oct  3 01:35:18 2017
+[*] Sun Oct  8 04:31:30 2017
 [*]
-[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.vcd"
-[dumpfile_mtime] "Tue Oct  3 01:34:00 2017"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testClks.vcd"
+[dumpfile_mtime] "Sun Oct  8 03:50:08 2017"
 [dumpfile_size] 28100
-[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testClks.gtkw"
-[timestart] 0
-[size] 1680 688
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testClks.gtkw"
+[timestart] 389700
+[size] 1680 1022
 [pos] -1 -1
-*-18.496521 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-15.388906 575000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testClks.
 [sst_width] 45
 [signals_width] 136
@@ -27,8 +27,10 @@ testClks.rst
 @28
 [color] 3
 testClks.testClks.enb
+@24
 [color] 3
 testClks.testClks.cnt10[2:0]
+@28
 [color] 3
 testClks.testClks.rst
 [color] 3
@@ -44,7 +46,7 @@ testClks.testClks.clk40
 @28
 [color] 2
 testClks.testClksSynth.enb
-@29
+@25
 [color] 2
 testClks.testClksSynth.cnt10[2:0]
 @28
