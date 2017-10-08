@@ -16,7 +16,7 @@ CC2   = gtkwave
 CC3   = yosys -c # yosys con bandera para tcl
 
 # para instalaciones locales(carpeta con .vpi's)
-VPI   = -M ~/.local/install/ivl/lib/ivl
+VPI   = -M ~/ruta/instalacion/lib/ivl
 
 # crea folders necesarios en caso que no existan
 MAKE_FOLDERS := $(shell mkdir -p $(DIRS))
@@ -193,6 +193,7 @@ module paraleloSerial(clk, rst, enb, clk10, entradas,
    ```
  - Orden de contador es descendente, se devuelve el MSB primero.
 ---
+# ```paraleloSerial```
  - Se actualiza estado en flanco positivo de reloj:
  ```verilog
 always @(posedge clk) begin
@@ -207,6 +208,39 @@ always @(posedge clk) begin
   end
 end
  ```
+ ---
+# ```serialParalelo```
+```verilog
+// Este modulo se encarga de escuchar n bits 
+// en n ciclos de reloj, y enviarlos una vez
+// que se han adquirido los n bits.
+module serialParalelo(clk, rst, enb, clk10, entrada, 
+                      salidas);
+```
+ - Se actualiza la salida cada 10 flancos de reloj ```clk```.
+ - La salida es secuencial.
+ - Se guardan valores en un arreglo de 10 bits que pasa a la salida una vez que se han capturado los 10 bits.
+ - Se identifica que se han capturado 10 bits con el uso de un contador.
+
+---
+# ```serialParalelo```
+```verilog
+always @(posedge clk) begin
+  if (rst) begin
+    contador <= 0;
+  end else if (enb) begin
+    contador <= contador==0? cantidadBits-1:contador-1;
+    bits[contador] <= entrada;
+    if (contador ==  0) begin
+      salidas <= {bits[cantidadBits-1:1], entrada};
+    end
+  end
+end
+```
+ - ```rst``` se asigna a 0 para que siguiente número sea 9(contador descendente).
+ - Primer bit que se escucha es el MSB.
+ - Se cambia la salida cuando el contador llega a 0.
+ - El bit 0 de la salida pasa directo de la entrada, porque no se ha almacenado _aun_.
 ---
 # ```paraleloSerial``` y ```serialParalelo```
 
