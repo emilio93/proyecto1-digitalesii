@@ -1,17 +1,24 @@
 `timescale 1ns/1ps
 
+
+`timescale 1ns/1ps
+`include "../clks/clks.v"
+`include "../to8bit-from8bit/to8bit.v"
+`include "../encoder8-10/encoder.v"
+`include "../paraleloSerial-serialParalelo/paraleloSerial.v"
+//`include "../diferencial/diferencial.v"
+
 `include "../lib/cmos_cells.v"
 `include "../bloques/encoder8-10/encoder.v"
 `include "../build/encoder-sintetizado.v"
 
 module testEncoder;
 
-
-reg [7:0] entradas;
-wire [9:0] salidasC;
-wire [9:0] salidasE;
-reg enb, clk, K;
-parameter retardo = 400;
+	reg [7:0] entradas;
+	wire [9:0] salidasC;
+	wire [9:0] salidasE;
+	reg enb, clk, K;
+	parameter retardo = 30;
  
 encoder testEnc(
 	.entradas(entradas),
@@ -29,7 +36,7 @@ encoderSynth testEncoderSynth(
 	.enb(enb)
 );
 
-always # 100 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
+always # 5 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
 
 initial begin
 	clk = 1;
@@ -37,13 +44,11 @@ initial begin
 
 	enb = 0;
 
-	#retardo;
 	entradas = 8'b000_00011;
 
 	#retardo;
 	entradas = 8'b000_00011;
 
-	enb = 1;
 //0
 	#retardo;
 	entradas = 8'b000_00000;
@@ -57,6 +62,8 @@ initial begin
 
 	#retardo;
 	entradas = 8'b000_00000;
+
+	enb = 1;
 
 	#retardo;
 	entradas = 8'b000_00000;
