@@ -17,3 +17,4 @@ ya sea de investigacion  para el proyecto en general o para bloques en especific
     ademas de el uso de un editor compatible. Se invierte tiempo en investigar funcionamiento y
     configuracion del editor Atom, se presentaron problemas en la configuracion.
 -1h 10/6/17 se trabaja en archivo de tiempo invertido en proyecto.
+-10h 3:50pm-02:am 10/7/17 trabajo en el decodificador, decodificor sin control de errores 
