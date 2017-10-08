@@ -32,10 +32,6 @@ module encoder(	//8 to 10 bit encoder
 
 always @(posedge clk)begin
 
-//	if(enb)begin
-
-//	if(!clk) begin
-//
 	A <= enb & entradas[0];
 	B <= enb & entradas[1];
 	C <= enb & entradas[2];
@@ -60,20 +56,20 @@ always @(posedge clk)begin
 	//DIFERENTE: XOR ^
 	//IGUAL: XNOR -^
 	//Ingoro señal s como lo recomendó el profesor
-	salidas[9] <= 	enb & ( (F^G)&~H | F&G&H&K );		//j
-	salidas[8] <= 	enb & H;				//h
-	salidas[7] <= 	enb & (G | ~F&~G&~H -^ G | ~F&~H);	//g
-	salidas[6] <= 	enb & (F&~(F&G&H&K));			//f
-	salidas[5] <= 	enb & (L21&~D&~E | L12&((D ^ E) | K) | L03&D&~E | L30&D&E);//i
-	salidas[4] <= 	enb & ((E&~(L03&D)) | (L12&~D&~E) | (L03&D&~E));//e
-	salidas[3] <=	enb & ((D&~(L30&D)));			//d
-	salidas[2] <= 	enb & (C|(L30&~D) | L03&D&(E -^ C) | (L03&(~D|D&E)) -^ C | L03&(~D|E));//c
-	salidas[1] <= 	enb & (B&~(L30&D)|L03&~D);		//b
-	salidas[0] <= 	enb & A;				//a
+	salidas[9] <= 	( (F^G)&~H | F&G&H&K );		//j
+	salidas[8] <= 	H;				//h
+	salidas[7] <= 	(G | ~F&~G&~H -^ G | ~F&~H);	//g
+	salidas[6] <= 	(F&~(F&G&H&K));			//f
+	salidas[5] <= 	(L21&~D&~E | L12&((D ^ E) | K) | L03&D&~E | L30&D&E);//i
+	salidas[4] <= 	((E&~(L03&D)) | (L12&~D&~E) | (L03&D&~E));//e
+	salidas[3] <=	((D&~(L30&D)));			//d
+	salidas[2] <= 	(C|(L30&~D) | L03&D&(E -^ C) | (L03&(~D|D&E)) -^ C | L03&(~D|E));//c
+	salidas[1] <= 	(B&~(L30&D)|L03&~D);		//b
+	salidas[0] <= 	A;				//a
 
-//end
-
-//	if (clk) begin
+//Usar if(señal) asignaciones
+//causa latches inferidos y esto hace el verilog no sintetizable
+//
 //Las siguientes lineas su utilizaban, segun el PDF de IBM para identificar
 //cuando usar la forma primaria o alterna de las salidas sin embargo no
 //funcionaron muy bien, motivo por el cual implementé esto de otra manera en
@@ -103,7 +99,6 @@ always @(posedge clk)begin
 	
 //	if (DBDR4 != 2'b10) salidas[9:0] = salidas[9:0] ^ (10'b1111000000);//Hay shift
 
-//end
 
 end
 
