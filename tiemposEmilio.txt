@@ -30,11 +30,12 @@ Tiempos Adicionales
   - 30mins 2/10/17: Creación de la presentación de avances de la semana previa
   - 10mins 2/10/17: Consulta sobre clk recovery.
   - 4hrs 3/10/17 al 10/4/17: Investigacion CLK recovery y PLL.
+  - 2hrs 30mins 7/10/2017: Avance presentacion 4(se hace en MARP, no se registra en wkatime)
 
   Acumulado
     20hrs 10min
 
 Acumulado Total
-  60 hrs 44 min
+  63 hrs 14 min
   factor de trabajo
-  .85 => 51hrs 37min
+  .85 => 53hrs 45min
