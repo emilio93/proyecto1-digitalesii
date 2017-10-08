@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Sun Oct  8 12:02:15 2017
+[*] Sun Oct  8 13:11:01 2017
 [*]
 [dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testTo8bitFrom8bit.vcd"
-[dumpfile_mtime] "Sun Oct  8 12:00:00 2017"
-[dumpfile_size] 207290
+[dumpfile_mtime] "Sun Oct  8 13:10:44 2017"
+[dumpfile_size] 227653
 [savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testTo8bitFrom8bit.gtkw"
 [timestart] 0
 [size] 1680 1022
 [pos] -1 -1
-*-19.351324 2895000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-19.828203 3695000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 45
 [signals_width] 214
 [sst_expanded] 0
@@ -78,5 +78,14 @@ testsTo8bitFrom8Bit.dataOutSynth[7:0]
 testsTo8bitFrom8Bit.dataOut16Synth[15:0]
 [color] 2
 testsTo8bitFrom8Bit.dataOut32Synth[31:0]
+@200
+-
+@28
+[color] 4
+testsTo8bitFrom8Bit.error8
+[color] 4
+testsTo8bitFrom8Bit.error16
+[color] 4
+testsTo8bitFrom8Bit.error32
 [pattern_trace] 1
 [pattern_trace] 0

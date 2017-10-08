@@ -4,11 +4,6 @@
 // dataS = 00 o 11 -> funcionamiento para 8 bits
 // dataS = 01 -> funcionamiento para 16 bits
 // dataS = 10 -> funcionamiento para 32 bits
-//
-// En cada flanco sucede lo siguiente:
-// se entregan las salidas según el estado actual
-// se lee un estado de lectura
-//
 module from8bit(
   rst, enb,
   clk, clk8, clk16, clk32,

@@ -144,7 +144,19 @@ module testsTo8bitFrom8Bit;
     @ (posedge clk40); dataIn32 <= 32'h01c59111;
 
     // Se espera 10f69f8a
-    @ (posedge clk10); dataIn <= 32'h10f69f8a;
+    @ (posedge clk40); dataIn32 <= 32'h10f69f8a;
+
+    @ (posedge clk40);
+    @ (posedge clk40);
+    dataS <= 2'b11;
+    dataIn <= 8'h49;
+    @ (posedge clk10); dataIn <= 8'h76;
+    @ (posedge clk10); dataIn <= 8'hdf;
+    @ (posedge clk10); dataIn <= 8'h8a;
+    @ (posedge clk10); dataIn <= 8'hd6;
+    @ (posedge clk10); dataIn <= 8'he4;
+    @ (posedge clk10); dataIn <= 8'h9d;
+    @ (posedge clk10); dataIn <= 8'h48;
 
     #2000
     $finish;
