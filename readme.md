@@ -15,7 +15,8 @@ gtkwave gtkws/testSerialParalelo.gtkw
 gtkwave gtkws/testParaleloSerial.gtkw
 gtkwave gtkws/testParaleloSerialSerialParalelo.gtkw
 ```
-#### Para Utilizar el Makefile
+
+### Para Utilizar el Makefile
 El makefile está adecuado para funcionar ante cierta configuración
 de folders y archivos, no es necesario modificar el makefile
 ni el archivo ```yosys.tcl``` si se siguen los siguientes rubros
@@ -28,7 +29,24 @@ ni el archivo ```yosys.tcl``` si se siguen los siguientes rubros
  - La inclusión de los archivos requeridos para una prueba se hacen en
  los archivos de prueba, que se colocan en la carpeta pruebas.
 
-#### Funcionamiento del Make
+### Agilización a la hora de usar ```make``` y ```gtkwave```
+El proyecto está pensado para que se pueda desarrollar el código y revisar las
+ondas de manera simultánea, se consideran ciertos puntos que agilizan este
+proceso.
+
+Cuando se crea un módulo y su test, se puede hacer lo siguiente:
+ 1. Se hace ```make```, eso crea los sintetizados del modulo y los compilados
+del probador.
+ 2. En otra terminal ```gtkwave ./gtkws/testModulo.vcd```.
+ 3. Organizar señales en el visualizador de ondas y crear savefile(```.gtkw```).
+ 4. Modificar módulo y test para corregir errores vistos.
+ 5. En terminal de paso 1 volver a correr ```make```.
+ 6. En gtkwave presionar ```ctrl+shift+r``` para recargar ondas.
+ 7. Si hay errores regresar a paso 4.
+
+El paso 2 se puede sustituir por ```gtkwave ./gtkws/testModulo.gtkw``` si ya se ha creado el savefile, esto abre el visualizador con las ondas esperadas.
+
+### Funcionamiento del Make
 
 El make realiza la síntesis para todos los archivos ```.v``` dentro de
 una carpeta dentro de la carpeta ```bloques```, a partir del nombre del
@@ -42,7 +60,7 @@ Una vez que se ha sintetizado se compilan todos los archivos .v en la carpeta
 pruebas y por ultimo se corren. Los archivos .gtkw deberían salir a la carpeta
 gtkws y se le debe hacer un savefile(```.gtkw```).
 
-#### Identificando fallas que no detienen al Make
+### Identificando fallas que no detienen al Make
 Conforme se ha trabajado, se ha notado que el make no se detiene ante ciertas fallas, esto se traduce en que no se actualiza las ondas, el ```.vcd```. Cuando se sospecha que esto está pasando puede ser por varias razones.
    - Un  módulo no tiene salidas y yosys lo interpreta como un empty module. Para verificar que esto está sucediendo se puede realizar un ```make synth```, o ```make synthYosys``` y revisar la salida, esto puede ser algo complicado si la salida es muy grande, la alternativa es sintetizar únicamente el módulo del que sospechan que da error, por ejemplo para el módulo ```clks```:
    ```bash

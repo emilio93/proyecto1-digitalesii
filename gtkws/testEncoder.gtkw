@@ -1,0 +1,113 @@
+[*]
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Sun Oct  8 14:55:43 2017
+[*]
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.vcd"
+[dumpfile_mtime] "Sun Oct  8 14:35:43 2017"
+[dumpfile_size] 26149
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.gtkw"
+[timestart] 0
+[size] 1920 1021
+[pos] -1 -1
+*-20.000000 20900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testEncoder.
+[treeopen] testEncoder.testEncoderSynth.
+[sst_width] 213
+[signals_width] 631
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@28
+[color] 4
+testEncoder.clk
+[color] 4
+testEncoder.enb
+[color] 4
+testEncoder.K
+@c00022
+[color] 4
+testEncoder.entradas[7:0]
+@28
+(0)testEncoder.entradas[7:0]
+(1)testEncoder.entradas[7:0]
+(2)testEncoder.entradas[7:0]
+(3)testEncoder.entradas[7:0]
+(4)testEncoder.entradas[7:0]
+(5)testEncoder.entradas[7:0]
+(6)testEncoder.entradas[7:0]
+(7)testEncoder.entradas[7:0]
+@1401200
+-group_end
+@200
+-
+@800022
+[color] 3
+testEncoder.salidasC[9:0]
+@28
+[color] 3
+(0)testEncoder.salidasC[9:0]
+[color] 3
+(1)testEncoder.salidasC[9:0]
+[color] 3
+(2)testEncoder.salidasC[9:0]
+[color] 3
+(3)testEncoder.salidasC[9:0]
+[color] 3
+(4)testEncoder.salidasC[9:0]
+[color] 3
+(5)testEncoder.salidasC[9:0]
+[color] 3
+(6)testEncoder.salidasC[9:0]
+[color] 3
+(7)testEncoder.salidasC[9:0]
+[color] 3
+(8)testEncoder.salidasC[9:0]
+[color] 3
+(9)testEncoder.salidasC[9:0]
+[color] 3
+testEncoder.testEnc.L03
+[color] 3
+testEncoder.testEnc.L30
+[color] 3
+testEncoder.testEnc.L12
+[color] 3
+testEncoder.testEnc.L21
+@200
+-
+@1001200
+-group_end
+@800023
+[color] 2
+testEncoder.salidasE[9:0]
+@29
+[color] 2
+(0)testEncoder.salidasE[9:0]
+[color] 2
+(1)testEncoder.salidasE[9:0]
+[color] 2
+(2)testEncoder.salidasE[9:0]
+[color] 2
+(3)testEncoder.salidasE[9:0]
+[color] 2
+(4)testEncoder.salidasE[9:0]
+[color] 2
+(5)testEncoder.salidasE[9:0]
+[color] 2
+(6)testEncoder.salidasE[9:0]
+[color] 2
+(7)testEncoder.salidasE[9:0]
+[color] 2
+(8)testEncoder.salidasE[9:0]
+[color] 2
+(9)testEncoder.salidasE[9:0]
+[color] 2
+testEncoder.testEnc.L03
+[color] 2
+testEncoder.testEnc.L30
+[color] 2
+testEncoder.testEnc.L12
+[color] 2
+testEncoder.testEnc.L21
+@1001201
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

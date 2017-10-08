@@ -29,14 +29,8 @@ module clks(
         if (cnt10 >= 3'd4) begin
           cnt10 <= 3'd0;
           clk10 <= ~clk10;
-
-          if (~clk10) begin
-            clk20 <= ~clk20;
-          end
-
-          if (~clk20 & ~clk10) begin
-            clk40 <= ~clk40;
-          end
+          if (~clk10) clk20 <= ~clk20;
+          if (~clk20 & ~clk10) clk40 <= ~clk40;
         end else begin
           cnt10 <= cnt10 + 1'b1;
         end

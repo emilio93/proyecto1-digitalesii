@@ -5,67 +5,98 @@
 // dataS = 01 -> funcionamiento para 16 bits
 // dataS = 10 -> funcionamiento para 32 bits
 module from8bit(
-  rst,
-  enb,
-  clk, clk16, clk32,
+  rst, enb,
+  clk, clk8, clk16, clk32,
   dataIn,
   dataS,
-  dataOut, dataOut16, dataOut32
+  dataOut, dataOut16, dataOut32,
+  // estas salidas no son necesarias,
+  // se agregan para ver sus ondas en
+  // gtkwave
+  bits,
+  contador,
+  dataSInternal
 );
 
+  // Señales básicas
   input wire rst;
   input wire enb;
-  input wire clk;
-  input wire clk16;
-  input wire clk32;
+  input wire clk;   // reloj con frecuencia máxima(para resets)
+  input wire clk8;  // reloj con frecuencia base
+  input wire clk16; // reloj con mitad de frecuencia base
+  input wire clk32; // reloj con cuarto de frecuencia base
 
-  input wire [7:0] dataIn;
-  input wire [1:0] dataS;
+  input wire [7:0] dataIn; // entrada serial de 8 bits
+  input wire [1:0] dataS;  // seleccion de cantidad de bits de salida
 
-  output reg [7:0] dataOut;
-  output reg [15:0] dataOut16;
-  output reg [31:0] dataOut32;
+  output reg [1:0] dataSInternal; // indica cual es la cantidad de bits de salida
+                                // por ejemplo, cuando dataS cambia a 01, debe
+                                // esperarse 2 clk8 para tener los 16 bits
+                                // deseados.
 
-  reg [31:0] bits;
+  reg [7:0] dataOutreg;    // salida en modo de 8 bits
+  reg [15:0] dataOut16reg; // salida en modo de 16 bits
+  reg [31:0] dataOut32reg; // salida en modo de 32 bits
+
+  output reg [7:0] dataOut;    // salida en modo de 8 bits
+  output reg [15:0] dataOut16; // salida en modo de 16 bits
+  output reg [31:0] dataOut32; // salida en modo de 32 bits
+
+  output reg [31:0] bits;
+
+  reg [7:0] outBits8;
+  reg [15:0] outBits16;
+  reg [31:0] outBits32;
+
+  output reg [1:0] contador;
+
+
 
   always @ ( * ) begin
-    if (dataS == 2'b01) begin
-      dataOut <= 8'h00;
-      dataOut16 = bits[15:0];
-      dataOut32 <= 32'h00000000;
-
-    end else if (dataS == 2'b10) begin
-      dataOut <= 8'h00;
-      dataOut16 <= 16'h0000;
-      dataOut32 = bits[31:0];
-
+    if (dataS == 2'b01 && dataSInternal) begin
+      dataOut = outBits8;
+      dataOut16 = outBits16;
+      dataOut32 = outBits32;
+    end else if (dataS == 2'b10 && dataSInternal) begin
+      dataOut = outBits8;
+      dataOut16 = outBits16;
+      dataOut32 = outBits32;
     end else begin
-      dataOut = {bits[7:0]};
-      dataOut16 <= 16'h0000;
-      dataOut32 <= 32'h00000000;
+      dataOut = (dataS == 2'b00 || dataS == 2'b11) ? {dataIn} : outBits8;
+      dataOut16 = outBits16;
+      dataOut32 = outBits32;
     end
   end
 
-  always @ (posedge clk) begin
+  always @ (posedge clk8) begin
     if (rst) begin
-      bits <= 32'h00000000;
-      dataOut <= 8'h00;
-      dataOut16 <= 16'h0000;
-      dataOut32 <= 32'h00000000;
-    end else if (enb) begin
+      bits <= 0;
+      contador <= 0;
+      dataSInternal <= 1;
+    end
+    if (~rst && enb) begin
+      outBits8 <= (dataS == 2'b00 || dataS == 2'b11) ?
+                  dataIn : outBits8;
+      outBits16 <= dataSInternal && dataS == 2'b01 ?
+                   {bits[15:8], dataIn} : outBits16;
+      outBits32 <= dataSInternal && dataS == 2'b10 ?
+                   {bits[31:8], dataIn} : outBits32;
       if (dataS == 2'b01) begin
-        if (clk16) bits[7:0] <= dataIn;
-        else bits [15:8] <= dataIn;
+        contador <= (contador >= 2'b01) ? 2'b00 : contador + 1;
+        dataSInternal <= (contador == 2'b00) ? 1 : 0;
+        if (contador == 2'b00) bits[15:8] <= dataIn;
+        else                   bits[7:0]  <= dataIn;
       end else if (dataS == 2'b10) begin
-        if (clk32 && clk16) bits[7:0] <= dataIn;
-        else if (clk32 && ~clk16) bits[15:8] <= dataIn;
-        else if (~clk32 && clk16) bits[23:16] <= dataIn;
-        else bits[31:24] <= dataIn;
+        contador <= (contador >= 2'b11) ? 2'b00 : contador + 1;
+        dataSInternal <= (contador == 2'b10) ? 1 : 0;
+        if (contador == 2'b00)      bits[31:24] <= dataIn;
+        else if (contador == 2'b01) bits[23:16] <= dataIn;
+        else if (contador == 2'b10) bits[15:8]  <= dataIn;
+        else                        bits[7:0]   <= dataIn;
       end else begin
         bits[7:0] <= dataIn;
+        dataSInternal <= 0;
       end
     end
-
-  end
-
+  end // always @ (posedge clk8)
 endmodule

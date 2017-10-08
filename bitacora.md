@@ -120,10 +120,14 @@ competitivos?
   No obstante al final expusimos el mismo lunes.
 
 Entre el 24 y el 4 de octubre no se dan reuniones estrictamente.
+Robin ha pasado a ser el líder del equipo.
 
-  _5/10/17
-  _Reunión breve a través de llama de voz
-  _Se inicia a las 8:20
+  ### Reunión 5
+
+  _5/10/17_
+  _Reunión breve a través de llama de voz_
+  _Se inicia a las 8:20_
+
   Nos ponemos de acuerdo para qué hacer cada uno,
   nos ponemos al día con el trabajo de Emilio.
   Los siguientes pasos son: tener listo el modulo 8bit (Emilio), codificador 8 a 10 b (Robin)
@@ -133,4 +137,17 @@ Entre el 24 y el 4 de octubre no se dan reuniones estrictamente.
   presentes en el receptor y optimizar toda nuestra interfaz PCIE.
   _Emilio se desconecta a las 8:40
   _Boanerges y Robin a las 9:10
+
+  ### Reunión 6
+
+  _7/10/17_
+  _Reunión a través de mensajes por 25 min a las 9:15_
+
+  Se toma la decisción de exponer por aparte por un lado Robin y Boanerges y por el otro Emilio.
+  Quedan aun varios bloques por hacer:from8bit, bloques en receptor de PCI, diferencial.
+  Emilio considera haber hecho su trabajo de la semana.
+  Robin y Boanerges seguirán trabajando dedicando el domingo el proyecto para avanzar más rápido y
+  presentarán los resultados obtenidos.
+  
+
 

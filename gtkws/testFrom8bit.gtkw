@@ -1,0 +1,189 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sun Oct  8 11:05:29 2017
+[*]
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testFrom8bit.vcd"
+[dumpfile_mtime] "Sun Oct  8 11:04:41 2017"
+[dumpfile_size] 165564
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testFrom8bit.gtkw"
+[timestart] 0
+[size] 1680 1022
+[pos] -1 -1
+*-19.340984 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testsFrom8Bit.
+[sst_width] 45
+[signals_width] 174
+[sst_expanded] 0
+[sst_vpaned_height] 290
+@28
+[color] 4
+testsFrom8Bit.clk
+[color] 4
+testsFrom8Bit.enbClk
+[color] 4
+testsFrom8Bit.rstClk
+[color] 4
+testsFrom8Bit.clk10
+[color] 4
+testsFrom8Bit.clk20
+[color] 4
+testsFrom8Bit.clk40
+[color] 4
+testsFrom8Bit.enb
+[color] 4
+testsFrom8Bit.rst
+@22
+[color] 4
+testsFrom8Bit.dataIn[7:0]
+@28
+[color] 4
+testsFrom8Bit.dataS[1:0]
+@200
+-
+@28
+[color] 3
+testsFrom8Bit.testFrom8bit.dataSInternal[1:0]
+@24
+[color] 3
+testsFrom8Bit.testFrom8bit.contador[1:0]
+@c00022
+[color] 3
+testsFrom8Bit.testFrom8bit.bits[31:0]
+@28
+[color] 3
+(0)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(1)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(2)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(3)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(4)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(5)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(6)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(7)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(8)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(9)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(10)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(11)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(12)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(13)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(14)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(15)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(16)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(17)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(18)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(19)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(20)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(21)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(22)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(23)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(24)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(25)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(26)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(27)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(28)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(29)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(30)testsFrom8Bit.testFrom8bit.bits[31:0]
+[color] 3
+(31)testsFrom8Bit.testFrom8bit.bits[31:0]
+@1401200
+-group_end
+@22
+[color] 3
+testsFrom8Bit.testFrom8bit.dataOut32[31:0]
+@c00022
+[color] 3
+testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+@28
+[color] 3
+(0)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(1)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(2)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(3)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(4)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(5)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(6)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(7)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(8)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(9)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(10)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(11)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(12)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(13)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(14)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+[color] 3
+(15)testsFrom8Bit.testFrom8bit.dataOut16[15:0]
+@1401200
+-group_end
+@22
+[color] 3
+testsFrom8Bit.testFrom8bit.dataOut[7:0]
+@200
+-
+@28
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.dataSInternal[1:0]
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.contador[1:0]
+@22
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.bits[31:0]
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.dataOut32[31:0]
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.dataOut16[15:0]
+[color] 2
+testsFrom8Bit.testFrom8bitSynth.dataOut[7:0]
+@200
+-
+@28
+[color] 4
+testsFrom8Bit.error32
+[color] 4
+testsFrom8Bit.error16
+[color] 4
+testsFrom8Bit.error8
+[pattern_trace] 1
+[pattern_trace] 0
