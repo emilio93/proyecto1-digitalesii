@@ -15,6 +15,10 @@
 
 
 `timescale 1ns/1ps
+`include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`include "../bloques/clks/clks.v"
+`include "../bloques/to8bit-from8bit/to8bit.v"
+`include "../bloques/encoder8-10/encoder.v"
 
 module transmisor(
 	clk,
