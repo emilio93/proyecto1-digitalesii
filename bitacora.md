@@ -169,3 +169,8 @@ competitivos?
 	- Hacer modulo receptor.
 	- Interconectar todo.
 	- Optimizar el diseño.
+
+	- Division de trabajo para la ultima semana:
+		-Elastic Buffer
+		-Clock recovery
+		-Diferencial
