@@ -170,7 +170,17 @@ competitivos?
 	- Interconectar todo.
 	- Optimizar el diseño.
 
-	- Division de trabajo para la ultima semana:
-		-Elastic Buffer
-		-Clock recovery
-		-Diferencial
+	- Division de trabajo para la ultima semana: bloques faltantes:
+		-Clock recovery: Boa
+		-K28.5 Detection (Com mencionada en clase): Emilio
+		-Diferencial (codifiacion nrz con valores no negativos)
+		-Receptor (la segunda mitad del CPI)
+		-Elastic Buffer.
+		-Corregir Errores.
+		-Trabajo escrito (trabajaremos los 3)
+	- Si sobra tiempo se volvera a implementar la paridad en el encoder y decoder para obtener
+	puntos extra
+	- Pasos dados por el profe para elastic Buffer y codificacion nrz en diferencial:
+	Investigacion corta (menos de una pagina de cada uno)
+	1. Elastic buffer: asic World (buscar en internet, ram no sintetizable), puntos extra si hacemos el codigo.
+	2. Diferencial: puntos extra si hay codigo.
