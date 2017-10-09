@@ -19,7 +19,8 @@ all: synth compile run
 
 # Compila con iverilog
 compile:
-	$(foreach test,$(wildcard pruebas/*.v),cd pruebas; $(CC) -E -o ../build/$(subst pruebas/,,$(subst .v,.o,$(test))) $(subst pruebas/,,$(test)) -Ttyp -g specify;cd ..;)
+	$(foreach test,$(wildcard pruebas/*.v),cd pruebas; $(CC) -E -DKEY=10 -o ../build/$(subst pruebas/,,$(subst .v,.pre.v,$(test))) $(subst pruebas/,,$(test)) -Ttyp -g specify;cd ..;)
+	$(foreach test,$(wildcard build/*.pre.v),cd build; $(CC) -o $(subst build/,,$(subst .pre.v,.o,$(test))) $(subst build/,,$(test)) -Ttyp -g specify;cd ..;)
 
 # Sintetiza segun scripts de yosys dentro de las carpetas para los bloques
 synth: synthYosys renameSynths
@@ -31,7 +32,6 @@ renameSynths:
 
 run:
 	$(foreach test,$(wildcard build/*.o), $(CC1) $(VPI) $(test);)
-
 # Este comando acepta argumentos al correrlo de la siguiente manera
 # > make gtkw="./achivo.gtkw" view
 # Resulta más sencillo utilizar simplemente
