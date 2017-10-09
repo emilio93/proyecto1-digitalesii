@@ -18,3 +18,8 @@ ya sea de investigacion  para el proyecto en general o para bloques en especific
     configuracion del editor Atom, se presentaron problemas en la configuracion.
 -1h 10/6/17 se trabaja en archivo de tiempo invertido en proyecto.
 -13h 3:50pm-04:50m 10/7/17 trabajo en el decodificador, decodificor sin control de errores, invetigacion de comportamiento de decoder10to8
+11h 4:30pm-4:16am 10/9/17 pruebas de codificador-decodificador, investigacion sobre de errores obtenidos,
+    se implemento una funcion que permite saber cuando hay un posible error en la decodificacion,
+    actualizacion de direcciones de los bloques y actualizacion de los gtkws,
+    investigacion sobre modulo de sincronizacion del clock, estudio de la presentacion,
+    y del funcionamiento del make implementado por Emilio, actualizacion de tiempos.
