@@ -4,6 +4,11 @@
 //Clks
 //To8Bit
 //encoder8-10
+//
+`include "../../bloques/clks/clks.v"
+`include "../../bloques/to8bit-from8bit/to8bit.v"
+`include "../../bloques/encoder8-10/encoder.v"
+`include "../../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
 
 `timescale 1ns/1ps
 
@@ -80,4 +85,4 @@ paraleloSerial emisor(
 );
 
 
-  endmodule
+endmodule
