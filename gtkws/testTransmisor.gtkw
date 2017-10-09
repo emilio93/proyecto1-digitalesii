@@ -1,0 +1,256 @@
+[*]
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Mon Oct  9 03:00:37 2017
+[*]
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testTransmisor.vcd"
+[dumpfile_mtime] "Mon Oct  9 02:53:58 2017"
+[dumpfile_size] 168869
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testTransmisor.gtkw"
+[timestart] 0
+[size] 1920 1021
+[pos] -1 -1
+*-16.000000 215200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testTransmisor.
+[treeopen] testTransmisor.testTransmisor.
+[treeopen] testTransmisor.testTransmisorSintetizado.
+[sst_width] 48
+[signals_width] 239
+[sst_expanded] 0
+[sst_vpaned_height] 298
+@28
+testTransmisor.clk
+testTransmisor.testTransmisor.reloj.clk10
+testTransmisor.testTransmisor.reloj.clk20
+testTransmisor.testTransmisor.reloj.clk40
+testTransmisor.K
+testTransmisor.enb
+testTransmisor.rst
+@c00028
+testTransmisor.dataS[1:0]
+@28
+(0)testTransmisor.dataS[1:0]
+(1)testTransmisor.dataS[1:0]
+@1401200
+-group_end
+@200
+-
+@c00022
+[color] 3
+testTransmisor.dataIn[7:0]
+@28
+[color] 3
+(0)testTransmisor.dataIn[7:0]
+[color] 3
+(1)testTransmisor.dataIn[7:0]
+[color] 3
+(2)testTransmisor.dataIn[7:0]
+[color] 3
+(3)testTransmisor.dataIn[7:0]
+[color] 3
+(4)testTransmisor.dataIn[7:0]
+[color] 3
+(5)testTransmisor.dataIn[7:0]
+[color] 3
+(6)testTransmisor.dataIn[7:0]
+[color] 3
+(7)testTransmisor.dataIn[7:0]
+@1401200
+-group_end
+@c00022
+[color] 3
+testTransmisor.dataIn16[15:0]
+@28
+[color] 3
+(0)testTransmisor.dataIn16[15:0]
+[color] 3
+(1)testTransmisor.dataIn16[15:0]
+[color] 3
+(2)testTransmisor.dataIn16[15:0]
+[color] 3
+(3)testTransmisor.dataIn16[15:0]
+[color] 3
+(4)testTransmisor.dataIn16[15:0]
+[color] 3
+(5)testTransmisor.dataIn16[15:0]
+[color] 3
+(6)testTransmisor.dataIn16[15:0]
+[color] 3
+(7)testTransmisor.dataIn16[15:0]
+[color] 3
+(8)testTransmisor.dataIn16[15:0]
+[color] 3
+(9)testTransmisor.dataIn16[15:0]
+[color] 3
+(10)testTransmisor.dataIn16[15:0]
+[color] 3
+(11)testTransmisor.dataIn16[15:0]
+[color] 3
+(12)testTransmisor.dataIn16[15:0]
+[color] 3
+(13)testTransmisor.dataIn16[15:0]
+[color] 3
+(14)testTransmisor.dataIn16[15:0]
+[color] 3
+(15)testTransmisor.dataIn16[15:0]
+@1401200
+-group_end
+@c00022
+[color] 3
+testTransmisor.dataIn32[31:0]
+@28
+[color] 3
+(0)testTransmisor.dataIn32[31:0]
+[color] 3
+(1)testTransmisor.dataIn32[31:0]
+[color] 3
+(2)testTransmisor.dataIn32[31:0]
+[color] 3
+(3)testTransmisor.dataIn32[31:0]
+[color] 3
+(4)testTransmisor.dataIn32[31:0]
+[color] 3
+(5)testTransmisor.dataIn32[31:0]
+[color] 3
+(6)testTransmisor.dataIn32[31:0]
+[color] 3
+(7)testTransmisor.dataIn32[31:0]
+[color] 3
+(8)testTransmisor.dataIn32[31:0]
+[color] 3
+(9)testTransmisor.dataIn32[31:0]
+[color] 3
+(10)testTransmisor.dataIn32[31:0]
+[color] 3
+(11)testTransmisor.dataIn32[31:0]
+[color] 3
+(12)testTransmisor.dataIn32[31:0]
+[color] 3
+(13)testTransmisor.dataIn32[31:0]
+[color] 3
+(14)testTransmisor.dataIn32[31:0]
+[color] 3
+(15)testTransmisor.dataIn32[31:0]
+[color] 3
+(16)testTransmisor.dataIn32[31:0]
+[color] 3
+(17)testTransmisor.dataIn32[31:0]
+[color] 3
+(18)testTransmisor.dataIn32[31:0]
+[color] 3
+(19)testTransmisor.dataIn32[31:0]
+[color] 3
+(20)testTransmisor.dataIn32[31:0]
+[color] 3
+(21)testTransmisor.dataIn32[31:0]
+[color] 3
+(22)testTransmisor.dataIn32[31:0]
+[color] 3
+(23)testTransmisor.dataIn32[31:0]
+[color] 3
+(24)testTransmisor.dataIn32[31:0]
+[color] 3
+(25)testTransmisor.dataIn32[31:0]
+[color] 3
+(26)testTransmisor.dataIn32[31:0]
+[color] 3
+(27)testTransmisor.dataIn32[31:0]
+[color] 3
+(28)testTransmisor.dataIn32[31:0]
+[color] 3
+(29)testTransmisor.dataIn32[31:0]
+[color] 3
+(30)testTransmisor.dataIn32[31:0]
+[color] 3
+(31)testTransmisor.dataIn32[31:0]
+@1401200
+-group_end
+@200
+-
+@800022
+[color] 2
+testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+@28
+[color] 2
+(0)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(1)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(2)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(3)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(4)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(5)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(6)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+[color] 2
+(7)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
+@1001200
+-group_end
+@200
+-
+@c00023
+[color] 2
+testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+@28
+[color] 2
+(0)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(1)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(2)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(3)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(4)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(5)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(6)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(7)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(8)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+[color] 2
+(9)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
+@1401201
+-group_end
+@200
+-
+@800022
+[color] 2
+testTransmisor.testTransmisor.emisor.entradas[9:0]
+@28
+[color] 2
+(0)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(1)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(2)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(3)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(4)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(5)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(6)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(7)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(8)testTransmisor.testTransmisor.emisor.entradas[9:0]
+[color] 2
+(9)testTransmisor.testTransmisor.emisor.entradas[9:0]
+@1001200
+-group_end
+@200
+-
+@28
+testTransmisor.testTransmisorSintetizado.emisor.clk
+[color] 3
+testTransmisor.dataOut
+[color] 2
+testTransmisor.dataOutSynth
+[pattern_trace] 1
+[pattern_trace] 0
