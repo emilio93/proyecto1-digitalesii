@@ -1,49 +1,146 @@
 [*]
-[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Sun Oct  8 23:15:33 2017
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Mon Oct  9 01:12:43 2017
 [*]
-[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testEncoderDecoder.vcd"
-[dumpfile_mtime] "Sun Oct  8 22:59:48 2017"
-[dumpfile_size] 60028
-[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testEncoderDecoder.gtkw"
-[timestart] 6540000
-[size] 659 716
-[pos] -318 -117
-*-22.104946 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[treeopen] testEncoder.
-[sst_width] 225
-[signals_width] 142
-[sst_expanded] 1
-[sst_vpaned_height] 201
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testEncoderDecoder.vcd"
+[dumpfile_mtime] "Mon Oct  9 01:02:52 2017"
+[dumpfile_size] 49083
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testEncoderDecoder.gtkw"
+[timestart] 0
+[size] 1920 1021
+[pos] -44 -44
+*-22.000000 12720000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 48
+[signals_width] 230
+[sst_expanded] 0
+[sst_vpaned_height] 298
 @28
-testEncoder.testEnc.clk
-testEncoder.testEnc.K
+testEncoder.clk
+testEncoder.k
+testEncoder.K
+@29
+testEncoder.enb
 @200
 -
-@22
+@800022
 [color] 3
-testEncoder.testEnc.entradas[7:0]
-[color] 3
-testEncoder.testEnc.salidas[9:0]
-[color] 3
-testEncoder.decodificador.data10_in[9:0]
-[color] 3
-testEncoder.decodificador.data8_out[7:0]
-@200
--
+testEncoder.entradas[7:0]
 @28
-testEncoder.testEncoderSynth.clk
-testEncoder.testEncoderSynth.K
+[color] 3
+(0)testEncoder.entradas[7:0]
+[color] 3
+(1)testEncoder.entradas[7:0]
+[color] 3
+(2)testEncoder.entradas[7:0]
+[color] 3
+(3)testEncoder.entradas[7:0]
+[color] 3
+(4)testEncoder.entradas[7:0]
+[color] 3
+(5)testEncoder.entradas[7:0]
+[color] 3
+(6)testEncoder.entradas[7:0]
+[color] 3
+(7)testEncoder.entradas[7:0]
+@1001200
+-group_end
+@800022
+[color] 3
+testEncoder.salidasC[9:0]
+@28
+[color] 3
+(0)testEncoder.salidasC[9:0]
+[color] 3
+(1)testEncoder.salidasC[9:0]
+[color] 3
+(2)testEncoder.salidasC[9:0]
+[color] 3
+(3)testEncoder.salidasC[9:0]
+[color] 3
+(4)testEncoder.salidasC[9:0]
+[color] 3
+(5)testEncoder.salidasC[9:0]
+[color] 3
+(6)testEncoder.salidasC[9:0]
+[color] 3
+(7)testEncoder.salidasC[9:0]
+[color] 3
+(8)testEncoder.salidasC[9:0]
+[color] 3
+(9)testEncoder.salidasC[9:0]
+@1001200
+-group_end
+@800022
+[color] 2
+testEncoder.salidasE[9:0]
+@28
+[color] 2
+(0)testEncoder.salidasE[9:0]
+[color] 2
+(1)testEncoder.salidasE[9:0]
+[color] 2
+(2)testEncoder.salidasE[9:0]
+[color] 2
+(3)testEncoder.salidasE[9:0]
+[color] 2
+(4)testEncoder.salidasE[9:0]
+[color] 2
+(5)testEncoder.salidasE[9:0]
+[color] 2
+(6)testEncoder.salidasE[9:0]
+[color] 2
+(7)testEncoder.salidasE[9:0]
+[color] 2
+(8)testEncoder.salidasE[9:0]
+[color] 2
+(9)testEncoder.salidasE[9:0]
 @200
 -
-@23
+@1001200
+-group_end
+@800022
+[color] 3
+testEncoder.salidasDeco[7:0]
+@28
+[color] 3
+(0)testEncoder.salidasDeco[7:0]
+[color] 3
+(1)testEncoder.salidasDeco[7:0]
+[color] 3
+(2)testEncoder.salidasDeco[7:0]
+[color] 3
+(3)testEncoder.salidasDeco[7:0]
+[color] 3
+(4)testEncoder.salidasDeco[7:0]
+[color] 3
+(5)testEncoder.salidasDeco[7:0]
+[color] 3
+(6)testEncoder.salidasDeco[7:0]
+[color] 3
+(7)testEncoder.salidasDeco[7:0]
+@1001200
+-group_end
+@800022
 [color] 2
-testEncoder.testEncoderSynth.entradas[7:0]
+testEncoder.salidasDecoSynt[7:0]
+@28
 [color] 2
-testEncoder.testEncoderSynth.salidas[9:0]
+(0)testEncoder.salidasDecoSynt[7:0]
 [color] 2
-testEncoder.decodificadorSynth.data10_in[9:0]
+(1)testEncoder.salidasDecoSynt[7:0]
 [color] 2
-testEncoder.decodificadorSynth.data8_out[7:0]
+(2)testEncoder.salidasDecoSynt[7:0]
+[color] 2
+(3)testEncoder.salidasDecoSynt[7:0]
+[color] 2
+(4)testEncoder.salidasDecoSynt[7:0]
+[color] 2
+(5)testEncoder.salidasDecoSynt[7:0]
+[color] 2
+(6)testEncoder.salidasDecoSynt[7:0]
+[color] 2
+(7)testEncoder.salidasDecoSynt[7:0]
+@1001200
+-group_end
 [pattern_trace] 1
 [pattern_trace] 0
