@@ -1,12 +1,27 @@
 `timescale 1ns/1ps
+`ifndef cmos_cells
+  `include "../lib/cmos_cells.v"
+`endif
 
-`include "../lib/cmos_cells.v"
+`ifndef clks
 `include "../bloques/clks/clks.v"
+`endif
+
+`ifndef to8bit
 `include "../bloques/to8bit-from8bit/to8bit.v"
+`endif
+
+`ifndef encoder
 `include "../bloques/encoder8-10/encoder.v"
-`include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`endif
+
+`ifndef paraleloSerial
+  `include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`endif
 //`include "../bloques/diferencial/diferencial.v"
+`ifndef transmisor
 `include "../bloques/interfaz-PCIE/transmisor.v"
+`endif
 //`include "../build/transmisor-sintetizado.v"
 
 module testTransmisor;
