@@ -1,6 +1,6 @@
 # Avance de Bloques
 ## Conductuales y Estructurales
-### ```paraleloSerial```, ```serialParalelo```, ```to8bit```, ```from8bit```, ```encoder```, ```decoder10to8```, ```clks```
+### ```paraleloSerial```, ```serialParalelo```, ```to8bit```, ```from8bit```, ```encoder```, ```decoder```, ```clks```
 _Por_
 #### Robin Gonzalez
 #### Boanerges Martinez
@@ -367,4 +367,71 @@ _Tambien se tienen pruebas individuales de cada modulo_
 
 ---
 
-# Clock Recovery
+
+# Bloque ```encoder```
+```verilog
+module encoder(	//8 to 10 bit encoder
+	entradas,
+	salidas,
+	K,
+	clk,
+	enb,
+	);
+
+	input wire [7:0] entradas;
+	input wire clk, K, enb;
+	output reg [9:0] salidas;
+	reg j, h, g, f, i, e, d, c, b, a;
+	reg L03, L30, L12, L21;
+```
+ - Lógica combinacional para calculo de salidas.
+ - Codificación de 3 a 4 bits y de 5 a 6 bits.
+ - Bits añadidos son el i y el j.
+---
+
+# Bloque ```decoder```
+```verilog
+//Asignacion sincrona de la salida
+always @(posedge clk) begin
+        data8_out[7] <= H;
+        data8_out[6] <= G;
+        data8_out[5] <= F;
+        data8_out[4] <= E;
+        data8_out[3] <= D;
+        data8_out[2] <= C;
+        data8_out[1] <= B;
+        data8_out[0] <= A;
+        k_out <= K;
+        invalid_value <= PINVBY;
+end
+```
+ - Recibe datos de 10 bits serialParalelo y decodifica a 8 bits
+ - Algunos valores posibles son invalidos en la codificacion.
+ - Mayoritariamente logica combinacional, bloque de FF para obtener salida sincronizada de reloj.
+---
+
+
+# ```encoder``` y ```decoder```
+
+![center 80%](presentacion-4/EncoderDecoder.png)
+_De ```gtkws/testEncoderDecoder.gtkw```_
+_Tambien se tienen pruebas individuales de cada modulo_
+
+---
+
+# Bloque ```transmisor```
+![center 75%](presentacion-4/bloques.png)
+_De ```phy-interface-pci-express-sata-usb30-architectures-3.1```_
+
+---
+
+# Bloque ```transmisor```
+![center 85%](presentacion-4/transmisor.png)
+_De ```gtkws/testTransmisor.gtkw```_
+
+---
+
+# ```Herramientas utiles```
+![center 88%](presentacion-4/waka1.png)
+_De ```wakatime.com```_
+---
