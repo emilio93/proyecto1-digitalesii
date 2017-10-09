@@ -8,7 +8,7 @@
 `include "../bloques/to8bit-from8bit/to8bit.v"
 `include "../build/to8bit-sintetizado.v"
 
-`include "../bloques/encoder8-10/encoder.v"
+`include "../bloques/encoder-decoder/encoder.v"
 `include "../build/encoder-sintetizado.v"
 
 module testsTo8Bit;
@@ -117,7 +117,7 @@ encoderSynth testEncoderSynth(
     dataIn16 <= 16'h7d5a;
 
     @ (posedge clk10);
-    @ (posedge clk10);  
+    @ (posedge clk10);
     dataS <= 2'b10;
     dataIn32 <= 32'h95fdad43;
 

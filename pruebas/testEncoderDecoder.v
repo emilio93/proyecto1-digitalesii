@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 
 `include "../lib/cmos_cells.v"
-`include "../bloques/encoder8-10/encoder.v"
+`include "../bloques/encoder-decoder/encoder.v"
 `include "../build/encoder-sintetizado.v"
-`include "../bloques/8b10b-10bto8b/decoder10to8.v"
-`include "../build/decoder10to8-sintetizado.v"
+`include "../bloques/encoder-decoder/decoder.v"
+`include "../build/decoder-sintetizado.v"
 
 module testEncoder;
 
@@ -14,6 +14,10 @@ wire [9:0] salidasC;
 wire [9:0] salidasE;
 wire [7:0] salidasDeco;
 wire [7:0] salidasDecoSynt;
+wire k;
+wire kSynth;
+wire invalid_value;
+wire invalid_valueSynth;
 reg enb, clk, K;
 parameter retardo = 400;
 
@@ -37,17 +41,19 @@ encoderSynth testEncoderSynth(
 );
 
 
-decoder10to8 decodificador(
+decoder decodificador(
   .clk(clk),
   .data10_in(salidasC),
   .data8_out(salidasDeco),
+  .invalid_value(invalid_value),
   .k_out(k)
 );
-decoder10to8Synth decodificadorSynth(
+decoderSynth decodificadorSynth(
   .clk(clk),
   .data10_in(salidasE),
   .data8_out(salidasDecoSynt),
-  .k_out(k)
+  .invalid_value(invalid_valueSynth),
+  .k_out(kSynth)
 );
 
 always # 100 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
@@ -294,8 +300,8 @@ initial begin
   initial begin
   	$dumpfile("gtkws/testEncoderDecoder.vcd");
   	$dumpvars;
-  	$display("		tiempo    | clk | enb | entradas | K |  salidasC  |  salidasE  | salidaDeco | salidasDecoSynth |tiempo ns");
-  	$monitor("%t      | %b   |  %b    %b   %b   %b   %b  %b   %b   %f ns", $time, clk, enb, entradas, K , salidasC , salidasE, salidasDeco, salidasDecoSynt, $realtime);
+  	$display("		tiempo    | clk | enb | entradas | K |  salidasC  |  salidasE  | tiempo ns");
+  	$monitor("%t      | %b   |  %b    %b   %b   %b   %b   %f ns", $time, clk, enb, entradas, K , salidasC , salidasE, $realtime);
 
   end
 

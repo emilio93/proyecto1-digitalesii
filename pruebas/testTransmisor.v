@@ -26,8 +26,9 @@ module testTransmisor;
   reg K;
 
   wire dataOut;
-
   wire dataOutSynth;
+  wire invalid_value;
+  wire invalid_valueSynth;
 
   transmisor testTransmisor(
     .clk(clk),

@@ -11,7 +11,7 @@
   `include "../bloques/to8bit-from8bit/to8bit.v"
 `endif
 `ifndef encoder
-  `include "../bloques/encoder8-10/encoder.v"
+  `include "../bloques/encoder-decoder/encoder.v"
 `endif
 `ifndef paraleloSerial
   `include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
@@ -30,7 +30,7 @@ module testEncoder;
 	wire [9:0] salidasE;
 	reg enb, clk, K;
 	parameter retardo = 30;
- 
+
 encoder testEnc(
 	.entradas(entradas),
 	.salidas(salidasC),
@@ -220,7 +220,7 @@ initial begin
 
 	#retardo;
 	entradas = 8'b000_00000;
-	
+
 	#retardo;
 	entradas = 8'b000_00001;
 
@@ -247,7 +247,7 @@ initial begin
 
 	#retardo;
 	entradas = 8'b010_00000;
-//4	
+//4
 	#retardo;
 	entradas = 8'b010_00001;
 

@@ -19,7 +19,7 @@
 `endif
 
 `ifndef encoder
-  `include "../bloques/encoder8-10/encoder.v"
+  `include "../bloques/encoder-decoder/encoder.v"
 `endif
 
 module transmisor(
@@ -31,7 +31,7 @@ module transmisor(
 	dataIn32,
 	dataS,
 	serialOut,
-	K	
+	K
 );
 
 //Declaración de puertos:
@@ -44,7 +44,7 @@ module transmisor(
 	input wire [15:0] dataIn16;
 	input wire [31:0] dataIn32;
 	input wire [1:0] dataS;
-	
+
 	output wire serialOut;
 
 //Variables internas:

@@ -5,8 +5,8 @@
 `include "../bloques/clks/clks.v"
 `include "../build/clks-sintetizado.v"
 
-`include "../bloques/8b10b-10bto8b/decoder10to8.v"
-`include "../build/decoder10to8-sintetizado.v"
+`include "../bloques/encoder-decoder/decoder.v"
+`include "../build/decoder-sintetizado.v"
 
 module testDecode10bto8b ();
 
@@ -21,6 +21,9 @@ wire clk20;
 wire clk40;
 wire [7:0] salida;
 wire k;
+wire kSynth;
+wire invalid_value;
+wire invalid_valueSynth;
 
 wire clk10Synth;
 wire clk20Synth;
@@ -44,17 +47,19 @@ decoder10to8(
 	input wire [9:0] data10_in
 );
 */
-decoder10to8 emisor(
+decoder emisor(
   .clk(clk),
   .data10_in(entradas),
   .data8_out(salida),
+  .invalid_value(invalid_value),
   .k_out(k)
 );
-decoder10to8Synth emisorSynth(
+decoderSynth emisorSynth(
   .clk(clk),
   .data10_in(entradas),
   .data8_out(salidaSynth),
-  .k_out(k)
+  .invalid_value(invalid_valueSynth),
+  .k_out(kSynth)
 );
 
 always # 5 clk = ~clk;//inicio de la señal de reloj, cambia cada 10ns

@@ -1,4 +1,5 @@
-module decoder10to8(
+`timescale 1ns/1ps
+module decoder(
 	output reg [7:0] data8_out,
 	output reg k_out,
 	output reg invalid_value,
