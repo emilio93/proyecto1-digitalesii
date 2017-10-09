@@ -1,28 +1,28 @@
 [*]
-[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Mon Oct  9 01:12:43 2017
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Mon Oct  9 06:48:46 2017
 [*]
-[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testEncoderDecoder.vcd"
-[dumpfile_mtime] "Mon Oct  9 01:02:52 2017"
-[dumpfile_size] 49083
-[savefile] "/root/Documents/proyecto1digitales/gtkws/testEncoderDecoder.gtkw"
+[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testEncoderDecoder.vcd"
+[dumpfile_mtime] "Mon Oct  9 06:39:51 2017"
+[dumpfile_size] 53060
+[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testEncoderDecoder.gtkw"
 [timestart] 0
-[size] 1920 1021
-[pos] -44 -44
+[size] 1317 744
+[pos] -1 -1
 *-22.000000 12720000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 48
+[treeopen] testEncoder.
+[sst_width] 225
 [signals_width] 230
-[sst_expanded] 0
+[sst_expanded] 1
 [sst_vpaned_height] 298
 @28
 testEncoder.clk
 testEncoder.k
 testEncoder.K
-@29
 testEncoder.enb
 @200
 -
-@800022
+@c00022
 [color] 3
 testEncoder.entradas[7:0]
 @28
@@ -42,9 +42,9 @@ testEncoder.entradas[7:0]
 (6)testEncoder.entradas[7:0]
 [color] 3
 (7)testEncoder.entradas[7:0]
-@1001200
+@1401200
 -group_end
-@800022
+@c00022
 [color] 3
 testEncoder.salidasC[9:0]
 @28
@@ -68,9 +68,36 @@ testEncoder.salidasC[9:0]
 (8)testEncoder.salidasC[9:0]
 [color] 3
 (9)testEncoder.salidasC[9:0]
-@1001200
+@1401200
 -group_end
-@800022
+@c00022
+[color] 3
+testEncoder.salidasDeco[7:0]
+@28
+[color] 3
+(0)testEncoder.salidasDeco[7:0]
+[color] 3
+(1)testEncoder.salidasDeco[7:0]
+[color] 3
+(2)testEncoder.salidasDeco[7:0]
+[color] 3
+(3)testEncoder.salidasDeco[7:0]
+[color] 3
+(4)testEncoder.salidasDeco[7:0]
+[color] 3
+(5)testEncoder.salidasDeco[7:0]
+[color] 3
+(6)testEncoder.salidasDeco[7:0]
+[color] 3
+(7)testEncoder.salidasDeco[7:0]
+@1401200
+-group_end
+@28
+[color] 3
+testEncoder.invalid_value
+@200
+-
+@c00022
 [color] 2
 testEncoder.salidasE[9:0]
 @28
@@ -96,31 +123,9 @@ testEncoder.salidasE[9:0]
 (9)testEncoder.salidasE[9:0]
 @200
 -
-@1001200
+@1401200
 -group_end
-@800022
-[color] 3
-testEncoder.salidasDeco[7:0]
-@28
-[color] 3
-(0)testEncoder.salidasDeco[7:0]
-[color] 3
-(1)testEncoder.salidasDeco[7:0]
-[color] 3
-(2)testEncoder.salidasDeco[7:0]
-[color] 3
-(3)testEncoder.salidasDeco[7:0]
-[color] 3
-(4)testEncoder.salidasDeco[7:0]
-[color] 3
-(5)testEncoder.salidasDeco[7:0]
-[color] 3
-(6)testEncoder.salidasDeco[7:0]
-[color] 3
-(7)testEncoder.salidasDeco[7:0]
-@1001200
--group_end
-@800022
+@c00022
 [color] 2
 testEncoder.salidasDecoSynt[7:0]
 @28
@@ -140,7 +145,10 @@ testEncoder.salidasDecoSynt[7:0]
 (6)testEncoder.salidasDecoSynt[7:0]
 [color] 2
 (7)testEncoder.salidasDecoSynt[7:0]
-@1001200
+@1401200
 -group_end
+@28
+[color] 2
+testEncoder.invalid_valueSynth
 [pattern_trace] 1
 [pattern_trace] 0

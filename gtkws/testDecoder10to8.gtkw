@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Mon Oct  9 06:51:37 2017
+[*]
+[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testDecoder10to8.vcd"
+[dumpfile_mtime] "Mon Oct  9 06:39:50 2017"
+[dumpfile_size] 45195
+[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testDecoder10to8.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-18.719391 628000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testDecode10bto8b.
+[sst_width] 225
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 160
+@28
+testDecode10bto8b.clk
+@200
+-
+@22
+[color] 3
+testDecode10bto8b.entradas[9:0]
+[color] 3
+testDecode10bto8b.salida[7:0]
+@28
+[color] 3
+testDecode10bto8b.invalid_value
+@200
+-
+@23
+[color] 2
+testDecode10bto8b.salidaSynth[7:0]
+@29
+[color] 2
+testDecode10bto8b.invalid_valueSynth
+[pattern_trace] 1
+[pattern_trace] 0

@@ -25,3 +25,5 @@ http://www.ssc.pe.titech.ac.jp/publications/2006/20060526_philipus_ppt.pdf
 https://pcisig.com/sites/default/files/files/PCI_Express_Electrical_Basics.pdf
 
 http://www.ieee802.org/3/z/public/presentations/mar1996/RT8B10B.pdf
+
+https://protocol-debug.com/2017/02/01/beginners-guide-to-clock-data-recovery/
