@@ -119,8 +119,8 @@ competitivos?
   se ha hecho.
   No obstante al final expusimos el mismo lunes.
 
-Entre el 24 y el 4 de octubre no se dan reuniones estrictamente.
-Robin ha pasado a ser el líder del equipo.
+  Entre el 24 y el 4 de octubre no se dan reuniones estrictamente.
+  Robin ha pasado a ser el líder del equipo.
 
   ### Reunión 5
 
@@ -150,4 +150,22 @@ Robin ha pasado a ser el líder del equipo.
   presentarán los resultados obtenidos.
   
 
+### Reunión 7
 
+  _8/10/2017
+
+  _Reunión  a través de llama de voz_
+  _Se inicia a las 9:35, Se finaliza a las 10:15_
+
+    - Hablamos acerca de nuestros avances y qué expondremos juntos mañana.
+    - Acordamos dividirnos el trabajo mañana durante clase.
+    - Observamos los resultados y Emilio explica brevemente como usar Marp.
+    - Siguientes pasos:
+	- Averiguar si se ocupan los 3 modulos presentes en el receptor.
+	- Aclarar dudas con tiempos de encoder en emisor y dudas de funcionamiento entre encoder
+	y decoder.
+	- Hacer modulo diferenciador.
+	- Hacer modulo recuperador de reloj.
+	- Hacer modulo receptor.
+	- Interconectar todo.
+	- Optimizar el diseño.
