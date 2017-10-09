@@ -1,13 +1,5 @@
 `timescale 1ns/1ps
 
-
-`timescale 1ns/1ps
-`include "../clks/clks.v"
-`include "../to8bit-from8bit/to8bit.v"
-`include "../encoder8-10/encoder.v"
-`include "../paraleloSerial-serialParalelo/paraleloSerial.v"
-//`include "../diferencial/diferencial.v"
-
 `include "../lib/cmos_cells.v"
 `include "../bloques/encoder8-10/encoder.v"
 `include "../build/encoder-sintetizado.v"

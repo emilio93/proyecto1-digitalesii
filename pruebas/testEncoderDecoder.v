@@ -294,8 +294,8 @@ initial begin
   initial begin
   	$dumpfile("gtkws/testEncoderDecoder.vcd");
   	$dumpvars;
-  	$display("		tiempo    | clk | enb | entradas | K |  salidasC  |  salidasE  | tiempo ns");
-  	$monitor("%t      | %b   |  %b    %b   %b   %b   %b   %f ns", $time, clk, enb, entradas, K , salidasC , salidasE, $realtime);
+  	$display("		tiempo    | clk | enb | entradas | K |  salidasC  |  salidasE  | salidaDeco | salidasDecoSynth |tiempo ns");
+  	$monitor("%t      | %b   |  %b    %b   %b   %b   %b  %b   %b   %f ns", $time, clk, enb, entradas, K , salidasC , salidasE, salidasDeco, salidasDecoSynt, $realtime);
 
   end
 
