@@ -1,15 +1,27 @@
 `timescale 1ns/1ps
 
-`timescale 1ns/1ps
-`include "../bloques/clks/clks.v"
-`include "../bloques/to8bit-from8bit/to8bit.v"
-`include "../bloques/encoder8-10/encoder.v"
-`include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`ifndef cmos_cells
+  `include "../lib/cmos_cells.v"
+`endif
+
+`ifndef clks
+  `include "../bloques/clks/clks.v"
+`endif
+`ifndef to8bit
+  `include "../bloques/to8bit-from8bit/to8bit.v"
+`endif
+`ifndef encoder
+  `include "../bloques/encoder8-10/encoder.v"
+`endif
+`ifndef paraleloSerial
+  `include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`endif
+
 //`include "../diferencial/diferencial.v"
 
-`include "../lib/cmos_cells.v"
-`include "../bloques/encoder8-10/encoder.v"
-`include "../build/encoder-sintetizado.v"
+`ifndef encoderSynth
+  `include "../build/encoder-sintetizado.v"
+`endif
 
 module testEncoder;
 
