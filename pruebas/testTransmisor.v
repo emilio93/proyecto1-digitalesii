@@ -1,17 +1,16 @@
 `timescale 1ns/1ps
-
+`define isTest 1
 `ifndef cmos_cells
   `include "../lib/cmos_cells.v"
 `endif
 
-`ifndef paraleloSerial
-  `include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
-`endif
 //`include "../bloques/diferencial/diferencial.v"
 `ifndef transmisor
   `include "../bloques/interfaz-PCIE/transmisor.v"
+  `endif
+`ifndef transmisorSynth
+  `include "../build/transmisor-sintetizado.v"
 `endif
-//`include "../build/transmisor-sintetizado.v"
 
 module testTransmisor;
 

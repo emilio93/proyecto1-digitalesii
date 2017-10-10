@@ -6,20 +6,20 @@
 //encoder8-10
 `timescale 1ns/1ps
 
-`ifndef clks
-  `include "../bloques/clks/clks.v"
+`ifndef isTest
+  `include "../../bloques/clks/clks.v"
 `endif
 
-`ifndef paraleloSerial
-  `include "../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
+`ifndef isTest
+  `include "../../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
 `endif
 
-`ifndef to8bit
-  `include "../bloques/to8bit-from8bit/to8bit.v"
+`ifndef isTest
+  `include "../../bloques/to8bit-from8bit/to8bit.v"
 `endif
 
-`ifndef encoder
-  `include "../bloques/encoder-decoder/encoder.v"
+`ifndef isTest
+  `include "../../bloques/encoder-decoder/encoder.v"
 `endif
 
 module transmisor(
