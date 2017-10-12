@@ -1,0 +1,118 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Thu Oct 12 07:21:07 2017
+[*]
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testK285Detector.vcd"
+[dumpfile_mtime] "Thu Oct 12 07:20:03 2017"
+[dumpfile_size] 36148
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testK285Detector.gtkw"
+[timestart] 0
+[size] 1878 1025
+[pos] -1 -1
+*-16.511765 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testsK285Detector.
+[sst_width] 45
+[signals_width] 170
+[sst_expanded] 0
+[sst_vpaned_height] 291
+@28
+[color] 4
+testsK285Detector.clk
+[color] 4
+testsK285Detector.testK285Detector.enb
+[color] 4
+testsK285Detector.testK285Detector.rst
+[color] 4
+testsK285Detector.testK285Detector.entrada
+@200
+-
+@c00024
+[color] 3
+testsK285Detector.testK285Detector.offsetCnt[3:0]
+@28
+(0)testsK285Detector.testK285Detector.offsetCnt[3:0]
+(1)testsK285Detector.testK285Detector.offsetCnt[3:0]
+(2)testsK285Detector.testK285Detector.offsetCnt[3:0]
+(3)testsK285Detector.testK285Detector.offsetCnt[3:0]
+@1401200
+-group_end
+@c00022
+[color] 3
+testsK285Detector.testK285Detector.bits[8:0]
+@28
+[color] 3
+(0)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(1)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(2)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(3)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(4)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(5)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(6)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(7)testsK285Detector.testK285Detector.bits[8:0]
+[color] 3
+(8)testsK285Detector.testK285Detector.bits[8:0]
+@1401200
+-group_end
+@28
+[color] 3
+testsK285Detector.testK285Detector.entrada
+[color] 3
+testsK285Detector.testK285Detector.esk285
+[color] 3
+testsK285Detector.testK285Detector.lectura
+@200
+-
+@c00022
+[color] 2
+testsK285Detector.testK285DetectorSynth.offsetCnt[3:0]
+@28
+[color] 2
+(0)testsK285Detector.testK285DetectorSynth.offsetCnt[3:0]
+[color] 2
+(1)testsK285Detector.testK285DetectorSynth.offsetCnt[3:0]
+[color] 2
+(2)testsK285Detector.testK285DetectorSynth.offsetCnt[3:0]
+[color] 2
+(3)testsK285Detector.testK285DetectorSynth.offsetCnt[3:0]
+@1401200
+-group_end
+@c00022
+[color] 2
+testsK285Detector.testK285DetectorSynth.bits[8:0]
+@28
+[color] 2
+(0)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(1)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(2)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(3)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(4)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(5)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(6)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(7)testsK285Detector.testK285DetectorSynth.bits[8:0]
+[color] 2
+(8)testsK285Detector.testK285DetectorSynth.bits[8:0]
+@1401200
+-group_end
+@28
+[color] 2
+testsK285Detector.testK285DetectorSynth.entrada
+[color] 2
+testsK285Detector.testK285DetectorSynth.esk285
+[color] 2
+testsK285Detector.testK285DetectorSynth.lectura
+[pattern_trace] 1
+[pattern_trace] 0
