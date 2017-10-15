@@ -17,6 +17,11 @@ module testTransmisor;
   reg rst;
   reg enb;
   reg clk;
+  //variables para generar numeros random
+  reg [7:0] numrandom8;
+  reg [15:0] numrandom16;
+  reg [31:0] numrandom32;
+	integer semilla = 0;
 
   reg [7:0] dataIn;
   reg [15:0] dataIn16;
@@ -90,6 +95,25 @@ module testTransmisor;
 	  dataS <= 2'b10;
 	  dataIn32 <= 32'h0123456f;
 	  #rc4;
+
+    //probar con valores random
+		repeat (10)	begin
+  		//Semilla inicial para el generador de numeros aleatorios
+
+      @(posedge clk) numrandom8 <= $random(semilla);
+      @(posedge clk) numrandom16 <= $random(semilla);
+      @(posedge clk) numrandom32 <= $random(semilla);
+  		 $display($time, " << Prueba random 8bits=%b, 16bits=%b, 32bits=%b >>", numrandom8, numrandom16, numrandom32);
+      #rc1;
+   	  dataIn <= numrandom8;
+   	  #rc1;
+   	  dataS <= 2'b01;
+   	  dataIn16 <= numrandom16;
+   	  #rc2;
+   	  dataS <= 2'b10;
+   	  dataIn32 <= numrandom32;
+   	  #rc4;
+		end
 
 	  $finish;
 
