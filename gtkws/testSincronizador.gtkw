@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Sun Oct 15 17:12:43 2017
+[*]
+[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testSincronizador.vcd"
+[dumpfile_mtime] "Sun Oct 15 17:10:39 2017"
+[dumpfile_size] 170165
+[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testSincronizador.gtkw"
+[timestart] 0
+[size] 1317 744
+[pos] -318 -117
+*-16.049026 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 225
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 211
+@28
+testSincronizador.clk
+@22
+testSincronizador.dataIn[7:0]
+@29
+[color] 3
+testSincronizador.dataOut
+@28
+[color] 2
+testSincronizador.dataOutSynth
+testSincronizador.clkRx
+@29
+[color] 3
+testSincronizador.dataOutSinc
+@28
+[color] 2
+testSincronizador.dataOutSincSynth
+[pattern_trace] 1
+[pattern_trace] 0

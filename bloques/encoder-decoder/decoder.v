@@ -1,10 +1,13 @@
 `timescale 1ns/1ps
+/*Decodifica de 10 bits a 8 bits tomando como referencia el documento de IBM,
+en esta version no se ha implementado el checkeo de paridad*/
 module decoder(
-	output reg [7:0] data8_out,
-	output reg k_out,
-	output reg invalid_value,
-	input wire clk,
-	input wire [9:0] data10_in
+	output reg [7:0] data8_out,	//datos decodificado de 8bits
+	output reg k_out,						//señal de control k calculada desde los 10bits de entrada
+	output reg invalid_value,		//se pone en uno cuando los datos decodificados puede que tengan error
+	input wire clk,							//reloj del receptor
+	input wire rst,						//señal reset para los ff de salida
+	input wire [9:0] data10_in	//datos de entrada codificados a 10bits
 );
 
 /*
@@ -18,7 +21,6 @@ k data8_out
 K H G F E D C B A
 8 7 6 5 4 3 2 1 0
 */
-
 
 
 //bloque combinacional
@@ -36,9 +38,6 @@ wire Px3=((!data10_in[0])&(!data10_in[1])&(!data10_in[2])) |
 	((!data10_in[1])&(!data10_in[2])&(!data10_in[3]));
 wire P22=(P3x)&(Px3);
 
-//calculo de  P2x y Px2 usados para definir la disparidad
-wire P2x=(data10_in[0])&(data10_in[1]) | (data10_in[0])&(data10_in[2]) | (data10_in[1])&(data10_in[2]);
-wire Px2=((!data10_in[0])&(!data10_in[1])) | ((!data10_in[0])&(!data10_in[2])) | ((!data10_in[1])&(data10_in[2]));
 
 //decoded Bits A, B, C, D, E
 //funciones intermedias
@@ -167,6 +166,8 @@ assign PINVBY = INVR6 | VKx7 | INVR4;
 
 wire n20 = (!((data10_in[0])&(data10_in[1])&(data10_in[2])))&(!data10_in[3]);
 wire n21 = (!((!data10_in[0])&(!data10_in[1])&(!data10_in[2])))&(data10_in[3]);
+wire P2x=(data10_in[0])&(data10_in[1]) | (data10_in[0])&(data10_in[2]) | (data10_in[1])&(data10_in[2]);
+wire Px2=((!data10_in[0])&(!data10_in[1])) | ((!data10_in[0])&(!data10_in[2])) | ((!data10_in[1])&(data10_in[2]));
 
 
 // Logic Equations for Required Input Disparity DRR6
@@ -259,17 +260,29 @@ FIN_COMENTARIO*/
 
 //Asignacion sincrona de la salida
 always @(posedge clk) begin
-	data8_out[7] <= H;
-	data8_out[6] <= G;
-	data8_out[5] <= F;
-	data8_out[4] <= E;
-	data8_out[3] <= D;
-	data8_out[2] <= C;
-	data8_out[1] <= B;
-	data8_out[0] <= A;
-	k_out <= K;
-	invalid_value <= PINVBY;
-
+	if (rst) begin
+		data8_out[7] <= 1'b0;
+		data8_out[6] <= 1'b0;
+		data8_out[5] <= 1'b0;
+		data8_out[4] <= 1'b0;
+		data8_out[3] <= 1'b0;
+		data8_out[2] <= 1'b0;
+		data8_out[1] <= 1'b0;
+		data8_out[0] <= 1'b0;
+		k_out <= 1'b0;
+		invalid_value <= 1'b0;
+	end else begin
+		data8_out[7] <= H;
+		data8_out[6] <= G;
+		data8_out[5] <= F;
+		data8_out[4] <= E;
+		data8_out[3] <= D;
+		data8_out[2] <= C;
+		data8_out[1] <= B;
+		data8_out[0] <= A;
+		k_out <= K;
+		invalid_value <= PINVBY;
+	end
 end
 
 
