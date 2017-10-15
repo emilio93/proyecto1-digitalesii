@@ -1,3 +1,9 @@
+`timescale 1ns/1ps
+
+`ifndef isTest
+  `include "./ram_async.v"
+`endif
+
 //-----------------------------------------------------
 // Design Name : syn_fifo
 // File Name   : syn_fifo.v
@@ -87,7 +93,7 @@ begin : STATUS_COUNTER
   end
 end
 
-ram_dp_ar_aw #(DATA_WIDTH,ADDR_WIDTH)DP_RAM (
+ram_async #(DATA_WIDTH,ADDR_WIDTH)DP_RAM (
 .address_0 (wr_pointer) , // address_0 input
 .data_0    (data_in)    , // data_0 bi-directional
 .cs_0      (wr_cs)      , // chip select

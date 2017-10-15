@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 //-----------------------------------------------------
 // Design Name : ram_dp_ar_aw
 // File Name   : ram_dp_ar_aw.v
