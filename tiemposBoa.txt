@@ -23,3 +23,5 @@ ya sea de investigacion  para el proyecto en general o para bloques en especific
     actualizacion de direcciones de los bloques y actualizacion de los gtkws,
     investigacion sobre modulo de sincronizacion del clock, estudio de la presentacion,
     y del funcionamiento del make implementado por Emilio, actualizacion de tiempos.
+4h 6:30am-11:30am 10/15/17 implementacion sincronizador y su tester, se
+    agrego reset a los bloques encoder-decoder
