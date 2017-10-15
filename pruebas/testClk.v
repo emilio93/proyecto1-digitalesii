@@ -1,4 +1,6 @@
-      `timescale 1ns/1ps
+`timescale 1ns/1ps
+
+`define isTest 1
 
 `include "../lib/cmos_cells.v"
 
