@@ -1,4 +1,3 @@
-_De https://github.com/kingstacker/ram_
+Usar fifo sincrono de asic worlds y adaptar si es necesario
 
-># ram
->use verilog to describe the ram model
+http://www.asic-world.com/examples/verilog/syn_fifo.html
