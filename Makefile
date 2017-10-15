@@ -44,4 +44,4 @@ clean:
 	rm -r build
 	rm -r pdfs
 	rm -f ./*.dot
-	rm -f tests/*.vcd
+	rm -f gtkws/*.vcd
