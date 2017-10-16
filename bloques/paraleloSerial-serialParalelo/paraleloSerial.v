@@ -37,6 +37,7 @@ output reg salida;
 // entero mayor.
 // log_2(10) =~ 3.322 => 4 bits
 reg [3:0] contador;
+//reg [3:0] contador = cantidadBits - 1;
 
 // la salida es 0 si rst está encendido o enb está
 // apagado
@@ -45,24 +46,25 @@ reg [3:0] contador;
 // Al usar un operador ternario se asumen todos los
 // casos evitando latches.
 always @ ( * ) begin
-  salida = ~rst & enb ? entradas[contador] : 0;
+salida = ~rst & enb ? entradas[contador] : 0;
 end
 
 // Bloque secuencial.
 always @(posedge clk) begin
   // Cuando rst está encendido se
   // asigna 0 al contador para comenzar con 9
-  // inmediatamente se de el flanco positivo
+  // inmediatamente se da el flanco positivo
   if (rst) begin
     // el contadorse resetea a 0 para que el primer
     // bit que tome sea el mayor, luego se continua
     // en orden descendente.
     contador <= 0;
-  end else begin
+  end else if(enb) begin
     // contador de 9 a 0 en funcionamiento normal.
     // el contador representa el bit de la entrada que pasa a
     // la salida.
     contador <= contador == 0 ? cantidadBits-1 : contador-1;
   end
-end
+  else  contador = contador;
+  end
 endmodule
