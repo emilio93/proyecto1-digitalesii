@@ -1,10 +1,11 @@
 `timescale 1ns/1ps
 `define isTest 1
 `ifndef cmos_cells
-  `include "../lib/cmos_cells.v"
+	`include "../lib/cmos_cells.v"
 `endif
 
-//`include "../bloques/diferencial/diferencial.v"
+//`include "../bloques/diferencial/diferencialEmisor.v"
+
 `ifndef transmisor
   `include "../bloques/interfaz-PCIE/transmisor.v"
   `endif
