@@ -6,6 +6,7 @@
 //encoder8-10
 `timescale 1ns/1ps
 
+
 `ifndef isTest
   `include "../../bloques/clks/clks.v"
 `endif
@@ -21,6 +22,8 @@
 `ifndef isTest
   `include "../../bloques/encoder-decoder/encoder.v"
 `endif
+
+
 
 module transmisor(
 	clk,
@@ -52,6 +55,25 @@ module transmisor(
 	wire clk10, clk20, clk40, salidaSerial;
 	wire [7:0] byteOut;
 	wire [9:0] encoderOut;
+	reg offsetCnt;
+	reg setEnbG;//enable general para todos los modulos excepto clk y paraleloSerial
+	reg setEnbPS;
+	reg enbG = 0;
+	reg enbPS = 0;//esta señal se usa como enable para el modulo paraleloSerial para retardo de un ciclo
+
+always @(negedge clk)begin
+	if (enb) setEnbG = 1;
+	else setEnbG = 0;
+	if (enbG) setEnbPS = 1;
+	else setEnbPS = 0;
+end
+
+always @(posedge clk)begin
+	if (setEnbG) enbG = 1;
+	else enbG = 0;
+	if (setEnbPS) enbPS = 1;
+	else enbPS = 0;
+end
 
 //Instancias:
 
