@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Tue Oct 17 08:41:07 2017
+[*]
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.vcd"
+[dumpfile_mtime] "Tue Oct 17 07:26:12 2017"
+[dumpfile_size] 1784
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.gtkw"
+[timestart] 0
+[size] 1920 1021
+[pos] -1 -1
+*-15.000000 90000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testDiferencialEmisorReceptor.
+[sst_width] 48
+[signals_width] 178
+[sst_expanded] 0
+[sst_vpaned_height] 298
+@28
+testDiferencialEmisorReceptor.emisor.TxElecIdle
+testDiferencialEmisorReceptor.emisor.entrada
+testDiferencialEmisorReceptor.emisor.salida
+@23
+testDiferencialEmisorReceptor.emisor.contadorE[5:0]
+@c00022
+testDiferencialEmisorReceptor.emisor.contador[5:0]
+@28
+(0)testDiferencialEmisorReceptor.emisor.contador[5:0]
+(1)testDiferencialEmisorReceptor.emisor.contador[5:0]
+(2)testDiferencialEmisorReceptor.emisor.contador[5:0]
+(3)testDiferencialEmisorReceptor.emisor.contador[5:0]
+(4)testDiferencialEmisorReceptor.emisor.contador[5:0]
+(5)testDiferencialEmisorReceptor.emisor.contador[5:0]
+@1401200
+-group_end
+@200
+-
+@28
+testDiferencialEmisorReceptor.receptor.TxElecIdle
+testDiferencialEmisorReceptor.receptor.entrada
+testDiferencialEmisorReceptor.receptor.entradaAnterior
+testDiferencialEmisorReceptor.receptor.salida
+[pattern_trace] 1
+[pattern_trace] 0
