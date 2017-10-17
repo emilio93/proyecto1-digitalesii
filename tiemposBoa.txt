@@ -25,3 +25,4 @@ ya sea de investigacion  para el proyecto en general o para bloques en especific
     y del funcionamiento del make implementado por Emilio, actualizacion de tiempos.
 4h 6:30am-12:00am 10/15/17 implementacion sincronizador y su tester, se
     agrego reset a los bloques encoder-decoder, agregue numeros aleatorios al testTransmisor
+8h 6pm-4am 10/17/17 implementacion de disparidad en bloque decodificador 
