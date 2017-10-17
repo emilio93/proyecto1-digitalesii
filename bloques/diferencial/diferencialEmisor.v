@@ -11,34 +11,43 @@
 // Es importante notar que esta codificacion siempre empieza con 0.
 
 module diferencialEmisor(
-  rst,
-  enb,
+//  rst,
+//  enb,
   entrada, // bit de entrada serial
   salida,  //D+
-  TxElecIdle,
-  TxDetectRx,
-  TxMargin,
-  TxSwing,
-  TxDeemph
-  );
+  contadorE,
+  contador,
+  TxElecIdle	//Es como un enable cuando esta alto la salida es alta impedancia, en este caso prondremos 0
+//  TxDetectRx, //Se usa para empezar loopback o sea devolver señales emitidas para pruebas por lo tanto// no lo usaremos
+//  TxMargin, //Seleciona rango de voltajes del emisor, por eso no lo usaremos
+//  TxSwing, //Controla nivel de swing de voltaje de transmision y por lo  tanto no se usara
+//  TxDeemph  //Se usa para seleccionar el nivel de de-emphasis del transmisor por esto no lo usaremos
+    );
 
-  input wire rst, enb, entrada;
-  output reg TxElecIdle, TxDetectRx, TxMargin, TxSwing, TxDeemph;
+  input wire entrada;
+  input wire TxElecIdle;
+//  input wire TxDetectRx, TxMargin, TxSwing, TxDeemph;
+  input wire [5:0] contadorE;
   output reg salida = 0;
+  output reg [5:0]  contador = 0;
 
-  always @ (entrada)begin
-	  if(rst) salida = 0;
-	  else if(enb)begin
-	  if (entrada == 1)	salida = !salida;
-	  else salida = salida;
+  always @ ( * )begin
+	  if(TxElecIdle) salida = 1'b0;
+//	  else if (salida == 1'bz) salida = 0;
+	  else begin 
+		  contador = contador +1;
+//		  contadorE = contador;
+//		  if(contador == 5'b11111) begin contador = 0;
+		  if (entrada == 1) salida = !salida;
+		  else salida = salida;
+////	  end
   end
-			else salida = 0;
   end
 
 endmodule
                        
 /*Fuentes:
-      https://es.wikipedia.org/wiki/C%C3%B3digos_NRZ#NRZ-I
-	www.teknoplof.com/tag/nrz-i/
-	Especificion de intel.
-	*/
+https://es.wikipedia.org/wiki/C%C3%B3digos_NRZ#NRZ-I
+www.teknoplof.com/tag/nrz-i/
+Especificion de intel.
+*/
