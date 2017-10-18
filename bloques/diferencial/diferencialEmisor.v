@@ -9,15 +9,17 @@
 // y envia al receptor diferencial que se haya en la mitad receptora de la
 // interfaz PCIE.                                        
 // Es importante notar que esta codificacion siempre empieza con 0.
+// Ante cambios en la opinion del profesor usaremos la codificación NRZ-L
+// la cual solamente invierte la señal de entrada.
 
 module diferencialEmisor(
 //  rst,
 //  enb,
   entrada, // bit de entrada serial
   salida,  //D+
-  contadorE,
-  contador,
-  TxElecIdle	//Es como un enable cuando esta alto la salida es alta impedancia, en este caso prondremos 0
+//  contadorE,
+//  contador,
+  TxElecIdle	//Es como un enable cuando esta alto la salida es 0 V, ya que en nuestro codigo no ponemos signos en los voltajes se pondra como z
 //  TxDetectRx, //Se usa para empezar loopback o sea devolver señales emitidas para pruebas por lo tanto// no lo usaremos
 //  TxMargin, //Seleciona rango de voltajes del emisor, por eso no lo usaremos
 //  TxSwing, //Controla nivel de swing de voltaje de transmision y por lo  tanto no se usara
@@ -27,19 +29,19 @@ module diferencialEmisor(
   input wire entrada;
   input wire TxElecIdle;
 //  input wire TxDetectRx, TxMargin, TxSwing, TxDeemph;
-  input wire [5:0] contadorE;
+//  input wire [5:0] contadorE;
   output reg salida = 0;
-  output reg [5:0]  contador = 0;
+//  output reg [5:0]  contador = 0;
 
   always @ ( * )begin
-	  if(TxElecIdle) salida = 1'b0;
-//	  else if (salida == 1'bz) salida = 0;
-	  else begin 
-		  contador = contador +1;
+	  if(TxElecIdle) salida = 1'bz;
+	  else begin if (entrada == 1) salida = 0;
+	  else salida = 1; 
+//		  contador = contador +1;
 //		  contadorE = contador;
 //		  if(contador == 5'b11111) begin contador = 0;
-		  if (entrada == 1) salida = !salida;
-		  else salida = salida;
+//		  if (entrada == 1) salida = !salida;
+//		  else salida = salida;
 ////	  end
   end
   end

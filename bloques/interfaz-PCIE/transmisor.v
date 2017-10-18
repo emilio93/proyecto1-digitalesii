@@ -23,9 +23,11 @@
   `include "../../bloques/encoder-decoder/encoder.v"
 `endif
 
+`ifndef isTest
+  `include "../../bloques/diferencial/diferencialEmisor.v"
+`endif
 
-
-module transmisor(
+module transmisor(//no tiene sentido poner la señal TxElecIdle ya que su funcionalidad no se sintetiza
 	clk,
 	enb,
 	rst,
@@ -34,6 +36,7 @@ module transmisor(
 	dataIn32,
 	dataS,
 	serialOut,
+	TxElecIdle,
 	K
 );
 
@@ -47,20 +50,22 @@ module transmisor(
 	input wire [15:0] dataIn16;
 	input wire [31:0] dataIn32;
 	input wire [1:0] dataS;
-
+	input wire TxElecIdle;
 	output wire serialOut;
+
 
 //Variables internas:
 
 	wire clk10, clk20, clk40, salidaSerial;
 	wire [7:0] byteOut;
 	wire [9:0] encoderOut;
+	wire salidaPS;
 	reg offsetCnt;
-	reg setEnbG;//enable general para todos los modulos excepto clk y paraleloSerial
-	reg setEnbPS;
-	reg enbG = 0;
-	reg enbPS = 0;//esta señal se usa como enable para el modulo paraleloSerial para retardo de un ciclo
-
+//	reg setEnbG;//enable general para todos los modulos excepto clk y paraleloSerial
+//	reg setEnbPS;
+//	reg enbG = 0;
+//	reg enbPS = 0;//esta señal se usa como enable para el modulo paraleloSerial para retardo de un ciclo
+/*
 always @(negedge clk)begin
 	if (enb) setEnbG = 1;
 	else setEnbG = 0;
@@ -74,6 +79,7 @@ always @(posedge clk)begin
 	if (setEnbPS) enbPS = 1;
 	else enbPS = 0;
 end
+*/
 
 //Instancias:
 
@@ -107,14 +113,19 @@ encoder codificador(
         .enb(enb)
 );
 
-paraleloSerial emisor(
+paraleloSerial serializador(
 	.clk(clk),
 	.rst(rst),
 	.enb(enb),
 	.clk10(clk10),
 	.entradas(encoderOut),
-	.salida(serialOut)
+	.salida(salidaPS)
 );
 
+diferencialEmisor emisor(
+	.entrada(salidaPS),
+	.TxElecIdle(TxElecIdle),
+	.salida(serialOut)
+);
 
 endmodule
