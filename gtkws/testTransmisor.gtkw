@@ -1,20 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Mon Oct 16 22:16:52 2017
+[*] Wed Oct 18 03:40:25 2017
 [*]
 [dumpfile] "/root/Documents/proyecto1digitales/gtkws/testTransmisor.vcd"
-[dumpfile_mtime] "Mon Oct 16 22:14:59 2017"
-[dumpfile_size] 763008
+[dumpfile_mtime] "Wed Oct 18 03:35:48 2017"
+[dumpfile_size] 768343
 [savefile] "/root/Documents/proyecto1digitales/gtkws/testTransmisor.gtkw"
 [timestart] 0
 [size] 1920 1021
 [pos] -1 -1
 *-16.000000 115000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testTransmisor.
-[treeopen] testTransmisor.testTransmisor.
 [treeopen] testTransmisor.testTransmisorSintetizado.
 [sst_width] 48
-[signals_width] 239
+[signals_width] 224
 [sst_expanded] 0
 [sst_vpaned_height] 298
 @28
@@ -23,6 +22,7 @@ testTransmisor.testTransmisor.reloj.clk10
 testTransmisor.testTransmisor.reloj.clk20
 testTransmisor.testTransmisor.reloj.clk40
 testTransmisor.K
+testTransmisor.testTransmisorSintetizado.emisor.TxElecIdle
 testTransmisor.enb
 testTransmisor.rst
 @c00028
@@ -166,7 +166,10 @@ testTransmisor.dataIn32[31:0]
 -group_end
 @200
 -
-@800022
+@22
+[color] 3
+testTransmisor.testTransmisor.byteOut[7:0]
+@c00022
 [color] 2
 testTransmisor.testTransmisorSintetizado.byteOut[7:0]
 @28
@@ -186,11 +189,14 @@ testTransmisor.testTransmisorSintetizado.byteOut[7:0]
 (6)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
 [color] 2
 (7)testTransmisor.testTransmisorSintetizado.byteOut[7:0]
-@1001200
+@1401200
 -group_end
 @200
 -
-@c00022
+@22
+[color] 3
+testTransmisor.testTransmisor.encoderOut[9:0]
+@800022
 [color] 2
 testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
 @28
@@ -214,46 +220,23 @@ testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
 (8)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
 [color] 2
 (9)testTransmisor.testTransmisorSintetizado.encoderOut[9:0]
-@1401200
--group_end
-@200
--
-@800022
-[color] 2
-testTransmisor.testTransmisor.emisor.entradas[9:0]
-@28
-[color] 2
-(0)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(1)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(2)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(3)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(4)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(5)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(6)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(7)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(8)testTransmisor.testTransmisor.emisor.entradas[9:0]
-[color] 2
-(9)testTransmisor.testTransmisor.emisor.entradas[9:0]
 @1001200
 -group_end
 @200
 -
 @28
-testTransmisor.testTransmisorSintetizado.emisor.clk
-@22
-testTransmisor.testTransmisor.emisor.contador[3:0]
+[color] 3
+testTransmisor.testTransmisor.salidaPS
+[color] 2
+testTransmisor.testTransmisorSintetizado.salidaPS
+@200
+-
 @28
 [color] 3
 testTransmisor.dataOut
 [color] 2
 testTransmisor.dataOutSynth
+@200
+-
 [pattern_trace] 1
 [pattern_trace] 0

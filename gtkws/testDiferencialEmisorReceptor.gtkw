@@ -1,43 +1,54 @@
 [*]
 [*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Tue Oct 17 08:41:07 2017
+[*] Wed Oct 18 03:01:04 2017
 [*]
 [dumpfile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.vcd"
-[dumpfile_mtime] "Tue Oct 17 07:26:12 2017"
-[dumpfile_size] 1784
+[dumpfile_mtime] "Wed Oct 18 02:58:13 2017"
+[dumpfile_size] 1873
 [savefile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.gtkw"
 [timestart] 0
 [size] 1920 1021
 [pos] -1 -1
-*-15.000000 90000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-15.000000 120000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testDiferencialEmisorReceptor.
 [sst_width] 48
-[signals_width] 178
+[signals_width] 169
 [sst_expanded] 0
 [sst_vpaned_height] 298
 @28
+[color] 4
 testDiferencialEmisorReceptor.emisor.TxElecIdle
-testDiferencialEmisorReceptor.emisor.entrada
-testDiferencialEmisorReceptor.emisor.salida
-@23
-testDiferencialEmisorReceptor.emisor.contadorE[5:0]
-@c00022
-testDiferencialEmisorReceptor.emisor.contador[5:0]
-@28
-(0)testDiferencialEmisorReceptor.emisor.contador[5:0]
-(1)testDiferencialEmisorReceptor.emisor.contador[5:0]
-(2)testDiferencialEmisorReceptor.emisor.contador[5:0]
-(3)testDiferencialEmisorReceptor.emisor.contador[5:0]
-(4)testDiferencialEmisorReceptor.emisor.contador[5:0]
-(5)testDiferencialEmisorReceptor.emisor.contador[5:0]
-@1401200
--group_end
 @200
 -
 @28
+[color] 3
+testDiferencialEmisorReceptor.emisor.entrada
+[color] 3
+testDiferencialEmisorReceptor.emisor.salida
+@200
+-
+@28
+[color] 3
 testDiferencialEmisorReceptor.receptor.TxElecIdle
+[color] 3
 testDiferencialEmisorReceptor.receptor.entrada
-testDiferencialEmisorReceptor.receptor.entradaAnterior
+[color] 3
 testDiferencialEmisorReceptor.receptor.salida
+@200
+-
+@28
+[color] 2
+testDiferencialEmisorReceptor.emisorSint.entrada
+[color] 2
+testDiferencialEmisorReceptor.emisorSint.salida
+@200
+-
+@28
+[color] 2
+testDiferencialEmisorReceptor.receptorSint.TxElecIdle
+[color] 2
+testDiferencialEmisorReceptor.receptorSint.entrada
+[color] 2
+testDiferencialEmisorReceptor.receptorSint.salida
 [pattern_trace] 1
 [pattern_trace] 0
