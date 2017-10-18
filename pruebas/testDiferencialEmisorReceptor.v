@@ -3,7 +3,7 @@
 `include "../lib/cmos_cells.v"
 
 `include "../bloques/diferencial/diferencialEmisor.v"
-//`include "../build/diferencialEmisor-sintetizado.v"
+`include "../build/diferencialEmisor-sintetizado.v"
 
 `include "../bloques/diferencial/diferencialReceptor.v"
 `include "../build/diferencialReceptor-sintetizado.v"
@@ -17,6 +17,9 @@ reg entradaEmisor;
 //reg entradaEmisor;
 wire salidaEmisor, TxElecIdleReceptor;
 reg TxElecIdle;
+
+wire salidaReceptorSynth;
+wire salidaEmisorSynth, TxElecIdleReceptorSynth;
 
 //Faltan mas vars
 
@@ -33,6 +36,21 @@ diferencialReceptor receptor(
   .entrada(salidaEmisor),
   .TxElecIdle(TxElecIdleReceptor),
   .salida(salidaReceptor)
+);
+
+diferencialEmisorSynth emisorSint(
+//  .rst(rst), .enb(enb),
+  .TxElecIdle(TxElecIdle),
+  .entrada(entradaEmisor),
+  .salida(salidaEmisorSynth)
+);
+
+
+diferencialReceptorSynth receptorSint(
+//  .rst(rst), .enb(enb),
+  .entrada(salidaEmisorSynth),
+  .TxElecIdle(TxElecIdleReceptorSynth),
+  .salida(salidaReceptorSynth)
 );
 
 

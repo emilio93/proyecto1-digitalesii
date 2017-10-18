@@ -1,13 +1,9 @@
 `timescale 1ns/1ps
 
-
 `define isTestr 2
 `ifndef cmos_cells
         `include "../lib/cmos_cells.v"
 `endif
-
-//`include "../bloques/diferencial/diferencialReceptor.v"
-
 
 `ifndef recibidor
   `include "../bloques/interfaz-PCIE/recibidor.v"
@@ -18,11 +14,10 @@
 
 `ifndef transmisor
   `include "../bloques/interfaz-PCIE/transmisor.v"
-  `endif
+`endif
 `ifndef transmisorSynth
   `include "../build/transmisor-sintetizado.v"
 `endif
-
 
 module testRecibidorTransmisor;
 
@@ -45,6 +40,7 @@ module testRecibidorTransmisor;
   reg [31:0] dataOut32;
   reg k_out;
   reg K;
+  reg TxElecIdle;
 
   reg [7:0] dataOutSynht;
   reg [15:0] dataOut16Synth;
@@ -65,6 +61,7 @@ module testRecibidorTransmisor;
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
     .dataS(dataS),
+    .TxElecIdle(TxElecIdle),
     .serialOut(serialOut)
   );
 
@@ -77,6 +74,7 @@ module testRecibidorTransmisor;
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
     .dataS(dataS),
+    .TxElecIdle(TxElecIdle),
     .serialOut(serialOutSynth)
   );
 
@@ -98,7 +96,7 @@ module testRecibidorTransmisor;
     .rst(rst),
     .enb(enb),
     .k_out(k_out),
-    .serialIn(serialOut),
+    .serialIn(serialOutSynth),
     .dataOut8(dataOut8),
     .dataOut16(dataOut16),
     .dataOut32(dataOut32),
@@ -119,13 +117,16 @@ module testRecibidorTransmisor;
   initial begin
 
 	  K <= 0;
+	  TxElecIdle = 1;
 	  enb <= 0;
 	  rst <= 1;
+	  serialOut = 0;
 	  clk <= 0;
 	  dataIn8 <= 8'hff;
 	  dataS <= 2'b00;
 	  #100;
 	  @(posedge clk)rst <= 0;
+	  @(posedge clk)TxElecIdle <= 0;
 	  @(posedge clk)enb <= 1;
 	  #rc1;
 	  dataIn8 <= 8'h00;

@@ -4,8 +4,6 @@
 	`include "../lib/cmos_cells.v"
 `endif
 
-//`include "../bloques/diferencial/diferencialEmisor.v"
-
 `ifndef transmisor
   `include "../bloques/interfaz-PCIE/transmisor.v"
   `endif
@@ -29,6 +27,7 @@ module testTransmisor;
   reg [31:0] dataIn32;
   reg [1:0] dataS;
   reg K;
+  reg TxElecIdle;
 
   wire dataOut;
   wire dataOutSynth;
@@ -44,6 +43,7 @@ module testTransmisor;
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
     .dataS(dataS),
+    .TxElecIdle(TxElecIdle),
     .serialOut(dataOut)
   );
 
@@ -55,6 +55,7 @@ module testTransmisor;
     .dataIn(dataIn),
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
+    .TxElecIdle(TxElecIdle),
     .dataS(dataS),
     .serialOut(dataOutSynth)
   );
@@ -73,6 +74,7 @@ module testTransmisor;
   initial begin
 
 	  K <= 0;
+	  TxElecIdle = 1;
 	  enb <= 0;
 	  rst <= 1;
 	  clk <= 0;
@@ -80,7 +82,10 @@ module testTransmisor;
 	  dataS <= 2'b00;
 	  #100;
 	  @(posedge clk)rst <= 0;
-	  @(posedge clk)enb <= 1;
+	  @(posedge clk)begin
+		  enb <= 1;
+		  TxElecIdle <= 0;
+	  end
 	  #rc1;
 	  dataIn <= 8'h00;
 	  #rc1;
