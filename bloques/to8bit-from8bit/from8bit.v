@@ -17,7 +17,9 @@ module from8bit(
   contador,
   dataSInternal
 );
-
+  //parametro para selecionar posicion en la memoria de contador
+  parameter PwrC=0;
+  
   // Señales básicas
   input wire rst;
   input wire enb;

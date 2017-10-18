@@ -1,5 +1,4 @@
-`timescale 1ns/100ps
-
+`timescale 1ns/1ps
 module test_P1(
   output rst, enb, K, TxElecIdle, clkTx, clkRx,
   output [1:0] dataS,
@@ -66,13 +65,13 @@ module test_P1(
   parameter rc2 = 200; // 20 ciclos, reloj intermedio
   parameter rc4 = 400; // 40 ciclos, reloj mayor
 
-  always # 5 clkTx <= ~clkTx; // clock transmisor, cambia cada 10ns
-  always # 5 clkRx <= ~clkRx; //clock receptor, cambia cada 10ns,desfase 180 grados
+  always # 0.1 clkTx <= ~clkTx; // clock transmisor, cambia cada 10ns
+  always # 0.1 clkRx <= ~clkRx; //clock receptor, cambia cada 10ns,desfase 180 grados
 
 
 
   initial begin
-    $dumpfile("gtkws/testReceptorTransmisor.vcd");
+    $dumpfile("gtkws/test_P1.vcd");
     $dumpvars();
     /*
     $monitor($time,,
@@ -122,9 +121,9 @@ module test_P1(
       @(posedge clkTx) numrandom32 <= $random(semilla);
        $display($time, " << Prueba random 8bits=%b, 16bits=%b, 32bits=%b >>", numrandom8, numrandom16, numrandom32);
       #rc1;
-      dataIn8 <= numrandom8;
-      @(posedge clkTx)#rc1;
-      dataS <= 2'b01;
+      @(posedge clkTx) dataIn8 <= numrandom8;
+      #rc1;
+      @(posedge clkTx) dataS <= 2'b01;
       @(posedge clkTx) dataIn16 <= numrandom16;
       #rc2;
       @(posedge clkTx) dataS <= 2'b10;

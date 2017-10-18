@@ -13,6 +13,8 @@ module to8bit(
   dataS,
   dataOut
 );
+  //parametro para selecionar posicion en la memoria de contador
+  parameter PwrC=0;
   // Señales básicas
   input wire rst;
   input wire enb;

@@ -1,7 +1,6 @@
-`timescale 1ns/100ps
-//`timescale 1ns/1ps
-`define isTest 1//que significa esto?, se debe cambiar?
-
+`timescale 1ns/1ps
+`define isTest//que significa esto?, se debe cambiar?
+//`define CALCULOPOTENCIA//para activar el codigo en las celdas
 //celdas para modulos sintetizados
 `ifndef cmos_cells
 	`include "../lib/cmos_cells.v"

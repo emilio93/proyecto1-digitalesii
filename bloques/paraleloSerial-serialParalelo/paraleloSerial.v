@@ -8,6 +8,8 @@ module paraleloSerial(
   entradas,
   salida
 );
+//parametro para selecionar posicion en la memoria de contador
+parameter PwrC=0;
 
 parameter cantidadBits = 10;
 
@@ -67,4 +69,11 @@ always @(posedge clk) begin
   end
   else  contador = contador;
   end
+
+  //Codigo de intrumentacion para el conteo de transiciones
+  //para solo contar transiciones en conductual, sin modificar la libreria
+  `ifdef SIMULATION_conductual
+    always @(posedge salida) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  `endif
+
 endmodule

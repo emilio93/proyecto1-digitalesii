@@ -34,6 +34,8 @@ module k285Detector(
   offsetCnt,
   rxValid
 );
+  //parametro para selecionar posicion en la memoria de contador
+  parameter PwrC=0;
 
   // Valor del simbolo K.28.5
   //   dec 188
@@ -87,5 +89,17 @@ module k285Detector(
       end
     end
   end
+  //Codigo de intrumentacion para el conteo de transiciones
+  //para solo contar transiciones en conductual, sin modificar la libreria
+  `ifdef SIMULATION_conductual
+    always @(posedge esk285) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge lectura) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge rxValid) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge offsetCnt[0]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge offsetCnt[1]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge offsetCnt[2]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  	always @(posedge offsetCnt[3]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  `endif
+  
 
 endmodule

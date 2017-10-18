@@ -8,6 +8,8 @@ module sincronizador (
   input wire rst      //señal de reset
 );
 
+//parametro para selecionar posicion en la memoria de contador
+parameter PwrC=0;
 reg flop1;
 
 always @ ( posedge clkRx ) begin

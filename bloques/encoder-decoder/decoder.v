@@ -10,6 +10,8 @@ module decoder(
 	input wire [9:0] data10_in	//datos de entrada codificados a 10bits
 );
 
+//parametro para selecionar posicion en la memoria de contador
+parameter PwrC=0;
 /*
 data10_in
 j h g f i e d c b a
@@ -284,6 +286,21 @@ always @(posedge clk) begin
 		invalid_value <= PINVBY;
 	end
 end
+id
 
+//Codigo de intrumentacion para el conteo de transiciones
+//para solo contar transiciones en conductual, sin modificar la libreria
+`ifdef SIMULATION_conductual
+  always @(posedge data8_out[0]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[1]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[2]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[3]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[4]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[5]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[6]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge data8_out[7]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge k_out) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+	always @(posedge invalid_value) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+`endif
 
 endmodule
