@@ -1,0 +1,85 @@
+[*]
+[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
+[*] Wed Oct 18 06:23:29 2017
+[*]
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testReceptor.vcd"
+[dumpfile_mtime] "Wed Oct 18 06:22:45 2017"
+[dumpfile_size] 278587
+[savefile] "/root/Documents/proyecto1digitales/gtkws/testRecibidor.gtkw"
+[timestart] 271200
+[size] 1920 1021
+[pos] -1 -1
+*-17.000000 351400 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testRecibidor.
+[treeopen] testRecibidor.testRecibidor.
+[sst_width] 213
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@28
+testRecibidor.testRecibidor.relojReceptor.clk
+testRecibidor.testRecibidor.relojReceptor.clk10
+testRecibidor.testRecibidor.relojReceptor.clk20
+testRecibidor.testRecibidor.relojReceptor.clk40
+@c00028
+testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
+@28
+(0)testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
+(1)testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
+@1401200
+-group_end
+@200
+-
+@28
+testRecibidor.testRecibidor.receptor.enb
+testRecibidor.testRecibidor.receptor.rst
+@200
+-
+@29
+testRecibidor.testRecibidor.receptor.entrada
+@800022
+testRecibidor.testRecibidor.receptor.salidas[9:0]
+@28
+(0)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(1)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(2)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(3)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(4)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(5)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(6)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(7)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(8)testRecibidor.testRecibidor.receptor.salidas[9:0]
+(9)testRecibidor.testRecibidor.receptor.salidas[9:0]
+@1001200
+-group_end
+@200
+-
+@800022
+testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+@28
+(0)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(1)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(2)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(3)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(4)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(5)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(6)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(7)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(8)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+(9)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+@1001200
+-group_end
+@28
+testRecibidor.testRecibidor.decodificador.k_out
+testRecibidor.testRecibidor.decodificador.invalid_value
+@22
+testRecibidor.testRecibidor.decodificador.data8_out[7:0]
+@200
+-
+@22
+testRecibidor.testRecibidor.expansorDe8bits.dataIn[7:0]
+testRecibidor.testRecibidor.expansorDe8bits.dataOut[7:0]
+testRecibidor.testRecibidor.expansorDe8bits.dataOut16[15:0]
+testRecibidor.testRecibidor.expansorDe8bits.dataOut32[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
