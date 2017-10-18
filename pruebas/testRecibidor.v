@@ -17,7 +17,9 @@ module testRecibidor;
   reg rst;
   reg enb;
   reg clk;
+
   //variables para generar numeros random
+  reg randIn;
   reg [7:0] numrandom8;
   reg [15:0] numrandom16;
   reg [31:0] numrandom32;
@@ -47,9 +49,9 @@ module testRecibidor;
     .enb(enb),
     .k_out(k_out),
     .serialIn(serialIn),
-    .dataIn8(dataOut8),
-    .dataIn16(dataOut16),
-    .dataIn32(dataOut32),
+    .dataOut8(dataOut8),
+    .dataOut16(dataOut16),
+    .dataOut32(dataOut32),
     .dataS(dataS)
   );
 
@@ -60,9 +62,9 @@ module testRecibidor;
     .enb(enb),
     .k_out(k_outSynth),
     .serialIn(serialIn),
-    .dataIn8(dataOut8Synth),
-    .dataIn16(dataOut16Synth),
-    .dataIn32(dataOut32Synth),
+    .dataOut8(dataOut8Synth),
+    .dataOut16(dataOut16Synth),
+    .dataOut32(dataOut32Synth),
     .dataS(dataS)
   );
 */
@@ -78,158 +80,38 @@ module testRecibidor;
   end
 
   initial begin
+//	  repeat (100)	begin
+//	  @(posedge clk) randIn <= $random(semilla);
+//	  serialIn = randIn;
 
-	  K <= 0;
-	  TxElecIdle = 1;
 	  enb <= 0;
 	  rst <= 1;
 	  serialIn = 0;
 	  clk <= 0;
-	  dataIn8 <= 8'hff;
 	  dataS <= 2'b00;
 	  #100;
 	  @(posedge clk)rst <= 0;
-//	  @(posedge clk)TxElecIdle <= 0;
 	  @(posedge clk)enb <= 1;
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 1;
-	  #5		
-	  serialIn = 0;
-	  #5		
-/*	  #rc1;
-	  dataIn8 <= 8'h00;
-	  #rc1;
-	  dataIn8 <= 8'hcc;
-	  #rc1;
-	  dataIn8 <= 8'hab;
-	  #rc1;
-	  dataIn8 <= 8'h25;
-	  #rc1;
-	  dataS <= 2'b01;
-	  dataIn16 <= 16'habcd;
-	  #rc2;
-	  dataS <= 2'b10;
-	  dataIn32 <= 32'h0123456f;
-*/	  #rc4;
+//	  #rc2
+//	  dataS = 2'b10;
+//	  #rc4
+//	  dataS = 2'b01;
+//	  #rc2
+//	  dataS = 2'b10;
+//	  #rc4
+//	  dataS = 2'b01;
 
-	//probar con valores random
-	repeat (10)	begin
-  	//Semilla inicial para el generador de numeros aleatorios
-	@(posedge clk) numrandom8 <= $random(semilla);
-	@(posedge clk) numrandom16 <= $random(semilla);
-	@(posedge clk) numrandom32 <= $random(semilla);
-	$display($time, " << Prueba random 8bits=%b, 16bits=%b, 32bits=%b >>", numrandom8, numrandom16, numrandom32);
-	#rc1;
-   	dataIn8 <= numrandom8;
-   	#rc1;
-   	dataS <= 2'b01;
-   	dataIn16 <= numrandom16;
-   	#rc2;
-   	dataS <= 2'b10;
-   	dataIn32 <= numrandom32;
-   	#rc4;
-end
+	  //probar con valores random
+	  repeat (110)	begin
+	  //Semilla inicial para el generador de numeros aleatoriosi
+	  @(posedge clk) randIn <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randIn);
+	  serialIn = randIn;
+	  //dataS = 2'b10;
+//	  #rc2;
+  end
 
-$finish;
+  $finish;
 
 end
 
