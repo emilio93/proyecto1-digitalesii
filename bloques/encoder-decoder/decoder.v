@@ -286,7 +286,7 @@ always @(posedge clk) begin
 		invalid_value <= PINVBY;
 	end
 end
-id
+
 
 //Codigo de intrumentacion para el conteo de transiciones
 //para solo contar transiciones en conductual, sin modificar la libreria
