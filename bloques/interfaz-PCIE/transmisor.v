@@ -5,25 +5,13 @@
 //To8Bit
 //encoder8-10
 `timescale 1ns/1ps
-
+`define isTransmisor 1
 
 `ifndef isTest
   `include "../../bloques/clks/clks.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/paraleloSerial-serialParalelo/paraleloSerial.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/to8bit-from8bit/to8bit.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/encoder-decoder/encoder.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/diferencial/diferencialEmisor.v"
 `endif
 

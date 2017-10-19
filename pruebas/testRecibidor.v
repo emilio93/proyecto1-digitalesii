@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-//`define isTest 2
+`define isTest 1
 `ifndef cmos_cells
         `include "../lib/cmos_cells.v"
 `endif
