@@ -11,7 +11,7 @@ module testbench_P1;
   wire [31:0] dataIn32;
 	//salidas de los bloques DUT
 	input k_out,k_outSynth,invalid_value,invalid_valueSynth;
-  input [7:0] dataOut8,dataOut8Synht;
+  input [7:0] dataOut8, dataOut8Synht;
   input [15:0] dataOut16, dataOut16Synth;
   input [31:0] dataOut32, dataOut32Synth;
 	//wires de salida intermedias, entrada intermedia transmisorDUT-receptorDUT
