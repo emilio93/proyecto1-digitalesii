@@ -19,7 +19,7 @@
   `include "../../bloques/to8bit-from8bit/from8bit.v"
   `include "../../bloques/encoder-decoder/decoder.v"
   `include "../../bloques/paraleloSerial-serialParalelo/serialParalelo.v"
-	`include "../../bloques/k28.5/k285Detector.v"
+  `include "../../bloques/k28.5/k285Detector.v"
   `include "../../bloques/sincronizador/sincronizador.v"
   `include "../../bloques/diferencial/diferencialReceptor.v"
 `endif
@@ -32,11 +32,10 @@ module recibidor(
   output [7:0] dataOut8,
   output [15:0] dataOut16,
   output [31:0] dataOut32,
-
   input clkRx,
-	input enb,
-	input rst,
-	input serialIn,
+  input enb,
+  input rst,
+  input serialIn,
   input [1:0] dataS
 );
 
@@ -48,16 +47,16 @@ module recibidor(
   wire [15:0] dataOut16;
   wire [31:0] dataOut32;
 //entradas
-	wire clkRx;
-	wire enb;
-	wire rst;
-	wire serialIn;
+  wire clkRx;
+  wire enb;
+  wire rst;
+  wire serialIn;
   wire [1:0] dataS;
 
 //cableado interno:
   wire invalido, dif_out, sinc_out;
-	wire [9:0] parallel_Out;
-	wire [7:0] decoder_Out;
+  wire [9:0] parallel_Out;
+  wire [7:0] decoder_Out;
 
 //Instancias:
 
@@ -116,14 +115,14 @@ serialParalelo serialAParalelo(
 	.salidas(parallel_Out)
 );
 
-sincronizador sinc (
+sincronizador sincroniza(
   .dataSync(sinc_out),  //salida sincronizada con el reloj del receptor
   .dataAsync(dif_out), //entrada asincronica desde el transmisor
   .clkRx(clkRx),     //reloj del receptor
   .rst(rst)      //señal de reset
 );
 
-diferencialReceptor diff(
+diferencialReceptor diferencialRec(
 //  rst,
 //  enb,
   .entrada(serialIn), // D+
