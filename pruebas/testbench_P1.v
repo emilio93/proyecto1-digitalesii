@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`define isTest//que significa esto?, se debe cambiar?
+`define isTest 3//que significa esto?, se debe cambiar?
 //`define CALCULOPOTENCIA//para activar el codigo en las celdas
 //celdas para modulos sintetizados
 `ifndef cmos_cells
@@ -7,17 +7,17 @@
 `endif
 
 //include de desing under test(DUT), units under test(UUT)
-`ifndef transmisorDUT
+`ifndef transmisor
   `include "../bloques/interfaz-PCIE/transmisor.v"
   `endif
-`ifndef transmisorSynthDUT
+`ifndef transmisor-sintetizado
   `include "../build/transmisor-sintetizado.v"
 `endif
 
-`ifndef receptorDUT
+`ifndef recibidor
   `include "../bloques/interfaz-PCIE/recibidor.v"
 `endif
-`ifndef receptorSynthDUT
+`ifndef recibidor-sintetizado
   `include "../build/recibidor-sintetizado.v"
 `endif
 
@@ -26,7 +26,7 @@
 `include "memTrans.v"
 `endif
 //tester, generador datos para probar los modulos DUT
-`ifndef testerP1
+`ifndef test_P1
 `include "test_P1.v"
 `endif
 
@@ -41,7 +41,7 @@ module testbench_P1;
   wire [31:0] dataIn32;
 	//salidas de los bloques DUT
 	input k_out,k_outSynth,invalid_value,invalid_valueSynth;
-  input [7:0] dataOut,dataOutSynht;
+  input [7:0] dataOut8,dataOut8Synht;
   input [15:0] dataOut16, dataOut16Synth;
   input [31:0] dataOut32, dataOut32Synth;
 	//wires de salida intermedias, entrada intermedia transmisorDUT-receptorDUT
@@ -50,20 +50,20 @@ module testbench_P1;
 
 	//instanciamos los modulos
 	//tester
-	tester_P1 probador(
+	test_P1 probador(
 	.rst(rst), .enb(enb), .K(K), .TxElecIdle(TxElecIdle), .clkTx(clkTx), .clkRx(clkRx),
   .dataS(dataS),
   .dataIn8(dataIn8),
   .dataIn16(dataIn16),
   .dataIn32(dataIn32),
 	.k_out(k_out), .k_outSynth(k_outSynth), .invalid_value(invalid_value), .invalid_valueSynth(invalid_valueSynth),
-  .dataOut(dataOut), .dataOutSynht(dataOutSynht),
+  .dataOut(dataOut8), .dataOutSynht(dataOut8Synht),
   .dataOut16(dataOut16), .dataOut16Synth(dataOut16Synth),
   .dataOut32(dataOut32), .dataOut32Synth(dataOut32Synth)
 	);
 
 	//desing under test(DUT), units under test(UUT)
-	transmisorDUT testTransmi(
+	transmisor testTransmi(
 		.clk(clkTx),
 		.rst(rst),
 		.enb(enb),
@@ -76,7 +76,7 @@ module testbench_P1;
 		.serialOut(serialOut)
 	);
 
-		transmisorSynthDUT testTransmisorSint(
+		transmisorSynth testTransmisorSint(
 		.clk(clkTx),
 		.rst(rst),
 		.enb(enb),
@@ -89,31 +89,33 @@ module testbench_P1;
 		.serialOut(serialOutSynth)
 	);
 
-	receptorDUT testRecibidor(
-		.clk(clkRx),//revisar
-		.rst(rst),
-		.enb(enb),
+	recibidor testRecibidor(
 		.k_out(k_out),
-		.serialIn(serialOut),
+		.error_probable(invalid_value),
 		.dataOut8(dataOut8),
 		.dataOut16(dataOut16),
 		.dataOut32(dataOut32),
+		.clkRx(clkRx),//revisar
+		.enb(enb),
+		.rst(rst),
+		.serialIn(serialOut),
 		.dataS(dataS)
 	);
 
-	/*
-	receptorSynthDUT testRecibidorSint(
-		.clk(clk),
-		.rst(rst),
-		.enb(enb),
-		.k_out(k_out),
-		.serialIn(serialOutSynth),
-		.dataOut8(dataOut8),
-		.dataOut16(dataOut16),
-		.dataOut32(dataOut32),
-		.dataS(dataS)
+
+	recibidorSynth testRecibidorSint(
+	.k_out(k_out),
+	.error_probable(invalid_value),
+	.dataOut8(dataOut8Synht),
+	.dataOut16(dataOut16Synth),
+	.dataOut32(dataOut32Synth),
+	.clkRx(clkRx),//revisar
+	.enb(enb),
+	.rst(rst),
+	.serialIn(serialOutSynth),
+	.dataS(dataS)
 	);
-	*/
+
 //falta implementar contador
 
 endmodule

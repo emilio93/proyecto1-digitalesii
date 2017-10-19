@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`define isTest 1//revisar si funciona
+//`define isTest 1//revisar si funciona
 `ifndef cmos_cells
         `include "../lib/cmos_cells.v"
 `endif
@@ -23,7 +23,8 @@ module testRecibidorTransmisor;
 
   reg rst;
   reg enb;
-  reg clk;
+  reg clkTx;
+  reg clkRx;
   //variables para generar numeros random
   reg [7:0] numrandom8;
   reg [15:0] numrandom16;
@@ -42,7 +43,7 @@ module testRecibidorTransmisor;
   reg K;
   reg TxElecIdle;
 
-  reg [7:0] dataOutSynht;
+  reg [7:0] dataOut8Synht;
   reg [15:0] dataOut16Synth;
   reg [31:0] dataOut32Synth;
   reg k_outSynth;
@@ -53,7 +54,7 @@ module testRecibidorTransmisor;
   wire invalid_valueSynth;
 
   transmisor testTransmi(
-    .clk(clk),
+    .clk(clkTx),
     .rst(rst),
     .enb(enb),
     .K(K),
@@ -66,7 +67,7 @@ module testRecibidorTransmisor;
   );
 
     transmisorSynth testTransmisorSint(
-    .clk(clk),
+    .clk(clkTx),
     .rst(rst),
     .enb(enb),
     .K(K),
@@ -79,36 +80,37 @@ module testRecibidorTransmisor;
   );
 
   recibidor testRecibidor(
-    .clk(clk),
-    .rst(rst),
-    .enb(enb),
-    .k_out(k_out),
-    .serialIn(serialOut),
-    .dataOut8(dataOut8),
-    .dataOut16(dataOut16),
-    .dataOut32(dataOut32),
-    .dataS(dataS)
-  );
+		.k_out(k_out),
+		.error_probable(invalid_value),
+		.dataOut8(dataOut8),
+		.dataOut16(dataOut16),
+		.dataOut32(dataOut32),
+		.clkRx(clkRx),//revisar
+		.enb(enb),
+		.rst(rst),
+		.serialIn(serialOut),
+		.dataS(dataS)
+	);
 
-/*
-  recibidorSynth testRecibidorSint(
-    .clk(clk),
-    .rst(rst),
-    .enb(enb),
-    .k_out(k_out),
-    .serialIn(serialOutSynth),
-    .dataOut8(dataOut8),
-    .dataOut16(dataOut16),
-    .dataOut32(dataOut32),
-    .dataS(dataS)
-  );
-*/
+
+	recibidorSynth testRecibidorSint(
+	.k_out(k_out),
+	.error_probable(invalid_value),
+	.dataOut8(dataOut8Synht),
+	.dataOut16(dataOut16Synth),
+	.dataOut32(dataOut32Synth),
+	.clkRx(clkRx),//revisar
+	.enb(enb),
+	.rst(rst),
+	.serialIn(serialOutSynth),
+	.dataS(dataS)
+	);
   parameter rc1 = 100; // 100/10 = 10 ciclos, reloj menor
   parameter rc2 = 200; // 20 ciclos, reloj intermedio
   parameter rc4 = 400; // 40 ciclos, reloj mayor
 
-  always # 5 clk = ~clk; // inicio de la señal de reloj, cambia cada 10ns
-
+  always # 5 clkTx = ~clkTx; // inicio de la señal de reloj, cambia cada 10ns
+  always # 5 clkRx = ~clkRx;
   initial begin
     $dumpfile("gtkws/testReceptorTransmisor.vcd");
     $dumpvars;
@@ -121,13 +123,14 @@ module testRecibidorTransmisor;
 	  enb <= 0;
 	  rst <= 1;
 	  serialOut = 0;
-	  clk <= 0;
+	  clkTx <= 0;
+    clkRx <=1;
 	  dataIn8 <= 8'hff;
 	  dataS <= 2'b00;
 	  #100;
-	  @(posedge clk)rst <= 0;
-	  @(posedge clk)TxElecIdle <= 0;
-	  @(posedge clk)enb <= 1;
+	  @(posedge clkTx)rst <= 0;
+	  @(posedge clkTx)TxElecIdle <= 0;
+	  @(posedge clkTx)enb <= 1;
 	  #rc1;
 	  dataIn8 <= 8'h00;
 	  #rc1;
@@ -148,9 +151,9 @@ module testRecibidorTransmisor;
 		repeat (10)	begin
   		//Semilla inicial para el generador de numeros aleatorios
 
-      @(posedge clk) numrandom8 <= $random(semilla);
-      @(posedge clk) numrandom16 <= $random(semilla);
-      @(posedge clk) numrandom32 <= $random(semilla);
+      @(posedge clkTx) numrandom8 <= $random(semilla);
+      @(posedge clkTx) numrandom16 <= $random(semilla);
+      @(posedge clkTx) numrandom32 <= $random(semilla);
   		 $display($time, " << Prueba random 8bits=%b, 16bits=%b, 32bits=%b >>", numrandom8, numrandom16, numrandom32);
       #rc1;
    	  dataIn8 <= numrandom8;
