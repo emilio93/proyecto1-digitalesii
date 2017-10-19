@@ -1,4 +1,4 @@
-# Capa fÃ­sica de la interfaz PCIE USB 3.0
+# Capa fiica de la interfaz PCIE USB 3.0
 ## Demostracion de funcionamiento de descripcion estructural
 _Por_
 #### Robin Gonzalez
@@ -10,35 +10,50 @@ _Por_
 ### Emisor
 ###  ```clks```,```to8bit```, ```encoder```, ```paraleloSerial``` 
 ### Receptor
-###  ```serialParalelo```, ```decoder```, ```from8bit```, ```clkRecovery```
+###  ```serialParalelo```, ```decoder```, ```from8bit```, ```sincronizador``` ,```detectorK28.5```
 
 ---
 
-# Modulos restantes
-### Clock recovery
-
-![center](presentacion-4/temporizacion-correcta.png)
-_De ```gtkws/testParaleloSerial.gtkw```_
-
-### Asignaciones no bloqueantes
-
-```verilog
-...
-@ (posedge clk10); entradas <= 10'h36c;
-@ (posedge clk10); entradas <= 10'h3e0;
-@ (posedge clk10); entradas <= 10'h01f;
-...
-```
-_Extracto de ```pruebas/testParaleloSerial.v```_
+# Transmisor
+### Diagrama de bloques
+![center](presentacion-5/tb.png)
 
 ---
+# Recibidor
+### Diagrama de bloques
+![center](presentacion-5/rb.png)
+
+---
+
+# Modulos nuevos
+### Detector K28.5
+
+
+---
+
+# Modulos nuevos
+### Sincronizador
+
+
+---
+
+
+# Modulos nuevos
+### Diferencial
+
+
+---
+
+# Investigacion ```Elastic buffer```
+---
+
 
 # Emisor 
-
+![center](presentacion-5/td.png)
 ---
 
 # Receptor 
-
+![center](presentacion-5/dr.png)
 ---
 
 
@@ -49,12 +64,3 @@ _Extracto de ```pruebas/testParaleloSerial.v```_
 # Interfaz con retardos
 
 ---
-
-
-# Investigacion ```Modulo diferencial```
-
----
-
-# Investigacion ```Elastic buffer```
----
-
