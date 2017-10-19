@@ -12,32 +12,15 @@
 
 //
 `timescale 1ns/1ps
+`define isRecibidor 1
 
 `ifndef isTest
-  `include "../../bloques/clks/clks.v"
-`endif
-
-`ifndef isTest
+  `include "../../bloques/clks/clksReceptor.v"
   `include "../../bloques/to8bit-from8bit/from8bit.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/encoder-decoder/decoder.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/paraleloSerial-serialParalelo/serialParalelo.v"
-`endif
-
-`ifndef isTest
 	`include "../../bloques/k28.5/k285Detector.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/sincronizador/sincronizador.v"
-`endif
-
-`ifndef isTest
   `include "../../bloques/diferencial/diferencialReceptor.v"
 `endif
 
@@ -77,7 +60,7 @@ module recibidor(
 
 //Instancias:
 
-clks relojReceptor(
+clksReceptor relojReceptor(
 	.clk(clkRx),
 	.rst(rst),
 	.enb(enb),

@@ -15,7 +15,7 @@ module testbench_P1;
   input [15:0] dataOut16, dataOut16Synth;
   input [31:0] dataOut32, dataOut32Synth;
 	//wires de salida intermedias, entrada intermedia transmisorDUT-receptorDUT
-	wire serialOut, serialOutSynth,
+	wire serialOut, serialOutSynth;
 
 
 	//instanciamos los modulos
