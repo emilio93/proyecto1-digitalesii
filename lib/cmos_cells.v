@@ -31,7 +31,7 @@ always @(posedge C)	Q <= D; //#(1.5:5.4:7.5,1.5:5:6.9)5v #(1.5:7.7:10.5,1.5:7.5:
 //Codigo de intrumentacion para el conteo de transiciones
 //para solo contar transiciones en conductual
 `ifdef CALCULOPOTENCIA
-  always @(posedge Q) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge Q) testbench_P1.probador.m1.PwrCntr[0]<=testbench_P1.probador.m1.PwrCntr[0]+1;
 `endif
 endmodule
 

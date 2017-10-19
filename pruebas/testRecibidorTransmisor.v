@@ -37,19 +37,17 @@ module testRecibidorTransmisor;
   reg [15:0] dataIn16;
   reg [31:0] dataIn32;
   reg [1:0] dataS;
-
-  reg [7:0] dataOut8;
-  reg [15:0] dataOut16;
-  reg [31:0] dataOut32;
-  reg k_out;
   reg K;
   reg TxElecIdle;
 
-  reg [7:0] dataOut8Synht;
-  reg [15:0] dataOut16Synth;
-  reg [31:0] dataOut32Synth;
-  reg k_outSynth;
-
+  wire [7:0] dataOut8;
+  wire [15:0] dataOut16;
+  wire [31:0] dataOut32;
+  wire [7:0] dataOut8Synht;
+  wire [15:0] dataOut16Synth;
+  wire [31:0] dataOut32Synth;
+  wire k_outSynth;
+  wire k_out;
   wire serialOut;
   wire serialOutSynth;
   wire invalid_value;
@@ -124,7 +122,7 @@ module testRecibidorTransmisor;
 	  TxElecIdle = 1;
 	  enb <= 0;
 	  rst <= 1;
-	  serialOut = 0;
+	  //serialOut = 0;
 	  clkTx <= 0;
     clkRx <=1;
 	  dataIn8 <= 8'hff;
