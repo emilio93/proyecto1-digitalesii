@@ -19,7 +19,7 @@
   `include "../../bloques/to8bit-from8bit/from8bit.v"
   `include "../../bloques/encoder-decoder/decoder.v"
   `include "../../bloques/paraleloSerial-serialParalelo/serialParalelo.v"
-	`include "../../bloques/k28.5/k285Detector.v"
+  `include "../../bloques/k28.5/k285Detector.v"
   `include "../../bloques/sincronizador/sincronizador.v"
   `include "../../bloques/diferencial/diferencialReceptor.v"
 `endif
@@ -72,7 +72,7 @@ clksReceptor relojReceptor(
 from8bit expansorDe8bits(
 	.rst(rst),
        	.enb(enb),
-	.clk(clk),
+	.clk(clkRx),
 	.clk8(clk10),
        	.clk16(clk20),
        	.clk32(clk40),
@@ -85,7 +85,7 @@ from8bit expansorDe8bits(
 
 /*
 k28Detector kDetector(//Cuál es la entrdad del detector k285?
-	.clk(clk),
+	.clk(clkRx),
 	.rst(rst),
 	.enb(enb),
 	.entrada(),
@@ -101,13 +101,13 @@ decoder decodificador(
         .data8_out(decoder_Out),
 	.invalid_value(error_probable),
         .k_out(k_out),
-        .clk(clk),
+        .clk(clkRx),
 	.rst(rst)
 //      .enb(enb)
 );
 
 serialParalelo serialAParalelo(
-	.clk(clk),
+	.clk(clkRx),
 	.rst(rst),
 	.enb(enb),
 	.clk10(clk10),
@@ -118,7 +118,7 @@ serialParalelo serialAParalelo(
 sincronizador sincroniza(
   .dataSync(sinc_out),  //salida sincronizada con el reloj del receptor
   .dataAsync(dif_out), //entrada asincronica desde el transmisor
-  .clkRx(clk),     //reloj del receptor
+  .clkRx(clkRx),     //reloj del receptor
   .rst(rst)      //señal de reset
 );
 
