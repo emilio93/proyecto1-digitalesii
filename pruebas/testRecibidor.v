@@ -17,10 +17,9 @@ module testRecibidor;
 reg rst;
 reg enb;
 reg clkRx;
+
 //variables para generar numeros random
-reg [7:0] numrandom8;
-reg [15:0] numrandom16;
-reg [31:0] numrandom32;
+reg randEntradaSerial;
 integer semilla = 0;
 
 wire [7:0] dataOut8;
@@ -34,8 +33,6 @@ wire [15:0] dataOut16Synth;
 wire [31:0] dataOut32Synth;
 wire k_outSynth;
 
-wire serialOut;
-wire serialOutSynth;
 wire invalid_value;
 wire invalid_valueSynth;
 
@@ -48,7 +45,7 @@ recibidor testRecibidor(
   .clkRx(clkRx),//revisar
   .enb(enb),
   .rst(rst),
-  .serialIn(numrandom8[0]),
+  .serialIn(randEntradaSerial),
   .dataS(dataS)
 );
 
@@ -62,7 +59,7 @@ recibidorSynth testRecibidorSint(
 .clkRx(clkRx),//revisar
 .enb(enb),
 .rst(rst),
-.serialIn(numrandom8[0]),
+.serialIn(randEntradaSerial),
 .dataS(dataS)
 );
   parameter rc1 = 100; // 100/10 = 10 ciclos, reloj menor
@@ -72,7 +69,7 @@ recibidorSynth testRecibidorSint(
   always #5 clkRx = ~clkRx; // inicio de la señal de reloj, cambia cada 10ns
 
   initial begin
-    $dumpfile("gtkws/testReceptor.vcd");
+    $dumpfile("gtkws/testRecibidor.vcd");
     $dumpvars;
   end
 
@@ -80,10 +77,9 @@ recibidorSynth testRecibidorSint(
 //	  repeat (100)	begin
 //	  @(posedge clk) randIn <= $random(semilla);
 //	  serialIn = randIn;
-
 	  enb <= 0;
 	  rst <= 1;
-	  numrandom8 <= 0;
+	  randEntradaSerial <= 0;
 	  clkRx <= 0;
 	  dataS <= 2'b00;
 	  #100;
@@ -101,8 +97,8 @@ recibidorSynth testRecibidorSint(
 	  //probar con valores random
 	  repeat (110)	begin
 	  //Semilla inicial para el generador de numeros aleatoriosi
-	  @(posedge clkRx) numrandom8 <= $random(semilla);
-	  $display($time, " << Prueba random bits = %b >>", numrandom8[0]);
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
 	  dataS = 2'b00;
 //	  #rc2;
   end
