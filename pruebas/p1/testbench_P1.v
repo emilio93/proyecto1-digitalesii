@@ -10,7 +10,7 @@ module testbench_P1;
   wire [15:0] dataIn16;
   wire [31:0] dataIn32;
 	//salidas de los bloques DUT
-	input k_out,k_outSynth,invalid_value,invalid_valueSynth, clkRstTx, clkEnbTx, clkRstRx, clkEnbRx;
+	input k_out,k_outSynth,invalid_value,invalid_valueSynth, clkRstTx, clkEnbTx;
   input [7:0] dataOut8, dataOut8Synht;
   input [15:0] dataOut16, dataOut16Synth;
   input [31:0] dataOut32, dataOut32Synth;
