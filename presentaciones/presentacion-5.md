@@ -115,8 +115,48 @@ parameter tpdtyp = 0.094;
 parameter tpdmax = 0.080;
 input A;
 output Y;
- assign #(tpdmin:tpdtyp:tpdmax) Y = ~A;//#(1:3.8:7.5,1:5.3:7.5)5v #(1:7.5:10.6,1:7.5:10.6) 3.3v ns 25 °C
+ assign #(tpdmin:tpdtyp:tpdmax) Y = ~A;
 endmodule
 ```
 - Retardos añadidos a biblioteca cmos
 ---
+
+# Cantidad de Compuertas
+
+## Transmisor con submódulos
+```
+ABC RESULTS:              NAND cells:       38
+ABC RESULTS:               NOR cells:      110
+ABC RESULTS:               NOT cells:       29
+ABC RESULTS:        internal signals:       65
+ABC RESULTS:           input signals:       60
+ABC RESULTS:          output signals:       10
+
+`\clks'.
+`\diferencialEmisor'.
+`\encoder'.
+`\paraleloSerial'.
+`\to8bit'.
+`\transmisor'.
+```
+
+---
+# Cantidad de Compuertas
+
+## Recibidor con submódulos
+```
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+
+`\clksReceptor'.
+`\decoder'.
+`\diferencialReceptor'.
+`\from8bit'.
+`\k285Detector'.
+`\recibidor'.
+`\serialParalelo'.
+`\sincronizador'.
+```
