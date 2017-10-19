@@ -1,4 +1,4 @@
-# Bitácora del Proyecto
+#Bitácora del Proyecto
 
   > El grupo de tres estudiantes trabajará en equipo para completar esta asignación. Las características del equipo de trabajo serán las siguientes.
 
@@ -184,3 +184,16 @@ competitivos?
 	Investigacion corta (menos de una pagina de cada uno)
 	1. Elastic buffer: asic World (buscar en internet, ram no sintetizable), puntos extra si hacemos el codigo.
 	2. Diferencial: puntos extra si hay codigo.
+
+### Reunión 8
+
+  _18/10/2017
+
+  _Reunión a través de llamada de voz_
+  _Emilio y Boa inician a las 6:00 pm, Robin se une a las 7:40, Se finaliza a las : am_
+  
+  Nos ponemos de acuerdo para relizar el trabajo faltante:
+  - Terminar el probador de todos los modulos
+  - Agregar retrasos a la biblioteca de componentes
+  - PDF y presentacion
+
