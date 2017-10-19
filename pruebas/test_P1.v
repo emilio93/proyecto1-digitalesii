@@ -91,14 +91,24 @@ module test_P1(
   end
   */
 
-  parameter rc1 = 100; // 100/10 = 10 ciclos, reloj menor
-  parameter rc2 = 200; // 20 ciclos, reloj intermedio
-  parameter rc4 = 400; // 40 ciclos, reloj mayor
-
   always # 0.1 clkTx <= ~clkTx; // clock transmisor, cambia cada 10ns
   always # 0.1 clkRx <= ~clkRx; //clock receptor, cambia cada 10ns,desfase 180 grados
 
+	wire clkTx10;
+	wire clkTx20;
+	wire clkTx40;
+	clks clksTx(
+		clkTx, rst, enb,
+		clkTx10, clkTx20, clkTx40
+	);
 
+	wire clkRx10;
+	wire clkRx20;
+	wire clkRx40;
+	clks clksRx(
+		clkRx, rst, enb,
+		clkRx10, clkRx20, clkRx40
+	);
 
   initial begin
     $dumpfile("gtkws/test_P1.vcd");
@@ -126,39 +136,33 @@ module test_P1(
     @(posedge clkTx)rst <= 0;
     @(posedge clkTx)TxElecIdle <= 0;
     @(posedge clkTx)enb <= 1;
-    #rc1;
-    @(posedge clkTx) dataIn8 <= 8'h00;
-    #rc1;
-    @(posedge clkTx) dataIn8 <= 8'hcc;
-    #rc1;
-    @(posedge clkTx) dataIn8 <= 8'hab;
-    #rc1;
-    @(posedge clkTx) dataIn8 <= 8'h25;
-    #rc1;
-    @(posedge clkTx) dataS <= 2'b01;
-    @(posedge clkTx) dataIn16 <= 16'habcd;
-    #rc2;
-    @(posedge clkTx) dataS <= 2'b10;
-    @(posedge clkTx) dataIn32 <= 32'h0123456f;
-    #rc4;
+
+    @(posedge clkTx10) dataIn8 <= 8'h00;
+    @(posedge clkTx10) dataIn8 <= 8'hcc;
+    @(posedge clkTx10) dataIn8 <= 8'hab;
+    @(posedge clkTx10) dataIn8 <= 8'h25;
+    @(posedge clkTx10) dataS <= 2'b01;
+
+    @(posedge clkTx20) dataIn16 <= 16'habcd;
+    @(posedge clkTx20) dataS <= 2'b10;
+    @(posedge clkTx20) dataIn32 <= 32'h0123456f;
 
     //probar con valores random
     repeat (10)	begin
       //Semilla inicial para el generador de numeros aleatorios
 
-      @(posedge clkTx) numrandom8 <= $random(semilla);
-      @(posedge clkTx) numrandom16 <= $random(semilla);
-      @(posedge clkTx) numrandom32 <= $random(semilla);
+      @(posedge clkTx10) numrandom8 <= $random(semilla);
+      @(posedge clkTx20) numrandom16 <= $random(semilla);
+      @(posedge clkTx40) numrandom32 <= $random(semilla);
        $display($time, " << Prueba random 8bits=%b, 16bits=%b, 32bits=%b >>", numrandom8, numrandom16, numrandom32);
-      #rc1;
-      @(posedge clkTx) dataIn8 <= numrandom8;
-      #rc1;
-      @(posedge clkTx) dataS <= 2'b01;
-      @(posedge clkTx) dataIn16 <= numrandom16;
-      #rc2;
-      @(posedge clkTx) dataS <= 2'b10;
+      @(posedge clkTx10) dataIn8 <= numrandom8;
+      @(posedge clkTx20)
+				dataS <= 2'b01;
+				dataIn16 <= numrandom16;
+
+      @(posedge clkTx20)
+			dataS <= 2'b10;
       @(posedge clkTx) dataIn32 <= numrandom32;
-      #rc4;
     end
 
     //Lea y despliegue la memoria con contadores de transicion
