@@ -55,14 +55,14 @@ module from8bit(
 
 
   always @ ( * ) begin
-    if (dataS == 2'b01 && dataSInternal) begin
+    if (dataS == 2'b01 && ~dataSInternal) begin
       dataOut = outBits8;
-      dataOut16 = outBits16;
+      dataOut16 = contador == 2'b01 ? {bits[15:8], dataIn} : outBits16;
       dataOut32 = outBits32;
     end else if (dataS == 2'b10 && dataSInternal) begin
       dataOut = outBits8;
       dataOut16 = outBits16;
-      dataOut32 = outBits32;
+      dataOut32 = contador == 2'b11 ? {bits[31:8], dataIn} : outBits32;
     end else begin
       dataOut = (dataS == 2'b00 || dataS == 2'b11) ? {dataIn} : outBits8;
       dataOut16 = outBits16;
