@@ -6,6 +6,7 @@ module decoder(
 	output reg k_out,						//señal de control k calculada desde los 10bits de entrada
 	output reg invalid_value,		//se pone en uno cuando los datos decodificados puede que tengan error
 	input wire clk,							//reloj del receptor
+	input wire enb,
 	input wire rst,						//señal reset para los ff de salida
 	input wire [9:0] data10_in	//datos de entrada codificados a 10bits
 );
@@ -263,17 +264,10 @@ FIN_COMENTARIO*/
 //Asignacion sincrona de la salida
 always @(posedge clk) begin
 	if (rst) begin
-		data8_out[7] <= 1'b0;
-		data8_out[6] <= 1'b0;
-		data8_out[5] <= 1'b0;
-		data8_out[4] <= 1'b0;
-		data8_out[3] <= 1'b0;
-		data8_out[2] <= 1'b0;
-		data8_out[1] <= 1'b0;
-		data8_out[0] <= 1'b0;
+		data8_out <= 10'b0;
 		k_out <= 1'b0;
 		invalid_value <= 1'b0;
-	end else begin
+	end else if (~rst && enb) begin
 		data8_out[7] <= H;
 		data8_out[6] <= G;
 		data8_out[5] <= F;

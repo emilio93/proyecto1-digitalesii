@@ -94,11 +94,12 @@ to8bit reductor8bits(
   );
 
 encoder codificador(
-        .entradas(byteOut),
-        .salidas(encoderOut),
-        .K(K),
-        .clk(clk),
-        .enb(enb)
+  .entradas(byteOut),
+  .salidas(encoderOut),
+  .K(K),
+  .clk(clk),
+  .rst(rst),
+  .enb(enb)
 );
 
 paraleloSerial serializador(

@@ -97,13 +97,13 @@ k28Detector kDetector(//Cuál es la entrdad del detector k285?
 */
 
 decoder decodificador(
-        .data10_in(parallel_Out),
-        .data8_out(decoder_Out),
-	.invalid_value(error_probable),
-        .k_out(k_out),
-        .clk(clkRx),
-	.rst(rst)
-//      .enb(enb)
+  .data10_in(parallel_Out),
+  .data8_out(decoder_Out),
+  .invalid_value(error_probable),
+  .k_out(k_out),
+  .clk(clkRx),
+  .rst(rst),
+	.enb(enb)
 );
 
 serialParalelo serialAParalelo(

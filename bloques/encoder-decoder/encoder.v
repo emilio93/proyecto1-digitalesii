@@ -6,12 +6,13 @@ module encoder(	//8 to 10 bit encoder
 	K,
 	clk,
 	enb,
+	rst
 	);
 	//parametro para selecionar posicion en la memoria de contador
 	parameter PwrC=0;
 
 	input wire [7:0] entradas;
-	input wire clk, K, enb;
+	input wire clk, K, enb, rst;
 	output reg [9:0] salidas;//wire no funca
 	reg j, h, g, f, i, e, d, c, b, a;
 	reg L03, L30, L12, L21;
@@ -40,18 +41,20 @@ always @(posedge clk)begin
 	//DIFERENTE: XOR ^
 	//IGUAL: XNOR -^
 	//Ingoro señal s como lo recomendó el profesor
-
-	salidas[9]  <= 	( (entradas[5]^entradas[6])&~entradas[7] | entradas[5]&entradas[6]&entradas[7]&K );		//j
-	salidas[8]  <= 	entradas[7];				//h
-	salidas[7]  <= 	(entradas[6] | ~entradas[5]&~entradas[6]&~entradas[7] -^ entradas[6] | ~entradas[5]&~entradas[7]);	//g
-	salidas[6]  <= 	(entradas[5]&~(entradas[5]&entradas[6]&entradas[7]&K));			//f
-	salidas[5]  <= 	(L21&~entradas[3]&~entradas[4] | L12&((entradas[3] ^ entradas[4]) | K) | L03&entradas[3]&~entradas[4] | L30&entradas[3]&entradas[4]);//i
-	salidas[4]  <= 	( (entradas[4]&(~(L03&entradas[3]))) | (L12&(~entradas[3])&(~entradas[4])) | (L03&entradas[3]&~entradas[4]));//e
-	salidas[3]  <=	((entradas[3]&~(L30&entradas[3])));			//d
-	salidas[2]  <= 	( (entradas[2]|(L30&(~entradas[3])))  |  ((L03&entradas[3]&entradas[4]) -^ entradas[2])  |  ((L03&((~entradas[3])|(entradas[3]&entradas[4]))) -^ entradas[2])  | ( L03&((~entradas[3])|entradas[4])) );//c
-	salidas[1]  <= 	(entradas[1]&~(L30&entradas[3]) | L03&~entradas[3]);		//b
-	salidas[0]  <= 	entradas[0];				//a
-
+	if (rst) begin
+		salidas <= 10'b0;
+	end else if (~rst && enb) begin
+		salidas[9]  <= 	( (entradas[5]^entradas[6])&~entradas[7] | entradas[5]&entradas[6]&entradas[7]&K );		//j
+		salidas[8]  <= 	entradas[7];				//h
+		salidas[7]  <= 	(entradas[6] | ~entradas[5]&~entradas[6]&~entradas[7] -^ entradas[6] | ~entradas[5]&~entradas[7]);	//g
+		salidas[6]  <= 	(entradas[5]&~(entradas[5]&entradas[6]&entradas[7]&K));			//f
+		salidas[5]  <= 	(L21&~entradas[3]&~entradas[4] | L12&((entradas[3] ^ entradas[4]) | K) | L03&entradas[3]&~entradas[4] | L30&entradas[3]&entradas[4]);//i
+		salidas[4]  <= 	( (entradas[4]&(~(L03&entradas[3]))) | (L12&(~entradas[3])&(~entradas[4])) | (L03&entradas[3]&~entradas[4]));//e
+		salidas[3]  <=	((entradas[3]&~(L30&entradas[3])));			//d
+		salidas[2]  <= 	( (entradas[2]|(L30&(~entradas[3])))  |  ((L03&entradas[3]&entradas[4]) -^ entradas[2])  |  ((L03&((~entradas[3])|(entradas[3]&entradas[4]))) -^ entradas[2])  | ( L03&((~entradas[3])|entradas[4])) );//c
+		salidas[1]  <= 	(entradas[1]&~(L30&entradas[3]) | L03&~entradas[3]);		//b
+		salidas[0]  <= 	entradas[0];				//a
+	end
 end
 
 //Codigo de intrumentacion para el conteo de transiciones
