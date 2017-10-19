@@ -30,7 +30,7 @@
 `endif
 
 module test_P1(
-  output rst, enb, K, TxElecIdle, clkTx, clkRx,
+  output rst, enb, K, TxElecIdle, clkTx, clkRx,clkRstTx, clkEnbTx, clkRstRx, clkEnbRx,
   output [1:0] dataS,
   output [7:0] dataIn8,
   output [15:0] dataIn16,
@@ -83,6 +83,12 @@ module test_P1(
   wire k_outSynth;
   wire invalid_valueSynth;
 
+	reg clkRstTx;
+	reg clkEnbTx;
+
+	reg clkRstRx;
+	reg clkEnbRx;
+
   //revisa error de datos de salida entre comportamiento-sintetisis
   /*
   reg error;
@@ -98,7 +104,7 @@ module test_P1(
 	wire clkTx20;
 	wire clkTx40;
 	clks clksTx(
-		clkTx, rst, enb,
+		clkTx, clkRstTx, clkEnbTx,
 		clkTx10, clkTx20, clkTx40
 	);
 
@@ -106,7 +112,7 @@ module test_P1(
 	wire clkRx20;
 	wire clkRx40;
 	clks clksRx(
-		clkRx, rst, enb,
+		clkRx, clkRstRx, clkEnbRx,
 		clkRx10, clkRx20, clkRx40
 	);
 
@@ -120,7 +126,10 @@ module test_P1(
     */
     $display($time, " << Starting the Simulation K=0, TxElecIdle=1, enb=0, rst=1,serialOut=0, clkTx=0, clkRx=1, dataIn8=8'hff, dataS = 2'b00  >>");
     //inicializacion de relojes, entradas y salidas
-    clkTx <= 0; clkRx <=1;
+		clkTx <= 0; clkRx <=1;
+		clkRstTx <= 1; clkEnbTx <=1;
+    clkRstRx <= 1; clkEnbRx <=1;
+
     K <= 0; TxElecIdle = 1; enb <= 0; rst <= 1;
     dataIn8 <= 8'hff; dataS <= 2'b00;
     //serialOut = 0;
@@ -132,6 +141,9 @@ module test_P1(
 			#1 Contador <= 0;
 		end
     //inician pruebas
+		#100;
+		@(posedge clkTx); clkRstTx <= 0;
+		@(posedge clkRx); clkRstRx <= 0;
     #100;
     @(posedge clkTx)rst <= 0;
     @(posedge clkTx)TxElecIdle <= 0;
@@ -141,10 +153,10 @@ module test_P1(
     @(posedge clkTx10) dataIn8 <= 8'hcc;
     @(posedge clkTx10) dataIn8 <= 8'hab;
     @(posedge clkTx10) dataIn8 <= 8'h25;
+		dataIn16 <= 16'habcd;
     @(posedge clkTx10) dataS <= 2'b01;
-
-    @(posedge clkTx20) dataIn16 <= 16'habcd;
     @(posedge clkTx20) dataS <= 2'b10;
+		dataIn32 <= 32'hde23456f;
     @(posedge clkTx20) dataIn32 <= 32'h0123456f;
 
     //probar con valores random
@@ -162,6 +174,7 @@ module test_P1(
 
       @(posedge clkTx20)
 			dataS <= 2'b10;
+			dataIn32 <= numrandom32;
       @(posedge clkTx) dataIn32 <= numrandom32;
     end
 

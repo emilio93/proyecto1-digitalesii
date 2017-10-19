@@ -10,7 +10,7 @@ module testbench_P1;
   wire [15:0] dataIn16;
   wire [31:0] dataIn32;
 	//salidas de los bloques DUT
-	input k_out,k_outSynth,invalid_value,invalid_valueSynth;
+	input k_out,k_outSynth,invalid_value,invalid_valueSynth, clkRstTx, clkEnbTx, clkRstRx, clkEnbRx;
   input [7:0] dataOut8, dataOut8Synht;
   input [15:0] dataOut16, dataOut16Synth;
   input [31:0] dataOut32, dataOut32Synth;
@@ -22,6 +22,8 @@ module testbench_P1;
 	//tester
 	test_P1 probador(
 	.rst(rst), .enb(enb), .K(K), .TxElecIdle(TxElecIdle), .clkTx(clkTx), .clkRx(clkRx),
+	.clkRstRx(clkRstRx),//revisar
+	.clkEnbRx(clkEnbRx),//revisar
   .dataS(dataS),
   .dataIn8(dataIn8),
   .dataIn16(dataIn16),
@@ -66,6 +68,8 @@ module testbench_P1;
 		.dataOut16(dataOut16),
 		.dataOut32(dataOut32),
 		.clkRx(clkRx),//revisar
+		.clkRstRx(clkRstRx),//revisar
+		.clkEnbRx(clkEnbRx),//revisar
 		.enb(enb),
 		.rst(rst),
 		.serialIn(serialOut),
@@ -80,6 +84,8 @@ module testbench_P1;
 	.dataOut16(dataOut16Synth),
 	.dataOut32(dataOut32Synth),
 	.clkRx(clkRx),//revisar
+	.clkRstRx(clkRstRx),//revisar
+	.clkEnbRx(clkEnbRx),//revisar
 	.enb(enb),
 	.rst(rst),
 	.serialIn(serialOutSynth),
