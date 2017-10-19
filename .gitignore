@@ -6,3 +6,7 @@ tests
 *.out
 *.swp
 *.dot
+
+\.tags1
+
+\.tags
