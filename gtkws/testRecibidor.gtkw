@@ -1,85 +1,187 @@
 [*]
 [*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Wed Oct 18 06:23:29 2017
+[*] Thu Oct 19 03:58:12 2017
 [*]
-[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testReceptor.vcd"
-[dumpfile_mtime] "Wed Oct 18 06:22:45 2017"
-[dumpfile_size] 278587
+[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testRecibidor.vcd"
+[dumpfile_mtime] "Thu Oct 19 03:35:39 2017"
+[dumpfile_size] 293843
 [savefile] "/root/Documents/proyecto1digitales/gtkws/testRecibidor.gtkw"
-[timestart] 271200
+[timestart] 0
 [size] 1920 1021
 [pos] -1 -1
-*-17.000000 351400 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-17.000000 125000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testRecibidor.
 [treeopen] testRecibidor.testRecibidor.
-[sst_width] 213
-[signals_width] 219
-[sst_expanded] 1
+[treeopen] testRecibidor.testRecibidorSint.
+[sst_width] 48
+[signals_width] 237
+[sst_expanded] 0
 [sst_vpaned_height] 298
 @28
-testRecibidor.testRecibidor.relojReceptor.clk
-testRecibidor.testRecibidor.relojReceptor.clk10
-testRecibidor.testRecibidor.relojReceptor.clk20
-testRecibidor.testRecibidor.relojReceptor.clk40
-@c00028
-testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
+testRecibidor.clkRx
+testRecibidor.testRecibidor.clk10
+testRecibidor.testRecibidor.clk20
+testRecibidor.testRecibidor.clk40
+testRecibidor.rst
+testRecibidor.enb
+testRecibidor.dataS[1:0]
+@200
+-
 @28
-(0)testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
-(1)testRecibidor.testRecibidor.expansorDe8bits.dataS[1:0]
+testRecibidor.randEntradaSerial
+@200
+-
+@28
+[color] 3
+testRecibidor.testRecibidor.diferencialRec.entrada
+[color] 3
+testRecibidor.testRecibidor.diferencialRec.TxElecIdle
+[color] 3
+testRecibidor.testRecibidor.diferencialRec.salida
+[color] 2
+testRecibidor.testRecibidorSint.diferencialRec.entrada
+[color] 2
+testRecibidor.testRecibidorSint.diferencialRec.TxElecIdle
+[color] 2
+testRecibidor.testRecibidorSint.diferencialRec.salida
+@200
+-
+@28
+[color] 3
+testRecibidor.testRecibidor.sincroniza.dataAsync
+[color] 3
+testRecibidor.testRecibidor.sincroniza.dataSync
+[color] 2
+testRecibidor.testRecibidorSint.sincroniza.dataAsync
+[color] 2
+testRecibidor.testRecibidorSint.sincroniza.dataSync
+@200
+-
+@28
+[color] 3
+testRecibidor.testRecibidor.serialAParalelo.entrada
+@22
+[color] 3
+testRecibidor.testRecibidor.serialAParalelo.contador[3:0]
+@c00022
+[color] 3
+testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+@28
+[color] 3
+(0)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(1)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(2)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(3)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(4)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(5)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(6)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(7)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(8)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+(9)testRecibidor.testRecibidor.serialAParalelo.salidas[9:0]
 @1401200
 -group_end
-@200
--
 @28
-testRecibidor.testRecibidor.receptor.enb
-testRecibidor.testRecibidor.receptor.rst
+[color] 2
+testRecibidor.testRecibidorSint.serialAParalelo.entrada
+[color] 2
+testRecibidor.testRecibidor.serialAParalelo.clk
+[color] 2
+testRecibidor.testRecibidor.serialAParalelo.clk10
+@22
+[color] 2
+testRecibidor.testRecibidorSint.serialAParalelo.contador[3:0]
+[color] 2
+testRecibidor.testRecibidorSint.serialAParalelo.salidas[9:0]
 @200
 -
-@29
-testRecibidor.testRecibidor.receptor.entrada
-@800022
-testRecibidor.testRecibidor.receptor.salidas[9:0]
-@28
-(0)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(1)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(2)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(3)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(4)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(5)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(6)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(7)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(8)testRecibidor.testRecibidor.receptor.salidas[9:0]
-(9)testRecibidor.testRecibidor.receptor.salidas[9:0]
-@1001200
--group_end
-@200
--
-@800022
+@c00022
+[color] 3
 testRecibidor.testRecibidor.decodificador.data10_in[9:0]
 @28
+[color] 3
 (0)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (1)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (2)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (3)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (4)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (5)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (6)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (7)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (8)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
+[color] 3
 (9)testRecibidor.testRecibidor.decodificador.data10_in[9:0]
-@1001200
+@1401200
 -group_end
 @28
-testRecibidor.testRecibidor.decodificador.k_out
+[color] 3
 testRecibidor.testRecibidor.decodificador.invalid_value
+[color] 3
+testRecibidor.testRecibidor.decodificador.k_out
 @22
+[color] 3
 testRecibidor.testRecibidor.decodificador.data8_out[7:0]
+[color] 2
+testRecibidor.testRecibidorSint.decodificador.data10_in[9:0]
+@28
+[color] 2
+testRecibidor.testRecibidorSint.decodificador.k_out
+[color] 2
+testRecibidor.testRecibidorSint.decodificador.invalid_value
+@22
+[color] 2
+testRecibidor.testRecibidorSint.decodificador.data8_out[7:0]
 @200
 -
+@c00022
+[color] 3
+testRecibidor.dataOut8[7:0]
+@28
+[color] 3
+(0)testRecibidor.dataOut8[7:0]
+[color] 3
+(1)testRecibidor.dataOut8[7:0]
+[color] 3
+(2)testRecibidor.dataOut8[7:0]
+[color] 3
+(3)testRecibidor.dataOut8[7:0]
+[color] 3
+(4)testRecibidor.dataOut8[7:0]
+[color] 3
+(5)testRecibidor.dataOut8[7:0]
+[color] 3
+(6)testRecibidor.dataOut8[7:0]
+[color] 3
+(7)testRecibidor.dataOut8[7:0]
+@1401200
+-group_end
 @22
-testRecibidor.testRecibidor.expansorDe8bits.dataIn[7:0]
-testRecibidor.testRecibidor.expansorDe8bits.dataOut[7:0]
-testRecibidor.testRecibidor.expansorDe8bits.dataOut16[15:0]
-testRecibidor.testRecibidor.expansorDe8bits.dataOut32[31:0]
+[color] 3
+testRecibidor.dataOut16[15:0]
+[color] 3
+testRecibidor.dataOut32[31:0]
+[color] 2
+testRecibidor.testRecibidorSint.expansorDe8bits.outBits8[7:0]
+[color] 2
+testRecibidor.testRecibidorSint.expansorDe8bits.outBits16[15:0]
+@23
+[color] 2
+testRecibidor.testRecibidorSint.expansorDe8bits.outBits32[31:0]
 [pattern_trace] 1
 [pattern_trace] 0
