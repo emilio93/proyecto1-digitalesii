@@ -94,13 +94,166 @@ recibidorSynth testRecibidorSint(
 //	  #rc4
 //	  dataS = 2'b01;
 
-	  //probar con valores random
-	  repeat (110)	begin
-	  //Semilla inicial para el generador de numeros aleatoriosi
+	  repeat (8)	begin
 	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
 	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
 	  dataS = 2'b00;
-//	  #rc2;
+	  end
+  	  
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end
+
+ 	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+
+	  end
+  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+
+	   end
+ repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  repeat (8)	begin
+  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+  end	  	
+ 	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+   end	  	 repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+	  	  end	  	  
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end	  	
+ 	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+  end	  	
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+   end	  	 repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b01;
+	  	  end	  	  
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end	  	
+ 	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+   end	  	 repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+	  end
+  	  
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+ 	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b10;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end
+
+	  repeat (8)	begin
+	  @(posedge clkRx) randEntradaSerial <= $random(semilla);
+	  $display($time, " << Prueba random bits = %b >>", randEntradaSerial);
+	  dataS = 2'b00;
+  end
+
   end
 
   $finish;
