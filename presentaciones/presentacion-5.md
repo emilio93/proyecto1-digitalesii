@@ -1,4 +1,4 @@
-# Capa fiica de la interfaz PCIE USB 3.0
+# Capa fisica de la interfaz PCIE USB 3.0
 ## Demostracion de funcionamiento de descripcion estructural
 _Por_
 #### Robin Gonzalez
@@ -25,42 +25,98 @@ _Por_
 
 ---
 
-# Modulos nuevos
-### Detector K28.5
+# Bloque ```Diferencial```
+
+![center](presentacion-5/di.png)
+- Dos diferentes: emisor y receptor.
+- Codificación NRZ-L
+- Lógica combinacional
+- Señales de potencia en desuso
+---
+
+# Bloque ```Sincronizador```
+```verilog
+always @ ( posedge clkRx ) begin
+  if (rst) begin
+    flop1 <= 1'b0;
+    dataSync <= 1'b0;
+  end else begin
+    flop1 <= dataAsync;
+    dataSync <= flop1;
+  end
+end
+
+```
+- Recibe bits asíncronos del diferencial, los transmite con el reloj local
 
 
 ---
 
-# Modulos nuevos
-### Sincronizador
+# Bloque ```Detector K28.5```
+![center](presentacion-5/k28.png)
 
-
+- Detecta la secuencia de entrada k28.5 : 001111_1010
+- Al llegar k28.5 activa la salida lectura que funciona como enable para bloques restantes
 ---
 
 
-# Modulos nuevos
-### Diferencial
 
 
----
 
 # Investigacion ```Elastic buffer```
+
+
+![center](presentacion-5/eb.png)
+
 ---
 
 
-# Emisor 
+# Bloque Emisor 
+
 ![center](presentacion-5/td.png)
+
 ---
 
-# Receptor 
+# Bloque Receptor 
+
 ![center](presentacion-5/dr.png)
+
 ---
 
 
 # Interfaz, conexion de emisor y receptor 
 
+
+![center](presentacion-5/P1.png)
+
 ---
 
-# Interfaz con retardos
+# Calculo de potencia
 
+```verilog
+//parametro para selecionar posicion en la memoria de contador
+parameter PwrC=0;
+
+end
+
+```
+
+ - Modulo de memoria de contadores
+ - Cada modulo con su contador
+ 
+---
+
+
+# Interfaz con retardos
+```verilog
+module NOT(A, Y);
+parameter tpdmin = 0.094;
+parameter tpdtyp = 0.094;
+parameter tpdmax = 0.080;
+input A;
+output Y;
+ assign #(tpdmin:tpdtyp:tpdmax) Y = ~A;//#(1:3.8:7.5,1:5.3:7.5)5v #(1:7.5:10.6,1:7.5:10.6) 3.3v ns 25 °C
+endmodule
+```
+- Retardos añadidos a biblioteca cmos
 ---
