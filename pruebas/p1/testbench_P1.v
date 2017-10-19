@@ -1,34 +1,4 @@
 `timescale 1ns/1ps
-`define isTest 3//que significa esto?, se debe cambiar?
-//`define CALCULOPOTENCIA//para activar el codigo en las celdas
-//celdas para modulos sintetizados
-`ifndef cmos_cells
-	`include "../lib/cmos_cells.v"
-`endif
-
-//include de desing under test(DUT), units under test(UUT)
-`ifndef transmisor
-  `include "../bloques/interfaz-PCIE/transmisor.v"
-  `endif
-`ifndef transmisor-sintetizado
-  `include "../build/transmisor-sintetizado.v"
-`endif
-
-`ifndef recibidor
-  `include "../bloques/interfaz-PCIE/recibidor.v"
-`endif
-`ifndef recibidor-sintetizado
-  `include "../build/recibidor-sintetizado.v"
-`endif
-
-//Memoria para llevar cuenta cantidad de transiciones en los ff de salida de los modulos DUT
-`ifndef memTrans//MemoriaTransiciones
-`include "memTrans.v"
-`endif
-//tester, generador datos para probar los modulos DUT
-`ifndef test_P1
-`include "test_P1.v"
-`endif
 
 module testbench_P1;
 	//wires de entrada inicial, salida final, desde tester-DUT

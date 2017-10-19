@@ -1,4 +1,34 @@
 `timescale 1ns/1ps
+
+`define isTest 1
+`ifndef cmos_cells
+	`include "../lib/cmos_cells.v"
+`endif
+
+//include de desing under test(DUT), units under test(UUT)
+`ifndef transmisor
+  `include "../bloques/interfaz-PCIE/transmisor.v"
+`endif
+`ifndef transmisorSynth
+  `include "../build/transmisor-sintetizado.v"
+`endif
+
+`ifndef recibidor
+  `include "../bloques/interfaz-PCIE/recibidor.v"
+`endif
+`ifndef recibidorSynth
+  `include "../build/recibidor-sintetizado.v"
+`endif
+
+//Memoria para llevar cuenta cantidad de transiciones en los ff de salida de los modulos DUT
+`ifndef memTrans//MemoriaTransiciones
+`include "./p1/memTrans.v"
+`endif
+//tester, generador datos para probar los modulos DUT
+`ifndef testbench_P1
+`include "./p1/testbench_P1.v"
+`endif
+
 module test_P1(
   output rst, enb, K, TxElecIdle, clkTx, clkRx,
   output [1:0] dataS,
