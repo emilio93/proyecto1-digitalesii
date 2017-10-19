@@ -34,6 +34,8 @@ module recibidor(
   output [15:0] dataOut16,
   output [31:0] dataOut32,
   input clkRx,
+  input clkRstRx,
+  input clkEnbRx,
   input enb,
   input rst,
   input serialIn,
@@ -50,6 +52,9 @@ module recibidor(
   wire [31:0] dataOut32;
 //entradas
   wire clkRx;
+  wire clk10;
+  wire clk20;
+  wire clk40;
   wire enb;
   wire rst;
   wire serialIn;
@@ -64,8 +69,8 @@ module recibidor(
 
 clksReceptor relojReceptor(
 	.clk(clkRx),
-	.rst(rst),
-	.enb(enb),
+	.rst(clkRstRx),
+	.enb(clkEnbRx),
 	.clk10(clk10),
 	.clk20(clk20),
 	.clk40(clk40)

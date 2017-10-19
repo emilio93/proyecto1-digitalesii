@@ -4,7 +4,9 @@
 `ifndef cmos_cells
         `include "../lib/cmos_cells.v"
 `endif
-
+`ifndef clks
+  `include "../bloques/clks/clks.v"
+`endif
 `ifndef recibidor
   `include "../bloques/interfaz-PCIE/recibidor.v"
 `endif
@@ -17,6 +19,8 @@ module testRecibidor;
 reg rst;
 reg enb;
 reg clkRx;
+reg clkRstRx;
+reg clkEnbRx;
 
 //variables para generar numeros random
 reg randEntradaSerial;
@@ -43,6 +47,8 @@ recibidor testRecibidor(
   .dataOut16(dataOut16),
   .dataOut32(dataOut32),
   .clkRx(clkRx),//revisar
+  .clkRstRx(clkRstRx),//revisar
+  .clkEnbRx(clkEnbRx),//revisar
   .enb(enb),
   .rst(rst),
   .serialIn(randEntradaSerial),
@@ -57,16 +63,24 @@ recibidorSynth testRecibidorSint(
 .dataOut16(dataOut16Synth),
 .dataOut32(dataOut32Synth),
 .clkRx(clkRx),//revisar
+.clkRstRx(clkRstRx),//revisar
+.clkEnbRx(clkEnbRx),//revisar
 .enb(enb),
 .rst(rst),
 .serialIn(randEntradaSerial),
 .dataS(dataS)
 );
-  parameter rc1 = 100; // 100/10 = 10 ciclos, reloj menor
-  parameter rc2 = 200; // 20 ciclos, reloj intermedio
-  parameter rc4 = 400; // 40 ciclos, reloj mayor
 
-  always #5 clkRx = ~clkRx; // inicio de la señal de reloj, cambia cada 10ns
+
+wire clkRx10;
+wire clkRx20;
+wire clkRx40;
+clks clksRx(
+  clkRx, rst, enb,
+  clkRx10, clkRx20, clkRx40
+);
+
+  always #0.1 clkRx = ~clkRx; // inicio de la señal de reloj, cambia cada 10ns
 
   initial begin
     $dumpfile("gtkws/testRecibidor.vcd");
@@ -77,12 +91,16 @@ recibidorSynth testRecibidorSint(
 //	  repeat (100)	begin
 //	  @(posedge clk) randIn <= $random(semilla);
 //	  serialIn = randIn;
-	  enb <= 0;
-	  rst <= 1;
+	  enb <= 1;
+    rst <= 1;
+    clkRstRx <= 1;
+	  clkEnbRx <= 1;
 	  randEntradaSerial <= 0;
 	  clkRx <= 0;
 	  dataS <= 2'b00;
 	  #100;
+    clkRstRx <= 0;
+    # 100
 	  @(posedge clkRx)rst <= 0;
 	  @(posedge clkRx)enb <= 1;
 //	  #rc2
