@@ -1,0 +1,102 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Thu Oct 19 06:16:04 2017
+[*]
+[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/test_P1.vcd"
+[dumpfile_mtime] "Thu Oct 19 03:55:44 2017"
+[dumpfile_size] 74156999
+[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/test_P1.gtkw"
+[timestart] 4830140
+[size] 1000 600
+[pos] -1 -1
+*-11.755765 4836110 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench_P1.
+[treeopen] testbench_P1.testRecibidor.
+[sst_width] 225
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 160
+@200
+-Señales de entrada
+@28
+testbench_P1.K
+testbench_P1.clkTx
+testbench_P1.clkRx
+testbench_P1.rst
+testbench_P1.enb
+testbench_P1.dataS[1:0]
+@22
+testbench_P1.dataIn8[7:0]
+testbench_P1.dataIn16[15:0]
+testbench_P1.testTransmi.reductor8bits.dataIn32[31:0]
+@200
+-Transmisor
+@22
+[color] 3
+testbench_P1.testTransmi.reductor8bits.dataOut[7:0]
+[color] 3
+testbench_P1.testTransmi.codificador.salidas[9:0]
+@28
+[color] 3
+testbench_P1.testTransmi.serializador.salida
+[color] 3
+testbench_P1.testTransmi.emisor.salida
+@22
+[color] 2
+testbench_P1.testTransmisorSint.reductor8bits.dataOut[7:0]
+[color] 2
+testbench_P1.testTransmisorSint.codificador.salidas[9:0]
+@28
+[color] 2
+testbench_P1.testTransmisorSint.emisor.salida
+[color] 2
+testbench_P1.testTransmisorSint.serializador.salida
+@200
+-Receptor
+@28
+[color] 3
+testbench_P1.testRecibidor.diff.salida
+[color] 3
+testbench_P1.testRecibidor.sinc.dataSync
+@22
+[color] 3
+testbench_P1.testRecibidor.serialAParalelo.salidas[9:0]
+[color] 3
+testbench_P1.testRecibidor.decodificador.data8_out[7:0]
+@28
+[color] 3
+testbench_P1.testRecibidor.decodificador.invalid_value
+@22
+[color] 3
+testbench_P1.testRecibidor.expansorDe8bits.dataOut[7:0]
+[color] 3
+testbench_P1.testRecibidor.expansorDe8bits.dataOut16[15:0]
+[color] 3
+testbench_P1.testRecibidor.expansorDe8bits.dataOut32[31:0]
+@28
+[color] 3
+testbench_P1.testRecibidor.expansorDe8bits.dataS[1:0]
+[color] 2
+testbench_P1.testRecibidorSint.diff.salida
+[color] 2
+testbench_P1.testRecibidorSint.sinc.dataSync
+@22
+[color] 2
+testbench_P1.testRecibidorSint.serialAParalelo.salidas[9:0]
+[color] 2
+testbench_P1.testRecibidorSint.decodificador.data8_out[7:0]
+@28
+[color] 2
+testbench_P1.testRecibidorSint.decodificador.invalid_value
+@23
+[color] 2
+testbench_P1.testRecibidorSint.expansorDe8bits.dataOut[7:0]
+@22
+[color] 2
+testbench_P1.testRecibidorSint.expansorDe8bits.dataOut16[15:0]
+[color] 2
+testbench_P1.testRecibidorSint.expansorDe8bits.dataOut32[31:0]
+@200
+-
+[pattern_trace] 1
+[pattern_trace] 0
