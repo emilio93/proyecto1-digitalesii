@@ -29,6 +29,7 @@
 module recibidor(
   output k_out,
   output error_probable,
+  output esk285,
   output [7:0] dataOut8,
   output [15:0] dataOut16,
   output [31:0] dataOut32,
@@ -43,6 +44,7 @@ module recibidor(
 //salidas
   wire k_out;
   wire error_probable;
+  wire esk285;
   wire [7:0] dataOut8;
   wire [15:0] dataOut16;
   wire [31:0] dataOut32;
@@ -57,7 +59,7 @@ module recibidor(
   wire invalido, dif_out, sinc_out;
   wire [9:0] parallel_Out;
   wire [7:0] decoder_Out;
-
+  wire lectura_enb2;
 //Instancias:
 
 clksReceptor relojReceptor(
@@ -71,30 +73,18 @@ clksReceptor relojReceptor(
 
 from8bit expansorDe8bits(
 	.rst(rst),
-       	.enb(enb),
+  .enb(lectura_enb2),
 	.clk(clkRx),
 	.clk8(clk10),
-       	.clk16(clk20),
-       	.clk32(clk40),
+  .clk16(clk20),
+  .clk32(clk40),
 	.dataIn(decoder_Out),
 	.dataOut(dataOut8),
-       	.dataOut16(dataOut16),
-       	.dataOut32(dataOut32),
+  .dataOut16(dataOut16),
+  .dataOut32(dataOut32),
 	.dataS(dataS)
   );
 
-/*
-k28Detector kDetector(//Cuál es la entrdad del detector k285?
-	.clk(clkRx),
-	.rst(rst),
-	.enb(enb),
-	.entrada(),
-	.esk285(),
-	.lectura(),
-	.offsetCnt(),
-	.rxValid()
-);
-*/
 
 decoder decodificador(
   .data10_in(parallel_Out),
@@ -103,17 +93,29 @@ decoder decodificador(
   .k_out(k_out),
   .clk(clkRx),
   .rst(rst),
-	.enb(enb)
+	.enb(lectura_enb2)
 );
 
 serialParalelo serialAParalelo(
 	.clk(clkRx),
 	.rst(rst),
-	.enb(enb),
+	.enb(lectura_enb2),
 	.clk10(clk10),
 	.entrada(sinc_out),
 	.salidas(parallel_Out)
 );
+
+k285Detector kDetector(//Cuál es la entrdad del detector k285?
+	.clk(clkRx),
+	.rst(rst),
+	.enb(enb),
+	.entrada(sinc_out),// bit de entrada serial
+	.esk285(esk285), // indica que se tiene k28.5
+	.lectura(lectura_enb2)// indica estado de lectura
+	//.offsetCnt(),
+	//.rxValid()
+);
+
 
 sincronizador sincroniza(
   .dataSync(sinc_out),  //salida sincronizada con el reloj del receptor
