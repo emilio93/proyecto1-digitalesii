@@ -89,6 +89,7 @@ module test_P1(
 	reg clkRstRx;
 	reg clkEnbRx;
 
+
   //revisa error de datos de salida entre comportamiento-sintetisis
   /*
   reg error;
@@ -104,6 +105,7 @@ module test_P1(
 	wire clkTx20;
 	wire clkTx40;
 	clks clksTx(
+		clkTx, clkRstTx, clkEnbTx,
 		clkTx10, clkTx20, clkTx40
 	);
 
@@ -111,6 +113,7 @@ module test_P1(
 	wire clkRx20;
 	wire clkRx40;
 	clks clksRx(
+		clkRx, clkRstRx, clkEnbRx,
 		clkRx10, clkRx20, clkRx40
 	);
 
@@ -172,6 +175,7 @@ module test_P1(
 
       @(posedge clkTx20)
 			dataS <= 2'b10;
+			dataIn32 <= numrandom32;
       @(posedge clkTx) dataIn32 <= numrandom32;
     end
 
