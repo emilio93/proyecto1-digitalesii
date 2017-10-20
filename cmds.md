@@ -1,3 +1,8 @@
+# Comandos de compilación tomados del ```Make```
+
+## Preprocesamiento
+
+```
 cd pruebas; iverilog -E -DKEY=10 -o ../build/testTo8bit.pre.v testTo8bit.v -Ttyp -g specify;cd ..;
 
 cd pruebas; iverilog -E -DKEY=10 -o ../build/testRecibidor.pre.v testRecibidor.v -Ttyp -g specify;cd ..;
@@ -29,10 +34,11 @@ cd pruebas; iverilog -E -DKEY=10 -o ../build/testEncoderDecoder.pre.v testEncode
 cd pruebas; iverilog -E -DKEY=10 -o ../build/testParaleloSerial.pre.v testParaleloSerial.v -Ttyp -g specify;cd ..;
 
 cd pruebas; iverilog -E -DKEY=10 -o ../build/testTo8bitFrom8bit.pre.v testTo8bitFrom8bit.v -Ttyp -g specify;cd ..;
+```
 
+## Compilación
 
-
-
+```
 cd build; iverilog -o test_P1.o test_P1.pre.v -Ttyp -g specify;cd ..;
 
 cd build; iverilog -o testEncoder.o testEncoder.pre.v -Ttyp -g specify;cd ..;
@@ -72,3 +78,4 @@ cd build; iverilog -o testTo8bitEncoder.o testTo8bitEncoder.pre.v -Ttyp -g speci
 cd build; iverilog -o testClk.o testClk.pre.v -Ttyp -g specify;cd ..;
 
 cd build; iverilog -o testDecode10bto8b.o testDecode10bto8b.pre.v -Ttyp -g specify;cd ..;
+```
