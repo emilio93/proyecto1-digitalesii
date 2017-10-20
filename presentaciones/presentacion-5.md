@@ -143,7 +143,7 @@ ABC RESULTS:          output signals:       10
 `\encoder'.
 `\paraleloSerial'.
 `\to8bit'.
-`\transmisor'.
+f`\transmisor'.
 ```
 
 ---
@@ -151,12 +151,12 @@ ABC RESULTS:          output signals:       10
 
 ## Recibidor con submódulos
 ```
-ABC RESULTS:               NOR cells:        2
-ABC RESULTS:               NOT cells:        2
-ABC RESULTS:        internal signals:        1
-ABC RESULTS:           input signals:        3
-ABC RESULTS:          output signals:        2
-
+ABC RESULTS:              NAND cells:       83
+ABC RESULTS:               NOR cells:       29
+ABC RESULTS:               NOT cells:        8
+ABC RESULTS:        internal signals:       76
+ABC RESULTS:           input signals:       26
+ABC RESULTS:          output signals:       23
 `\clksReceptor'.
 `\decoder'.
 `\diferencialReceptor'.
