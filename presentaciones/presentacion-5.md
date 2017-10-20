@@ -94,10 +94,16 @@ end
 # Calculo de potencia
 
 ```verilog
-//parametro para selecionar posicion en la memoria de contador
-parameter PwrC=0;
+module DFF(C, D, Q);
 
-end
+always @(posedge C)	Q <= D; 
+//Codigo de intrumentacion para el conteo de transiciones
+//utilizando la directiva del compilador
+`ifdef CALCULOPOTENCIA
+  always @(posedge Q) testbench_P1.probador.m1.PwrCntr[0]
+  <=testbench_P1.probador.m1.PwrCntr[0]+1;
+`endif
+endmodule
 
 ```
 
