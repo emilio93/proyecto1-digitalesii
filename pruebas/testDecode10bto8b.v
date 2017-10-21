@@ -47,11 +47,14 @@ decoder10to8(
 	input wire [9:0] data10_in
 );
 */
+
 decoder emisor(
   .clk(clk),
   .data10_in(entradas),
   .data8_out(salida),
   .invalid_value(invalid_value),
+  .rst(rst),
+  .enb(enb),
   .k_out(k)
 );
 decoderSynth emisorSynth(
@@ -59,6 +62,8 @@ decoderSynth emisorSynth(
   .data10_in(entradas),
   .data8_out(salidaSynth),
   .invalid_value(invalid_valueSynth),
+  .rst(rst),
+  .enb(enb),
   .k_out(kSynth)
 );
 

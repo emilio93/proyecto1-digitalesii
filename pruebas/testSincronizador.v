@@ -43,6 +43,7 @@ module testSincronizador;
     .dataSync(dataOutSinc),  //salida sincronizada con el reloj del receptor
     .dataAsync(dataOut), //entrada asincronica desde el transmisor
     .clkRx(clkRx),     //reloj del receptor
+    .enb(enb),
     .rst(rst)
     );
 
@@ -50,6 +51,7 @@ module testSincronizador;
       .dataSync(dataOutSincSynth),  //salida sincronizada con el reloj del receptor
       .dataAsync(dataOutSynth), //entrada asincronica desde el transmisor
       .clkRx(clkRx),     //reloj del receptor
+      .enb(enb),
       .rst(rst)
       );
 

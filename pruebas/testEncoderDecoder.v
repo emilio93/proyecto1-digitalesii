@@ -18,7 +18,7 @@ wire k;
 wire kSynth;
 wire invalid_value;
 wire invalid_valueSynth;
-reg enb, clk, K;
+reg enb, clk, K rst;
 parameter retardo = 400;
 
 
@@ -29,6 +29,7 @@ encoder testEnc(
 	.salidas(salidasC),
 	.K(K),
 	.clk(clk),
+	.rst(rst),
 	.enb(enb)
 );
 
@@ -37,6 +38,7 @@ encoderSynth testEncoderSynth(
 	.salidas(salidasE),
 	.K(K),
 	.clk(clk),
+	.rst(rst),
 	.enb(enb)
 );
 
@@ -46,13 +48,17 @@ decoder decodificador(
   .data10_in(salidasC),
   .data8_out(salidasDeco),
   .invalid_value(invalid_value),
-  .k_out(k)
+  .k_out(k),
+	.rst(rst),
+	.enb(enb)
 );
 decoderSynth decodificadorSynth(
   .clk(clk),
   .data10_in(salidasE),
   .data8_out(salidasDecoSynt),
   .invalid_value(invalid_valueSynth),
+	.rst(rst),
+	.enb(enb),
   .k_out(kSynth)
 );
 
@@ -61,7 +67,7 @@ always # 100 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
 initial begin
 	clk = 1;
 	K = 0;
-
+	rst=1;
 	enb = 0;
 
 	#retardo;
@@ -69,7 +75,7 @@ initial begin
 
 	#retardo;
 	entradas = 8'b000_00011;
-
+	rst=0;
 	enb = 1;
 //0
 	#retardo;

@@ -28,7 +28,7 @@ module testEncoder;
 	reg [7:0] entradas;
 	wire [9:0] salidasC;
 	wire [9:0] salidasE;
-	reg enb, clk, K;
+	reg enb, clk, K, rst;
 	parameter retardo = 30;
 
 encoder testEnc(
@@ -36,7 +36,8 @@ encoder testEnc(
 	.salidas(salidasC),
 	.K(K),
 	.clk(clk),
-	.enb(enb)
+  .rst(rst),
+  .enb(enb)
 );
 
 encoderSynth testEncoderSynth(
@@ -44,7 +45,8 @@ encoderSynth testEncoderSynth(
 	.salidas(salidasE),
 	.K(K),
 	.clk(clk),
-	.enb(enb)
+  .rst(rst),
+  .enb(enb)
 );
 
 always # 5 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
@@ -52,7 +54,7 @@ always # 5 clk <= ~clk; // inicio de la señal de reloj, cambia cada 20ns
 initial begin
 	clk = 1;
 	K = 0;
-
+  rst =1;
 	enb = 0;
 
 	entradas = 8'b000_00011;
@@ -75,6 +77,7 @@ initial begin
 	entradas = 8'b000_00000;
 
 	enb = 1;
+  rst =0;
 
 	#retardo;
 	entradas = 8'b000_00000;
