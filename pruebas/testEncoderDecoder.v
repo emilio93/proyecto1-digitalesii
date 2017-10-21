@@ -18,7 +18,7 @@ wire k;
 wire kSynth;
 wire invalid_value;
 wire invalid_valueSynth;
-reg enb, clk, K rst;
+reg enb, clk, K, rst;
 parameter retardo = 400;
 
 

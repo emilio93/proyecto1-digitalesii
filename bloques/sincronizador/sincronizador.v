@@ -5,6 +5,7 @@ module sincronizador (
   output reg dataSync,  //salida sincronizada con el reloj del receptor
   input wire dataAsync, //entrada asincronica desde el transmisor
   input wire clkRx,     //reloj del receptor
+  input wire enb,      //señal de enable
   input wire rst      //señal de reset
 );
 
@@ -16,7 +17,7 @@ always @ ( posedge clkRx ) begin
   if (rst) begin
     flop1 <= 1'b0;
     dataSync <= 1'b0;
-  end else begin
+  end else if (~rst && enb) begin
     flop1 <= dataAsync;
     dataSync <= flop1;
   end

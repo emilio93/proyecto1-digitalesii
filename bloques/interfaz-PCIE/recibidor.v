@@ -126,6 +126,7 @@ sincronizador sincroniza(
   .dataSync(sinc_out),  //salida sincronizada con el reloj del receptor
   .dataAsync(dif_out), //entrada asincronica desde el transmisor
   .clkRx(clkRx),     //reloj del receptor
+  .enb(enb),
   .rst(rst)      //señal de reset
 );
 
