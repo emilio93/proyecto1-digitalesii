@@ -3,7 +3,7 @@
 module testbench_P1;
 	//wires de entrada inicial, salida final, desde tester-DUT
 	//señales de control y reloj a los bloques DUT
-	wire rst, enb, K, TxElecIdle, clkTx, clkRx;
+	wire rst, enb, K, TxElecIdle, clkTx, clkRx, rstRx, enbRx;
 	//datos de entradas a los bloque de a probar
   wire [1:0] dataS;
   wire [7:0] dataIn8;
@@ -21,7 +21,7 @@ module testbench_P1;
 	//instanciamos los modulos
 	//tester
 	test_P1 probador(
-	.rst(rst), .enb(enb), .K(K), .TxElecIdle(TxElecIdle), .clkTx(clkTx), .clkRx(clkRx),
+	.rst(rst), .enb(enb), .K(K), .TxElecIdle(TxElecIdle), .clkTx(clkTx), .clkRx(clkRx), .rstRx(rstRx), .enbRx(enbRx),
 	.clkRstRx(clkRstRx),//revisar
 	.clkEnbRx(clkEnbRx),//revisar
   .dataS(dataS),
@@ -70,8 +70,8 @@ module testbench_P1;
 		.clkRx(clkRx),//revisar
 		.clkRstRx(clkRstRx),//revisar
 		.clkEnbRx(clkEnbRx),//revisar
-		.enb(enb),
-		.rst(rst),
+		.enb(enbRx),
+		.rst(rstRx),
 		.serialIn(serialOut),
 		.dataS(dataS)
 	);
@@ -86,8 +86,8 @@ module testbench_P1;
 	.clkRx(clkRx),//revisar
 	.clkRstRx(clkRstRx),//revisar
 	.clkEnbRx(clkEnbRx),//revisar
-	.enb(enb),
-	.rst(rst),
+	.enb(enbRx),
+	.rst(rstRx),
 	.serialIn(serialOutSynth),
 	.dataS(dataS)
 	);

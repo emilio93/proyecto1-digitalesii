@@ -30,7 +30,7 @@
 `endif
 
 module test_P1(
-  output rst, enb, K, TxElecIdle, clkTx, clkRx,clkRstTx, clkEnbTx, clkRstRx, clkEnbRx,
+  output rst, enb, K, TxElecIdle, clkTx, clkRx,clkRstTx, clkEnbTx, clkRstRx, clkEnbRx,rstRx,enbRx,
   output [1:0] dataS,
   output [7:0] dataIn8,
   output [15:0] dataIn16,
@@ -59,8 +59,8 @@ module test_P1(
 
   //variables de entrada y salida
   //señales de control y reloj
-  reg rst;
-  reg enb;
+  reg rst, rstRx;
+  reg enb, enbRx;
   reg K;
   reg TxElecIdle;
   reg clkTx;
@@ -88,7 +88,7 @@ module test_P1(
 
 	reg clkRstRx;
 	reg clkEnbRx;
-
+ 	parameter k285_8b= 8'hBC;
 
   //revisa error de datos de salida entre comportamiento-sintetisis
   /*
@@ -131,8 +131,8 @@ module test_P1(
 		clkRstTx <= 1; clkEnbTx <=1;
     clkRstRx <= 1; clkEnbRx <=1;
 
-    K <= 0; TxElecIdle = 1; enb <= 0; rst <= 1;
-    dataIn8 <= 8'hff; dataS <= 2'b00;
+    K <= 0; TxElecIdle = 1; enb <= 0; rst <= 1; rstRx<=1; enbRx <= 0;
+    dataIn8 <= 8'hBC; dataS <= 2'b00;
     //serialOut = 0;
 
     //Borrar memoria del contador de transicion
@@ -141,10 +141,23 @@ module test_P1(
 		for (dir=0; dir<=`NumPwrCntr; dir=dir+1) begin
 			#1 Contador <= 0;
 		end
+
+		//valores validos: 8'h03, 8'h05, 8'h06, 8'h83, 8'h85, 8'h86, k285_8b= 8'hBC
+		//#1=10clk,#2=20clk,#4=40clk
     //inician pruebas
-		#100;
-		@(posedge clkTx); clkRstTx <= 0;
-		@(posedge clkRx); clkRstRx <= 0;
+		#1 @(posedge clkTx); begin
+		clkRstTx <= 0;  clkRstRx <= 0; enb <= 1; rst <= 0; enbRx <= 0; rstRx<=1;
+    dataIn8 <= 8'hBC; TxElecIdle <= 1;
+		end
+		#1 @(posedge clkTx) dataIn8 <= 8'h03;
+		#1 @(posedge clkRx); begin
+		clkRstTx <= 0;  clkRstRx <= 0; enb <= 0; rst <= 0; enbRx <= 1; rstRx<=0;
+    dataIn8 <= 8'hBC; TxElecIdle <= 0; TxElecIdle <= 0;
+		end
+		#1 @(posedge clkTx) dataIn8 <= 8'h06;
+
+		/*
+
     #100;
     @(posedge clkTx)rst <= 0;
     @(posedge clkTx)TxElecIdle <= 0;
@@ -178,9 +191,9 @@ module test_P1(
 			dataIn32 <= numrandom32;
       @(posedge clkTx) dataIn32 <= numrandom32;
     end
-
+		*/
     //Lea y despliegue la memoria con contadores de transicion
-		#450 LE = 1;
+		#5 LE = 1;
 		for (dir=0; dir<=`NumPwrCntr; dir=dir+1)	begin
 			#1 Contador = dato;
 			$display(,,"PwrCntr[%d]: %d", dir, Contador);
