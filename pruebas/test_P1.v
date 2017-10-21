@@ -30,7 +30,7 @@
 `endif
 
 module test_P1(
-  output rst, enb, K, TxElecIdle, clkTx, clkRx, clkRstRx, clkEnbRx,
+  output rst, enb, K, TxElecIdle, clkTx, clkRx,clkRstTx, clkEnbTx, clkRstRx, clkEnbRx,
   output [1:0] dataS,
   output [7:0] dataIn8,
   output [15:0] dataIn16,
@@ -65,8 +65,6 @@ module test_P1(
   reg TxElecIdle;
   reg clkTx;
   reg clkRx;
-  reg clkRstRx; //
-  reg clkEnbRx; //
   reg [1:0] dataS;
   //datos de entradas a los bloque de a probar
   reg [7:0] dataIn8;
@@ -84,7 +82,12 @@ module test_P1(
   wire [31:0] dataOut32Synth;
   wire k_outSynth;
   wire invalid_valueSynth;
-  parameter k285_8b= 8'hBC;
+
+	reg clkRstTx;
+	reg clkEnbTx;
+
+	reg clkRstRx;
+	reg clkEnbRx;
 
   //revisa error de datos de salida entre comportamiento-sintetisis
   /*
@@ -121,112 +124,40 @@ module test_P1(
     */
     $display($time, " << Starting the Simulation K=0, TxElecIdle=1, enb=0, rst=1,serialOut=0, clkTx=0, clkRx=1, dataIn8=8'hff, dataS = 2'b00  >>");
     //inicializacion de relojes, entradas y salidas
-    clkTx <= 0; clkRx <=1;
-    K <= 0; TxElecIdle = 1;
+		clkTx <= 0; clkRx <=1;
+		clkRstTx <= 1; clkEnbTx <=1;
+    clkRstRx <= 1; clkEnbRx <=1;
+
+    K <= 0; TxElecIdle = 1; enb <= 0; rst <= 1;
     dataIn8 <= 8'hff; dataS <= 2'b00;
     //serialOut = 0;
-    rst <= 1; clkRstRx <= 1;
-    enb <= 0; clkEnbRx <= 0;
+
     //Borrar memoria del contador de transicion
 		#1 LE <= 0;
 		Contador <= 0;
 		for (dir=0; dir<=`NumPwrCntr; dir=dir+1) begin
 			#1 Contador <= 0;
 		end
+    //inician pruebas
+		#100;
+		@(posedge clkTx); clkRstTx <= 0;
+		@(posedge clkRx); clkRstRx <= 0;
+    #100;
+    @(posedge clkTx)rst <= 0;
+    @(posedge clkTx)TxElecIdle <= 0;
+    @(posedge clkTx)enb <= 1;
 
-    //inician pruebas con 8bits
-    //#1=10clk,#2=20clk,#4=40clk
-    // convierte una señal seleccionada por dataS de n a 8 bits segun sea el caso.
-    //  dataS = 00 o 11 -> funcionamiento para 8 bits
-    //  dataS = 01      -> funcionamiento para 16 bits
-    //  dataS = 10      -> funcionamiento para 32 bits
-    #1 @(posedge clkTx)begin
-      rst <= 0; clkRstRx <= 1;
-      enb <= 1; clkEnbRx <= 0;
-      TxElecIdle <= 0;
-      dataS <= 2'b00;
-      numrandom8<=8'hAA;
-    end
-    //probar con valores random de 8bits
-    repeat (20)	begin
-      //Semilla inicial para el generador de numeros aleatorios
-      #1 @(posedge clkTx10) begin
-        dataIn8=k285_8b;
-        K <= 1;
-      end
-      #1 @(posedge clkTx10)begin
-       numrandom8 <= $random(semilla);
-       dataIn8 <= numrandom8;
-       K <= 0;
-       end
-    end
+    @(posedge clkTx10) dataIn8 <= 8'h00;
+    @(posedge clkTx10) dataIn8 <= 8'hcc;
+    @(posedge clkTx10) dataIn8 <= 8'hab;
+    @(posedge clkTx10) dataIn8 <= 8'h25;
+		dataIn16 <= 16'habcd;
+    @(posedge clkTx10) dataS <= 2'b01;
+    @(posedge clkTx20) dataS <= 2'b10;
+		dataIn32 <= 32'hde23456f;
+    @(posedge clkTx20) dataIn32 <= 32'h0123456f;
 
-    //inician pruebas con 16bits
-    //#1=10clk,#2=20clk,#4=40clk
-    // convierte una señal seleccionada por dataS de n a 8 bits segun sea el caso.
-    //  dataS = 00 o 11 -> funcionamiento para 8 bits
-    //  dataS = 01      -> funcionamiento para 16 bits
-    //  dataS = 10      -> funcionamiento para 32 bits
-    #1 @(posedge clkTx)begin
-      rst <= 1; clkRstRx <= 1;
-      enb <= 0; clkEnbRx <= 0;
-      TxElecIdle <= 0;
-      dataS <= 2'b01;
-    end
-
-    #3 @(posedge clkTx)begin
-      rst <= 0; clkRstRx <= 0;
-      enb <= 1; clkEnbRx <= 1;
-      TxElecIdle <= 0;
-      dataS <= 2'b01;
-      numrandom16<=16'hAAAA;
-    end
-
-    repeat (20)	begin
-      //Semilla inicial para el generador de numeros aleatorios
-      #2 @(posedge clkTx20)begin
-         numrandom16 <= $random(semilla);
-         dataIn16 <= numrandom16;
-         K <= 0;
-       end
-    end
-
-    //inician pruebas con 32bits
-    //#1=10clk,#2=20clk,#4=40clk
-    // convierte una señal seleccionada por dataS de n a 8 bits segun sea el caso.
-    //  dataS = 00 o 11 -> funcionamiento para 8 bits
-    //  dataS = 01      -> funcionamiento para 16 bits
-    //  dataS = 10      -> funcionamiento para 32 bits
-    #1 @(posedge clkTx)begin
-      rst <= 1; clkRstRx <= 1;
-      enb <= 0; clkEnbRx <= 0;
-      TxElecIdle <= 0;
-      dataS <= 2'b10;
-    end
-
-    #1 @(posedge clkTx)begin
-      rst <= 0; clkRstRx <= 0;
-      enb <= 1; clkEnbRx <= 1;
-      TxElecIdle <= 0;
-      dataS <= 2'b10;
-      numrandom32<=32'hAAAAAAAA;
-    end
-
-    repeat (20)	begin
-      //Semilla inicial para el generador de numeros aleatorios
-      #4 @(posedge clkTx40)begin
-       numrandom32 <= $random(semilla);
-       dataIn32 <= numrandom32;
-       K <= 0;
-       end
-    end
-    //#1 @(posedge clkTx10) begin
-    //  dataIn8=k285_8b;
-    //  K <= 1;
-    //end
-
-/*
-    //probar con valores random de 16bits
+    //probar con valores random
     repeat (10)	begin
       //Semilla inicial para el generador de numeros aleatorios
 
@@ -243,8 +174,6 @@ module test_P1(
 			dataS <= 2'b10;
       @(posedge clkTx) dataIn32 <= numrandom32;
     end
-
-*/
 
     //Lea y despliegue la memoria con contadores de transicion
 		#450 LE = 1;
