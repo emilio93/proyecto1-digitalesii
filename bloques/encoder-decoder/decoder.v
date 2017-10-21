@@ -2,13 +2,13 @@
 /*Decodifica de 10 bits a 8 bits tomando como referencia el documento de IBM,
 en esta version no se ha implementado el checkeo de paridad*/
 module decoder(
-	output reg [7:0] data8_out,	//datos decodificado de 8bits
-	output reg k_out,						//señal de control k calculada desde los 10bits de entrada
-	output reg invalid_value,		//se pone en uno cuando los datos decodificados puede que tengan error
-	input wire clk,							//reloj del receptor
-	input wire enb,
-	input wire rst,						//señal reset para los ff de salida
-	input wire [9:0] data10_in	//datos de entrada codificados a 10bits
+  output reg [7:0] data8_out,  //datos decodificado de 8bits
+  output reg k_out,            //señal de control k calculada desde los 10bits de entrada
+  output reg invalid_value,    //se pone en uno cuando los datos decodificados puede que tengan error
+  input wire clk,              //reloj del receptor
+  input wire enb,
+  input wire rst,            //señal reset para los ff de salida
+  input wire [9:0] data10_in  //datos de entrada codificados a 10bits
 );
 
 //parametro para selecionar posicion en la memoria de contador
@@ -32,13 +32,13 @@ K H G F E D C B A
 wire P40=(data10_in[0])&(data10_in[1])&(data10_in[2])&(data10_in[3]);
 wire P04=(!data10_in[0])&(!data10_in[1])&(!data10_in[2])&(!data10_in[3]);
 wire P3x=((data10_in[0])&(data10_in[1])&(data10_in[2])) |
-	((data10_in[0])&(data10_in[1])&(data10_in[3])) |
-	((data10_in[0])&(data10_in[2])&(data10_in[3])) |
-	((data10_in[1])&(data10_in[2])&(data10_in[3]));
+  ((data10_in[0])&(data10_in[1])&(data10_in[3])) |
+  ((data10_in[0])&(data10_in[2])&(data10_in[3])) |
+  ((data10_in[1])&(data10_in[2])&(data10_in[3]));
 wire Px3=((!data10_in[0])&(!data10_in[1])&(!data10_in[2])) |
-	((!data10_in[0])&(!data10_in[1])&(!data10_in[3])) |
-	((!data10_in[0])&(!data10_in[2])&(!data10_in[3])) |
-	((!data10_in[1])&(!data10_in[2])&(!data10_in[3]));
+  ((!data10_in[0])&(!data10_in[1])&(!data10_in[3])) |
+  ((!data10_in[0])&(!data10_in[2])&(!data10_in[3])) |
+  ((!data10_in[1])&(!data10_in[2])&(!data10_in[3]));
 wire P22=(P3x)&(Px3);
 
 
@@ -56,7 +56,7 @@ n7 = Px3•(e’ + i’)
 n8 = (a’+b’)
 */
 wire n0= (n8 & (!data10_in[2])&(data10_in[3])&((data10_in[4]) == (data10_in[5])))==
-	((!data10_in[2])&(data10_in[3]))&((data10_in[4])==(data10_in[5])) & n8;
+  ((!data10_in[2])&(data10_in[3]))&((data10_in[4])==(data10_in[5])) & n8;
 wire n1= Px3 & (((data10_in[3])&(data10_in[5])) | (!data10_in[4]));
 wire n2= ((data10_in[0])&(data10_in[1])&(data10_in[4])&(data10_in[5])) | ((!data10_in[2])&(!data10_in[3])&(!data10_in[4])&(!data10_in[5]));
 wire n3= (data10_in[2])&(!data10_in[3])&((data10_in[4]) == (data10_in[5]))&((data10_in[0]) != (data10_in[1]));
@@ -93,7 +93,7 @@ wire m0 = ((data10_in[7]) != (data10_in[7])) & (data10_in[8]) &(data10_in[9]);
 wire m7 = (!data10_in[2])&(!data10_in[3])&(!data10_in[4])&(!data10_in[5])&((data10_in[8])!=(data10_in[9]));
 wire m2 = (data10_in[7]) & (!data10_in[7])& ((data10_in[8]) ==(data10_in[9]));
 wire m10 = (data10_in[5])&(data10_in[7])&(data10_in[8])&(data10_in[9]) |
-	(!data10_in[5])&(!data10_in[7])&(!data10_in[8])&(!data10_in[9]);
+  (!data10_in[5])&(!data10_in[7])&(!data10_in[8])&(!data10_in[9]);
 
 /* F,G,H:
 CPLf = m0 + (f = g) • j + m7
@@ -106,12 +106,12 @@ H = CPLh ? h’:h;
 
 */
 assign F = (m0 | ((data10_in[6]) == (data10_in[7])) & (data10_in[9]) | m7) ?
- 	(!data10_in[6]):(data10_in[6]);
+   (!data10_in[6]):(data10_in[6]);
 assign G = (((data10_in[6]) != (data10_in[7]))&(!data10_in[8])&(!data10_in[9]) |
- 	((data10_in[6]) == (data10_in[7])) & (data10_in[9]) | m7) ?
- 	(!data10_in[7]):(data10_in[7]);
+   ((data10_in[6]) == (data10_in[7])) & (data10_in[9]) | m7) ?
+   (!data10_in[7]):(data10_in[7]);
 assign H = (m2 | ((data10_in[6]) == (data10_in[7]))&(data10_in[9]) | m7) ?
- 	(!data10_in[8]):(data10_in[8]);
+   (!data10_in[8]):(data10_in[8]);
 
 /*Logic Equation for Control Bit K
 //m10 = i•g•h•j + i’•g’•h’•j’
@@ -126,7 +126,7 @@ K = c•d•e•i + c’•d’•e’•i’ + (e ≠ i)•(i•g•h•j + i�
 */
 wire Kx7 = (m10&((data10_in[4]) != (data10_in[5])));
 wire K28 = ((data10_in[2])& (data10_in[3])& (data10_in[4])& (data10_in[5]) |
- 	(!data10_in[2])& (!data10_in[3])& (!data10_in[4])& (!data10_in[5]));
+   (!data10_in[2])& (!data10_in[3])& (!data10_in[4])& (!data10_in[5]));
 //wire m5 = (K28&((data10_in[6])==(data10_in[7])==(data10_in[8])));
 //wire m6 = ((!K28)&((data10_in[5]) != (data10_in[7])==(data10_in[8])==(data10_in[9])));
 //revisar delay luego se usa: K= K28+Kx7;
@@ -135,7 +135,7 @@ assign K = K28 | Kx7 ? 1: 0;
 /*******INVALID INPUT VECTORS*******/
 //Logic Equation for invalid Vectors R6, INVR6
 wire INVR6=P40|P04|(P3x&(data10_in[4])&(data10_in[5])) |
-	(P3x&(!data10_in[4])&(!data10_in[5]));
+  (P3x&(!data10_in[4])&(!data10_in[5]));
 // An invalid Kx.7 control character is recognized if the following conditions are met:
 // VKx7 = (i•g•h•j + i’•g’•h’•j’) •(e ≠ i)•P22 = m10 •(e ≠ i)•P22
 wire VKx7 =(m10&((data10_in[4]) != (data10_in[5])))&P22;
@@ -148,7 +148,7 @@ wire VKx7 =(m10&((data10_in[4]) != (data10_in[5])))&P22;
 wire m5 = K28&((data10_in[6])==(data10_in[7])==(data10_in[8]));
 wire m6 = (!K28)&((data10_in[5]) != (data10_in[7]) == (data10_in[8])==(data10_in[9]));
 wire INVR4 = ((data10_in[6])==(data10_in[7])==(data10_in[8])==(data10_in[9])) |
- 	((data10_in[4])==(data10_in[5])==(data10_in[6])==(data10_in[7])==(data10_in[8])) | m5 | m6;
+   ((data10_in[4])==(data10_in[5])==(data10_in[6])==(data10_in[7])==(data10_in[8])) | m5 | m6;
 
 /* Un vector de entrada invalido generara un vector de salida invalido,
 por lo que es posible genere un vector de salida distindo al que se codifico.
@@ -182,11 +182,11 @@ wire Px2=((!data10_in[0])&(!data10_in[1])) | ((!data10_in[0])&(!data10_in[2])) |
 // NDRR6 = P3x•(e+i) + a • b • c + e•i•[P2x + d•(a’•b’•c’)’]
 
 wire PDRR6 = (Px3)&((!data10_in[4])|(!data10_in[5])) |
-	(!data10_in[0])&(!data10_in[1])&(!data10_in[2]) |
-	(!data10_in[4])&(!data10_in[5])&((Px2) | n20);
+  (!data10_in[0])&(!data10_in[1])&(!data10_in[2]) |
+  (!data10_in[4])&(!data10_in[5])&((Px2) | n20);
 wire NDRR6 = (P3x)&((data10_in[4])|(data10_in[5])) |
-	((data10_in[0])&(data10_in[1])&(data10_in[2])) |
-	(data10_in[4])&(data10_in[5])&((P2x) | n21);
+  ((data10_in[0])&(data10_in[1])&(data10_in[2])) |
+  (data10_in[4])&(data10_in[5])&((P2x) | n21);
 
 
 //  Logic Equations for the assumed ending Disparities PDUR6 and NDUR6
@@ -194,9 +194,9 @@ wire NDRR6 = (P3x)&((data10_in[4])|(data10_in[5])) |
 // NDUR6 = Px3 •(e’+i‘) + d’• e‘•i’ + Px2• e‘•i’ = Px3 •(e’+i‘) + e‘• i’•(d' + Px2)
 
 wire PDUR6 =  P3x&((data10_in[4])|(data10_in[5])) |
-	(data10_in[4])&(data10_in[5])&((data10_in[3]) | P2x);
+  (data10_in[4])&(data10_in[5])&((data10_in[3]) | P2x);
 wire NDUR6 =  Px3 &((!data10_in[4])|(!data10_in[5])) |
-	(!data10_in[4])& (!data10_in[5])&((!data10_in[3]) | Px2);
+  (!data10_in[4])& (!data10_in[5])&((!data10_in[3]) | Px2);
 
 
 
@@ -263,22 +263,22 @@ FIN_COMENTARIO*/
 
 //Asignacion sincrona de la salida
 always @(posedge clk) begin
-	if (rst) begin
-		data8_out <= 10'b0;
-		k_out <= 1'b0;
-		invalid_value <= 1'b0;
-	end else if (~rst && enb) begin
-		data8_out[7] <= H;
-		data8_out[6] <= G;
-		data8_out[5] <= F;
-		data8_out[4] <= E;
-		data8_out[3] <= D;
-		data8_out[2] <= C;
-		data8_out[1] <= B;
-		data8_out[0] <= A;
-		k_out <= K;
-		invalid_value <= PINVBY;
-	end
+  if (rst) begin
+    data8_out <= 10'b0;
+    k_out <= 1'b0;
+    invalid_value <= 1'b0;
+  end else if (~rst && enb) begin
+    data8_out[7] <= H;
+    data8_out[6] <= G;
+    data8_out[5] <= F;
+    data8_out[4] <= E;
+    data8_out[3] <= D;
+    data8_out[2] <= C;
+    data8_out[1] <= B;
+    data8_out[0] <= A;
+    k_out <= K;
+    invalid_value <= PINVBY;
+  end
 end
 
 
@@ -286,15 +286,15 @@ end
 //para solo contar transiciones en conductual, sin modificar la libreria
 `ifdef SIMULATION_conductual
   always @(posedge data8_out[0]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[1]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[2]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[3]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[4]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[5]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[6]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge data8_out[7]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge k_out) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
-	always @(posedge invalid_value) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[1]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[2]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[3]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[4]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[5]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[6]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge data8_out[7]) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge k_out) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
+  always @(posedge invalid_value) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
 `endif
 
 endmodule

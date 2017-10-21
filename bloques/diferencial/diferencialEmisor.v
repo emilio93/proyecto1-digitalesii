@@ -1,13 +1,13 @@
 `timescale 1ns/1ps
 
-// Existen diferentes tipos de codificacion NRZ, en este caso nosotros 
-// usaremos la codificacion NRZI para el bloque diferencial, la cual 
-// consiste en realizar una transicion en la señal de salida cuando en la 
+// Existen diferentes tipos de codificacion NRZ, en este caso nosotros
+// usaremos la codificacion NRZI para el bloque diferencial, la cual
+// consiste en realizar una transicion en la señal de salida cuando en la
 // entrada se recibe un 1 y mantener el valor actual en la señal de salida
 // cuando en la entrada se presenta un 0.
 // Este módulo recibe la informacion del modulo paraleloSerial la codifica
 // y envia al receptor diferencial que se haya en la mitad receptora de la
-// interfaz PCIE.                                        
+// interfaz PCIE.
 // Es importante notar que esta codificacion siempre empieza con 0.
 // Ante cambios en la opinion del profesor usaremos la codificación NRZ-L
 // la cual solamente invierte la señal de entrada.
@@ -37,15 +37,9 @@ module diferencialEmisor(
 //  output reg [5:0]  contador = 0;
 
   always @ ( * )begin
-	  if(TxElecIdle) salida = 1'bz;
-	  else begin if (entrada == 1) salida = 0;
-	  else salida = 1; 
-//		  contador = contador +1;
-//		  contadorE = contador;
-//		  if(contador == 5'b11111) begin contador = 0;
-//		  if (entrada == 1) salida = !salida;
-//		  else salida = salida;
-////	  end
+    if(TxElecIdle) salida = 1'bz;
+    else begin if (entrada == 1) salida = 0;
+    else salida = 1;
   end
   end
 
@@ -55,7 +49,7 @@ module diferencialEmisor(
     always @(posedge salida) testbench_P1.probador.m1.PwrCntr[PwrC]<=testbench_P1.probador.m1.PwrCntr[PwrC]+1;
   `endif
 endmodule
-                       
+
 /*Fuentes:
 https://es.wikipedia.org/wiki/C%C3%B3digos_NRZ#NRZ-I
 www.teknoplof.com/tag/nrz-i/

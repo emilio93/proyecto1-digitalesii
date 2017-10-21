@@ -8,8 +8,6 @@
 //k285Detector
 //fromTo8Bit
 
-
-
 //
 `timescale 1ns/1ps
 `define isRecibidor 1
@@ -23,7 +21,6 @@
   `include "../../bloques/sincronizador/sincronizador.v"
   `include "../../bloques/diferencial/diferencialReceptor.v"
 `endif
-
 
 
 module recibidor(
@@ -68,27 +65,27 @@ module recibidor(
 //Instancias:
 
 clksReceptor relojReceptor(
-	.clk(clkRx),
-	.rst(clkRstRx),
-	.enb(clkEnbRx),
-	.clk10(clk10),
-	.clk20(clk20),
-	.clk40(clk40)
-  );
+  .clk(clkRx),
+  .rst(clkRstRx),
+  .enb(clkEnbRx),
+  .clk10(clk10),
+  .clk20(clk20),
+  .clk40(clk40)
+);
 
 from8bit expansorDe8bits(
-	.rst(rst),
+  .rst(rst),
   .enb(lectura_enb2),
-	.clk(clkRx),
-	.clk8(clk10),
+  .clk(clkRx),
+  .clk8(clk10),
   .clk16(clk20),
   .clk32(clk40),
-	.dataIn(decoder_Out),
-	.dataOut(dataOut8),
+  .dataIn(decoder_Out),
+  .dataOut(dataOut8),
   .dataOut16(dataOut16),
   .dataOut32(dataOut32),
-	.dataS(dataS)
-  );
+  .dataS(dataS)
+);
 
 
 decoder decodificador(
@@ -98,27 +95,25 @@ decoder decodificador(
   .k_out(k_out),
   .clk(clkRx),
   .rst(rst),
-	.enb(lectura_enb2)
+  .enb(lectura_enb2)
 );
 
 serialParalelo serialAParalelo(
-	.clk(clkRx),
-	.rst(rst),
-	.enb(lectura_enb2),
-	.clk10(clk10),
-	.entrada(sinc_out),
-	.salidas(parallel_Out)
+  .clk(clkRx),
+  .rst(rst),
+  .enb(lectura_enb2),
+  .clk10(clk10),
+  .entrada(sinc_out),
+  .salidas(parallel_Out)
 );
 
-k285Detector kDetector(//Cuál es la entrdad del detector k285?
-	.clk(clkRx),
-	.rst(rst),
-	.enb(enb),
-	.entrada(sinc_out),// bit de entrada serial
-	.esk285(esk285), // indica que se tiene k28.5
-	.lectura(lectura_enb2)// indica estado de lectura
-	//.offsetCnt(),
-	//.rxValid()
+k285Detector kDetector(
+  .clk(clkRx),
+  .rst(rst),
+  .enb(enb),
+  .entrada(sinc_out),// bit de entrada serial
+  .esk285(esk285), // indica que se tiene k28.5
+  .lectura(lectura_enb2)// indica estado de lectura
 );
 
 
@@ -136,8 +131,6 @@ diferencialReceptor diferencialRec(
   .entrada(serialIn), // D+
   .salida(dif_out)  //bit de salida serial
   //TxElecIdle //se pone en 1 si detecta un voltaje de 0 en la entrada, en este modulo, z
-  );
-
-
+);
 
 endmodule

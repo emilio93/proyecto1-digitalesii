@@ -9,7 +9,7 @@ module clks(
 );
   //parametro para selecionar posicion en la memoria de contador
   parameter PwrC=0;
-  
+
   input wire clk;
   input wire rst;
   input wire enb;
@@ -39,6 +39,4 @@ module clks(
       end
     end
   end
-
-
 endmodule

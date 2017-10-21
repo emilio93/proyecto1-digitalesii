@@ -108,6 +108,21 @@ initial begin
 	entradas = 8'b000_00001;
 
 	#retardo;
+	entradas = 8'hd0;
+
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
 	entradas = 8'b000_00001;
 
 	#retardo;
@@ -241,6 +256,36 @@ initial begin
 
 	#retardo;
 	entradas = 8'b000_00010;
+
+	#retardo;
+	entradas = 8'hc5;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	entradas = 8'ha7;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
+	#retardo;
 
 	#retardo;
 	entradas = 8'b100_00011;

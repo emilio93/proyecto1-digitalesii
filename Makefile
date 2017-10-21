@@ -11,7 +11,7 @@ NO_ERROR  = 2> /dev/null
 # crea folders necesarios en caso que no existan
 MAKE_FOLDERS := $(shell mkdir -p $(DIRS))
 
-.PHONY: 	compile run
+.PHONY: 	compile run synth
 
 
 # Sintetiza con yosys, compila con iverilog y corre con vvp
