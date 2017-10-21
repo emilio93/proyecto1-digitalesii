@@ -1,20 +1,20 @@
 [*]
-[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Mon Oct  9 06:51:37 2017
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sat Oct 21 01:20:39 2017
 [*]
-[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testDecoder10to8.vcd"
-[dumpfile_mtime] "Mon Oct  9 06:39:50 2017"
-[dumpfile_size] 45195
-[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testDecoder10to8.gtkw"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testDecoder10to8.vcd"
+[dumpfile_mtime] "Sat Oct 21 01:05:42 2017"
+[dumpfile_size] 46251
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testDecoder10to8.gtkw"
 [timestart] 0
-[size] 1000 600
-[pos] -1 -1
-*-18.719391 628000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1680 1022
+[pos] -51 -51
+*-17.390816 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testDecode10bto8b.
-[sst_width] 225
+[sst_width] 45
 [signals_width] 174
-[sst_expanded] 1
-[sst_vpaned_height] 160
+[sst_expanded] 0
+[sst_vpaned_height] 324
 @28
 testDecode10bto8b.clk
 @200
@@ -29,10 +29,10 @@ testDecode10bto8b.salida[7:0]
 testDecode10bto8b.invalid_value
 @200
 -
-@23
+@22
 [color] 2
 testDecode10bto8b.salidaSynth[7:0]
-@29
+@28
 [color] 2
 testDecode10bto8b.invalid_valueSynth
 [pattern_trace] 1

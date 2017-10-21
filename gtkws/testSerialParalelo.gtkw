@@ -1,20 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
-[*] Tue Oct  3 03:03:21 2017
+[*] Sat Oct 21 01:13:35 2017
 [*]
-[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testSerialParalelo.vcd"
-[dumpfile_mtime] "Tue Oct  3 02:53:21 2017"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testSerialParalelo.vcd"
+[dumpfile_mtime] "Sat Oct 21 01:05:45 2017"
 [dumpfile_size] 46704
-[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proyecto1-digitalesii/gtkws/testSerialParalelo.gtkw"
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testSerialParalelo.gtkw"
 [timestart] 0
-[size] 1680 688
+[size] 1680 1022
 [pos] -1 -1
-*-16.908188 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-16.715252 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testSerialParalelo.
-[sst_width] 223
+[sst_width] 45
 [signals_width] 166
-[sst_expanded] 1
-[sst_vpaned_height] 169
+[sst_expanded] 0
+[sst_vpaned_height] 282
 @28
 [color] 4
 testSerialParalelo.clk
@@ -28,17 +28,17 @@ testSerialParalelo.rst
 testSerialParalelo.entrada
 @200
 -
-@c00023
+@c00022
 [color] 3
 testSerialParalelo.receptor.contador[3:0]
-@29
+@28
 (0)testSerialParalelo.receptor.contador[3:0]
 (1)testSerialParalelo.receptor.contador[3:0]
 (2)testSerialParalelo.receptor.contador[3:0]
 (3)testSerialParalelo.receptor.contador[3:0]
-@1401201
+@1401200
 -group_end
-@800022
+@c00022
 [color] 3
 testSerialParalelo.receptor.bits[9:0]
 @28
@@ -62,23 +62,33 @@ testSerialParalelo.receptor.bits[9:0]
 (8)testSerialParalelo.receptor.bits[9:0]
 [color] 3
 (9)testSerialParalelo.receptor.bits[9:0]
-@1001200
+@1401200
 -group_end
-@c00028
+@800022
 [color] 3
 testSerialParalelo.receptor.salidas[9:0]
 @28
+[color] 3
 (0)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (1)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (2)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (3)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (4)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (5)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (6)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (7)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (8)testSerialParalelo.receptor.salidas[9:0]
+[color] 3
 (9)testSerialParalelo.receptor.salidas[9:0]
-@1401200
+@1001202
 -group_end
 @200
 -
@@ -101,9 +111,32 @@ testSerialParalelo.receptorSynth.bits[9:0]
 (9)testSerialParalelo.receptorSynth.bits[9:0]
 @1401200
 -group_end
-@22
+@800022
 [color] 2
 testSerialParalelo.receptorSynth.salidas[9:0]
+@28
+[color] 2
+(0)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(1)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(2)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(3)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(4)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(5)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(6)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(7)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(8)testSerialParalelo.receptorSynth.salidas[9:0]
+[color] 2
+(9)testSerialParalelo.receptorSynth.salidas[9:0]
+@1001200
+-group_end
 @200
 -
 @22

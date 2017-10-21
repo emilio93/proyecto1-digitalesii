@@ -1,35 +1,45 @@
 [*]
-[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Sun Oct 15 17:12:43 2017
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sat Oct 21 02:54:09 2017
 [*]
-[dumpfile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testSincronizador.vcd"
-[dumpfile_mtime] "Sun Oct 15 17:10:39 2017"
-[dumpfile_size] 170165
-[savefile] "/home/ubuntu/BMC_git/proyecto1-digitalesii/gtkws/testSincronizador.gtkw"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testSincronizador.vcd"
+[dumpfile_mtime] "Sat Oct 21 02:53:52 2017"
+[dumpfile_size] 196506
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testSincronizador.gtkw"
 [timestart] 0
-[size] 1317 744
-[pos] -318 -117
-*-16.049026 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 225
+[size] 1680 1022
+[pos] -1 -1
+*-17.374582 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testSincronizador.
+[treeopen] testSincronizador.testTransmisor.
+[treeopen] testSincronizador.testTransmisor.emisor.
+[treeopen] testSincronizador.testTransmisorSintetizado.
+[treeopen] testSincronizador.testTransmisorSintetizado.emisor.
+[sst_width] 45
 [signals_width] 158
-[sst_expanded] 1
-[sst_vpaned_height] 211
+[sst_expanded] 0
+[sst_vpaned_height] 317
 @28
 testSincronizador.clk
 @22
 testSincronizador.dataIn[7:0]
-@29
+@28
 [color] 3
 testSincronizador.dataOut
-@28
 [color] 2
 testSincronizador.dataOutSynth
 testSincronizador.clkRx
-@29
 [color] 3
 testSincronizador.dataOutSinc
-@28
 [color] 2
 testSincronizador.dataOutSincSynth
+@200
+-
+@28
+testSincronizador.testTransmisor.emisor.entrada
+testSincronizador.testTransmisor.emisor.salida
+testSincronizador.testTransmisorSintetizado.emisor.TxElecIdle
+testSincronizador.testTransmisorSintetizado.emisor.entrada
+testSincronizador.testTransmisorSintetizado.emisor.salida
 [pattern_trace] 1
 [pattern_trace] 0

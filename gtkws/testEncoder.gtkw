@@ -1,20 +1,20 @@
 [*]
-[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Sun Oct  8 14:55:43 2017
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sat Oct 21 02:24:01 2017
 [*]
-[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.vcd"
-[dumpfile_mtime] "Sun Oct  8 14:35:43 2017"
-[dumpfile_size] 26149
-[savefile] "/root/Documents/proyecto1digitales/gtkws/testEncoder.gtkw"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testEncoder.vcd"
+[dumpfile_mtime] "Sat Oct 21 02:18:42 2017"
+[dumpfile_size] 28046
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testEncoder.gtkw"
 [timestart] 0
-[size] 1920 1021
+[size] 1680 1022
 [pos] -1 -1
-*-20.000000 20900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-18.079790 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testEncoder.
 [treeopen] testEncoder.testEncoderSynth.
-[sst_width] 213
-[signals_width] 631
-[sst_expanded] 1
+[sst_width] 45
+[signals_width] 137
+[sst_expanded] 0
 [sst_vpaned_height] 298
 @28
 [color] 4
@@ -39,7 +39,7 @@ testEncoder.entradas[7:0]
 -group_end
 @200
 -
-@800022
+@c00023
 [color] 3
 testEncoder.salidasC[9:0]
 @28
@@ -73,12 +73,12 @@ testEncoder.testEnc.L12
 testEncoder.testEnc.L21
 @200
 -
-@1001200
+@1401201
 -group_end
-@800023
+@c00022
 [color] 2
 testEncoder.salidasE[9:0]
-@29
+@28
 [color] 2
 (0)testEncoder.salidasE[9:0]
 [color] 2
@@ -107,7 +107,7 @@ testEncoder.testEnc.L30
 testEncoder.testEnc.L12
 [color] 2
 testEncoder.testEnc.L21
-@1001201
+@1401200
 -group_end
 [pattern_trace] 1
 [pattern_trace] 0

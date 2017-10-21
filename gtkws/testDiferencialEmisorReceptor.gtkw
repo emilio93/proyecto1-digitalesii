@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.82 (w)1999-2017 BSI
-[*] Wed Oct 18 03:01:04 2017
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sat Oct 21 01:29:29 2017
 [*]
-[dumpfile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.vcd"
-[dumpfile_mtime] "Wed Oct 18 02:58:13 2017"
+[dumpfile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testDiferencialEmisorReceptor.vcd"
+[dumpfile_mtime] "Sat Oct 21 01:05:44 2017"
 [dumpfile_size] 1873
-[savefile] "/root/Documents/proyecto1digitales/gtkws/testDiferencialEmisorReceptor.gtkw"
+[savefile] "/home/dvl/Desktop/ucr/2017-ii/523/proy/gtkws/testDiferencialEmisorReceptor.gtkw"
 [timestart] 0
-[size] 1920 1021
+[size] 1680 1022
 [pos] -1 -1
-*-15.000000 120000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-14.918145 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testDiferencialEmisorReceptor.
 [sst_width] 48
 [signals_width] 169
