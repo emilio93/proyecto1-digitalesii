@@ -11,9 +11,22 @@ make
 #  - make run
 
 # Abrir visualizador con ondas generadas
-gtkwave gtkws/testSerialParalelo.gtkw
-gtkwave gtkws/testParaleloSerial.gtkw
-gtkwave gtkws/testParaleloSerialSerialParalelo.gtkw
+gtkwave ./gtkws/testClks.gtkw
+gtkwave ./gtkws/testEncoderDecoder.gtkw
+gtkwave ./gtkws/test_P1.gtkw
+gtkwave ./gtkws/testSerialParalelo.gtkw
+gtkwave ./gtkws/testTransmisor.gtkw
+gtkwave ./gtkws/testEncoder.gtkw
+gtkwave ./gtkws/testParaleloSerial.gtkw
+gtkwave ./gtkws/testSincronizador.gtkw
+gtkwave ./gtkws/testDecoder10to8.gtkw
+gtkwave ./gtkws/testFrom8bit.gtkw
+gtkwave ./gtkws/testParaleloSerialSerialParalelo.gtkw
+gtkwave ./gtkws/testTo8bitFrom8bit.gtkw
+gtkwave ./gtkws/testDiferencialEmisorReceptor.gtkw
+gtkwave ./gtkws/testK285Detector.gtkw
+gtkwave ./gtkws/testRecibidor.gtkw
+gtkwave ./gtkws/testTo8bit.gtkw
 ```
 
 ### Para Utilizar el Makefile
