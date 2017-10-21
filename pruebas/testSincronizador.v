@@ -65,10 +65,11 @@ module testSincronizador;
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
     .dataS(dataS),
+    .TxElecIdle(1'b0),
     .serialOut(dataOut)
   );
 
-    transmisorSynth testTransmisorSintetizado(
+  transmisorSynth testTransmisorSintetizado(
     .clk(clk),
     .rst(rst),
     .enb(enb),
@@ -77,6 +78,7 @@ module testSincronizador;
     .dataIn16(dataIn16),
     .dataIn32(dataIn32),
     .dataS(dataS),
+    .TxElecIdle(1'b0),
     .serialOut(dataOutSynth)
   );
 
